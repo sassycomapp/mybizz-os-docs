@@ -1,0 +1,18 @@
+---
+project: mybizz-os-docs
+status: active
+verified: 2026-09-09
+---
+
+local_path: /mnt/c/mybizz/mybizz-os-docs
+github_remote: https://github.com/sassycomapp/mybizz-os-docs (private)
+type: document repo — system describer/explainer documents (narrative, not config reference)
+in_scope: yes (scope scaffold, 2026-09-09)
+
+note: >
+  narrative and explainer documents — memory-master-explainer, pdlf-explainer,
+  skill-index.md, environment explainers; walked in scope by mb-docs-manager
+
+folders_note: >
+  flat document collection at root; skill-index.md is the authoritative
+  skill status register
