@@ -145,6 +145,22 @@ client = TestClient(test_app)
 project_id = "test-audit-write"
 headers = {"X-Governor-Credential": os.environ["MEMORY_GOVERNOR_WRITER_MANUAL_SUBMISSION"]}
 
+# --- Disposable GBrain source (REQUIRED, added 2026-09-09): the delivery
+# coupling demands a real gbrain source matching owning_project — without
+# it the write fails with SourceNotFoundError, exactly as documented. ---
+tmp = tempfile.mkdtemp()
+src_path = os.path.join(tmp, "gbrain_source")
+os.makedirs(src_path)
+subprocess.run(["git", "init", src_path], check=True, capture_output=True)
+subprocess.run(["git", "-C", src_path, "config", "user.email", "audit@local"], check=True, capture_output=True)
+subprocess.run(["git", "-C", src_path, "config", "user.name", "Audit"], check=True, capture_output=True)
+open(os.path.join(src_path, "README.md"), "w").write("disposable audit source\n")
+subprocess.run(["git", "-C", src_path, "add", "-A"], check=True, capture_output=True)
+subprocess.run(["git", "-C", src_path, "commit", "-m", "initial"], check=True, capture_output=True)
+subprocess.run(["gbrain", "sources", "add", project_id, "--path", src_path], check=True, capture_output=True)
+current = subprocess.run(["gbrain", "sources", "current"], check=True, capture_output=True, text=True)
+original_source = current.stdout.strip().splitlines()[0].replace("source: ", "").strip()
+
 def cleanup_db(memory_id=None):
     with get_connection() as conn:
         with conn.cursor() as cur:
@@ -188,7 +204,7 @@ try:
     print("gbrain presence:", ok_presence, "| private visibility:", ok_scoped, "| register written:", register_row)
 finally:
     cleanup_db(memory_id); expire_gbrain_fact()
-    subprocess.run(["gbrain", "sources", "default", "default"], check=False, capture_output=True)
+    subprocess.run(["gbrain", "sources", "default", original_source], check=False, capture_output=True)
     # remove the disposable project's gbrain source registration if one was created
     subprocess.run(["gbrain", "sources", "remove", project_id, "--confirm-destructive"], check=False, capture_output=True)
 print("END-TO-END: done (cleanup complete)")
