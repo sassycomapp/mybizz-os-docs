@@ -1,3 +1,10 @@
+---
+document: "Active PDLF To-Do List"
+doc-id: dev-makepdlf-todo
+state: Live
+date-created: 2026-09-05
+---
+
 # Active PDLF To-Do List
 
 Action items only. Completed and closed items are not tracked here.

@@ -1,3 +1,10 @@
+---
+document: "Skill Index"
+doc-id: skill-index
+state: Live
+date-created: 2026-09-05
+---
+
 # Skill Index
 
 Real skill files on this machine, enumerated from the confirmed discovery paths

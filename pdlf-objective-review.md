@@ -1,3 +1,10 @@
+---
+document: "PDLF — An Objective Review"
+doc-id: pdlf-objective-review
+state: Live
+date-created: 2026-09-05
+---
+
 # PDLF — An Objective Review
 *Assessed against the current landscape of AI-agent software development frameworks*
 

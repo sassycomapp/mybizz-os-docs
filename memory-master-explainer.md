@@ -1,3 +1,10 @@
+---
+document: "The Memory System — Master Explainer"
+doc-id: memory-master-explainer
+state: Live
+date-created: 2026-09-05
+---
+
 # The Memory System — Master Explainer
 
 ## 1. Opening

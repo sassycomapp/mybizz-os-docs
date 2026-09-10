@@ -1,3 +1,10 @@
+---
+document: "The Environment Explainer — the pre-makePDLF, makePDLF, PDLF, and shipped layers"
+doc-id: environment-explainer
+state: Live
+date-created: 2026-09-09
+---
+
 # The Environment Explainer — the pre-makePDLF, makePDLF, PDLF, and shipped layers
 
 *Created 2026-09-09 from the Sentinel scoping side conversation. This is the
