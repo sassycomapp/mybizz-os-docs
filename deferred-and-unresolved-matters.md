@@ -45,7 +45,7 @@ reconstruct the conversation that produced it:
 ### What it is
 
 The reasoning framework and set of deliberately-unresolved items
-originally recorded in `structural-compliance-enforcement-architecture-
+originally recorded in the retired `structural-compliance-enforcement-architecture-
 v3.md`. That document's actively-current content (Cupcake's identity,
 the rules-authoring pipeline, the cross-project grant system, the full
 rule inventory) has since been folded into the canonical Cupcake

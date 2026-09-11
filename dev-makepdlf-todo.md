@@ -17,7 +17,7 @@ These steps currently model a staging/production environment split that does not
 
 ### 2. Integrate Suite A and Suite B into Steps 35A, 36, 37, 38, 39
 
-Both testing checklists (`chk-pdlf-self-test.md`, `chk-anvil-app-testing.md`) exist and are referenced from `pol-testing-and-quality.md`, but their checks are not yet built into the actual stepwise files that do testing work. Deferred to Phase D, when those step files are rebuilt.
+Both testing checklists (`chk-pdlf-self-test.md`, `the retired chk-anvil-app-testing.md`) exist and are referenced from `pol-testing-and-quality.md`, but their checks are not yet built into the actual stepwise files that do testing work. Deferred to Phase D, when those step files are rebuilt.
 
 ### 3. Build out `Instructions.md` files
 
