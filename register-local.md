@@ -19,10 +19,10 @@ doc-ids where basenames repeat.
 |---|---|---|---|---|---|
 | deferred-and-unresolved-matters | deferred-and-unresolved-matters.md | . | explainer | Live |  |
 | dev-makepdlf-todo | dev-makepdlf-todo.md | . | explainer | Live |  |
-| environment-explainer | environment-explainer.md | . | explainer | Live |  |
+| environment-explainer | environment-explainer.md | . | explainer | Retired | moved to C:\pdlf\pdlf-library 2026-09-11 |
 | memory-functionality-audit | memory-functionality-audit.md | . | explainer | Live |  |
 | memory-master-explainer | memory-master-explainer.md | . | explainer | Live |  |
-| pdlf-explainer | pdlf-explainer.md | . | explainer | Live |  |
-| pdlf-objective-review | pdlf-objective-review.md | . | explainer | Live |  |
+| pdlf-explainer | pdlf-explainer.md | . | explainer | Retired | moved to C:\pdlf\pdlf-library\pdlf-explainer-docs\ as pdlf-system-explainer.md 2026-09-11 |
+| pdlf-objective-review | pdlf-objective-review.md | . | explainer | Retired | moved to C:\pdlf\pdlf-library 2026-09-11 |
 | session-start-checklist-and-behavioral-principles | session-start-checklist-and-behavioral-principles.md | . | explainer | Live |  |
 | skill-index | skill-index.md | . | explainer | Live |  |
