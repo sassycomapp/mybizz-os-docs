@@ -1,10 +1,3 @@
----
-document: "Scope Scaffold — mybizz-scope-list"
-doc-id: mybizz-scope-list
-state: Live
-date-created: 2026-09-17
----
-
 **In scope:**
 
 "C:\\data-mybizz-mgt"
@@ -19,7 +12,9 @@ date-created: 2026-09-17
 
 "C:\data-mybizz-mgt\WIP"
 "C:\data-mybizz-mgt\archive"
-"C:\data-mybizz-mgt\temp""C:\\mybizz\\gbrain"
+"C:\data-mybizz-mgt\temp"
+
+"C:\\mybizz\\gbrain"
 
 "C:\dev\dev-mb4ecom"
 "C:\dev\dev-mb5pdlf"
@@ -47,5 +42,3 @@ date-created: 2026-09-17
 "C:\backup-daily"
 "C:\backup-dream-cycle"
 "C:\backup-gbrain"
-
-
