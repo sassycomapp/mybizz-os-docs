@@ -25,3 +25,4 @@ Replaces `Repo organization.xlsx` (deleted 2026-09-14 by the developer).
 | mybizz-config-docs (federated) | mybizz-config-docs (Private)       | C:\mybizz\mybizz-config-docs                 | /mnt/c/mybizz/mybizz-config-docs                 |
 | mybizz-os-docs (federated)     | mybizz-os-docs (Private)           | C:\mybizz\mybizz-os-docs                     | /mnt/c/mybizz/mybizz-os-docs                     |
 | data-mybizz-mgt (federated)    | data-mybizz-mgt (Private)          | C:\data-mybizz-mgt                           | /mnt/c/data-mybizz-mgt                           |
+| pdlf (federated)              | pdlf (Private)                    | C:\pdlf                                      | /mnt/c/pdlf                                      |
