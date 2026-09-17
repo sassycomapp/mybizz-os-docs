@@ -1,3 +1,10 @@
+---
+document: "Scope Scaffold — mybizz-scope-list"
+doc-id: mybizz-scope-list
+state: Live
+date-created: 2026-09-17
+---
+
 **In scope:**
 
 "C:\\data-mybizz-mgt"
@@ -40,3 +47,5 @@
 "C:\backup-daily"
 "C:\backup-dream-cycle"
 "C:\backup-gbrain"
+
+
