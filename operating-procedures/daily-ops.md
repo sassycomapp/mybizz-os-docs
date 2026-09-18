@@ -1,10 +1,3 @@
----
-document: "Daily Operations — Quick Reference"
-doc-id: daily-ops
-state: Live
-date-created: 2026-09-17
----
-
 # Daily Operations — Quick Reference
 
 ---
@@ -13,7 +6,7 @@ date-created: 2026-09-17
 
 ```bash
 cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
-opencode web --hostname 0.0.0.0
+opencode web --hostname 0.0.0.0  <<Check the model>>
 ```
 
 Then open browser: `http://localhost:3000`
