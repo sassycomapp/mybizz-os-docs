@@ -193,7 +193,7 @@ curl -s -X POST http://127.0.0.1:8321/memory/candidate \
 #    The agent drafts the row WITHOUT a number; the developer enters the
 #    log's next zero-padded index at the prompt (hard rule 8)
 read -p "Next sessions-log No: " SLNO
-printf '%s\n' "| $SLNO | DATE-YYYY/MM/DD | topic | subject | title | gbrain-page-name |" >> /mnt/c/data-mybizz-mgt/_desktop/sessions-log.md
+printf '%s\n' "| $SLNO | DATE-YYYY/MM/DD | topic | subject | title | gbrain-page-name |" >> /mnt/c/mybizz/logs/sessions-log/sessions-log.md
 ```
 
 ### M-3b — DEVELOPER TERMINAL BLOCK 1b (review resolution)
@@ -251,7 +251,7 @@ curl -s -X POST http://127.0.0.1:8321/memory/LITERAL-MEMORY-ID/review \
 # and the helper increments per row. The agent drafts each frow line fully
 # literal; the fact-NN goes ONLY in the last column (trap T9)
 read -p "Next facts-log No: " N
-frow() { printf '%s\n' "| $(printf '%03d' "$((10#$N))") | $1 | $2 | $3 | $4 | $5 |" >> /mnt/c/data-mybizz-mgt/_desktop/facts-log.md; N=$((10#$N+1)); }
+frow() { printf '%s\n' "| $(printf '%03d' "$((10#$N))") | $1 | $2 | $3 | $4 | $5 |" >> /mnt/c/mybizz/logs/gbrain-logs/facts-log/facts-log.md; N=$((10#$N+1)); }
 frow "YYYY/MM/DD" "subject" "title" "fact text" "fact-NN"
 # (one frow line per saved fact)
 
@@ -310,7 +310,7 @@ decision, and the next-work pointer. Then the session is closed.
   any artifact.
 - **T6 — the sessions-log row is presented at the gate** (Phase B), so the
   single approval covers it; appending is developer-run (M-3) because the
-  agent-side write to `_desktop` is boundary-blocked.
+  agent-side write to the logs is boundary-blocked.
 - **T7 — grants decrement per write.** Request the count the work actually
   needs before starting (live lesson 2026-09-14: a `count 1` grant consumed
   by the first write forced a second request).
@@ -336,7 +336,7 @@ decision, and the next-work pointer. Then the session is closed.
   decimal on both — `$(printf '%03d' "$((10#$N))")` for output and
   `N=$((10#$N+1))` for the increment. When this still slips (a mangled
   paste), the corrective edit to facts-log.md is agent-run under an
-  `mg-grant --path /mnt/c/data-mybizz-mgt/_desktop --count 1` slip —
+  `mg-grant --path /mnt/c/mybizz/logs/gbrain-logs/facts-log --count 1` slip —
   not a re-paste of the same block.
 
 Completion status per the mb-submit-memory protocol (Branch M runs): DONE,

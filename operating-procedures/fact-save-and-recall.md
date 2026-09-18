@@ -20,7 +20,7 @@ always have a readable list of everything the AI permanently believes.
 
 **Your file:**
 
-- Facts log (the index): `C:\_data-mybizz-mgt\_desktop\Facts-log.md`
+- Facts log (the index): `C:\mybizz\logs\gbrain-logs\facts-log\facts-log.md`
 
 The two kinds of facts, and the difference that matters:
 

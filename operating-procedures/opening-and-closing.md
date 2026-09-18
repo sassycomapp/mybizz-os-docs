@@ -21,7 +21,7 @@ session — which is why every new session starts fast.
 
 **Your files:**
 
-- Sessions log (the index): `C:\_data-mybizz-mgt\_desktop\sessions-log.md`
+- Sessions log (the index): `C:\mybizz\logs\sessions-log\sessions-log.md`
 - The session summaries themselves: GBrain pages named `sessions/...`
 
 ---
