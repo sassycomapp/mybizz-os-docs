@@ -29,7 +29,9 @@ Then run Start sequence above.
 mg-grant --path <folder> --count N
 ```
 
-`<folder>`: Windows or WSL form, either works. `N`: writes to allow.
+`<folder>`: use the WSL forward-slash form (`/mnt/c/...`) when issuing from
+bash — backslash paths get eaten as escape characters and produce an
+unmatchable grant key (verified incident 2026-09-11). `N`: writes to allow.
 Reads open for 30 minutes, no count needed. Closes automatically at 30
 minutes or when the write count hits zero, whichever's first.
 
@@ -62,7 +64,7 @@ git add -A
 git commit -m "your message here"
 git push origin main
 gbrain sync --source mb-3-cs-project-library
-gbrain embed --stale
+gbrain embed --stale --source mb-3-cs-project-library
 ```
 
 ```bash
@@ -71,7 +73,7 @@ git add -A
 git commit -m "your message here"
 git push origin master
 gbrain sync --source pdlf
-gbrain embed --stale
+gbrain embed --stale --source pdlf
 ```
 
 ```bash
@@ -80,8 +82,14 @@ git add -A
 git commit -m "your message here"
 git push origin master
 gbrain sync --source template-project-library
-gbrain embed --stale
+gbrain embed --stale --source template-project-library
 ```
+
+**Provisioning status (verified 2026-09-18):** the local folder
+`/mnt/c/dev/project-template` is not a git repository yet and no
+`template-project-library` gbrain source exists. Clone the GitHub template
+(`gh repo clone sassycomapp/template-project-library`) and register the gbrain
+source before relying on the commands above.
 
 **`template-project-library` is a GitHub template repository, not a normal
 project.** Never develop a new project inside this folder directly — use
@@ -234,7 +242,7 @@ not optional — it's what actually catches a phantom candidate (a
 proposed change for text that isn't really there).
 
 **Reference paths (wikilink retrofit):** skill `mb-wikilinks`; backups
-`C:\backup-wikilinks\`; logs `C:\mybizz\logs\wikilinks\`.
+`C:\backup-mb-wikilinks\`; logs `C:\mybizz\logs\mb-wikilinks\`.
 
 ---
 
@@ -258,7 +266,7 @@ to `C:\dev\...`).
 
 **Cause:** OpenCode has no built-in cleanup for stale `project`/`session`
 database rows (confirmed upstream gap — see
-`C:\mybizz\mybizz-os\opencode-project-session-data-integrity.md`).
+`C:\mybizz\mybizz-config-docs\opencode\opencode-project-session-data-integrity.md`).
 
 **Fix:** run the cleanup script — see that same document for the exact
 command and full path.

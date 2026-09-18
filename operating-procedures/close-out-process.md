@@ -31,8 +31,8 @@ their solutions, and the developer's refinement that the process is
 context-based, not memory-specific.
 
 Reference files (developer-side; agent reads what the guards allow):
-- `C:\data-mybizz-mgt\_desktop\facts-log.md` — index of saved facts
-- `C:\data-mybizz-mgt\_desktop\sessions-log.md` — index of session pages
+- `C:\mybizz\logs\gbrain-logs\facts-log\facts-log.md` — index of saved facts
+- `C:\mybizz\logs\sessions-log\sessions-log.md` — index of session pages
 - `C:\mybizz\mybizz-os-docs\operating-procedures\sessions\opening-and-closing.md`
 - `C:\mybizz\mybizz-os-docs\operating-procedures\gbrain\fact-save-and-recall.md`
 

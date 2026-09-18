@@ -38,4 +38,4 @@ doc-ids where basenames repeat.
 | memory-family | os-reference-docs/The memory family.txt | os-reference-docs | reference | Live |  |
 | mybizz-scope-list | os-reference-docs/mybizz-scope-list.md | os-reference-docs | scaffold | Live | scope scaffold — read at Phase 0 of every mb-docs-manager run |
 | repo-organization | os-reference-docs/repo-organization.md | os-reference-docs | reference | Live | GBrain sources / GitHub repos / local paths correlation table |
-| wsl-path-references | os-reference-docs/wsl-path-references..md | os-reference-docs | reference | Live | filename carries a doubled dot — flagged for the docs skills |
+| wsl-path-references | os-reference-docs/wsl-path-references.md | os-reference-docs | reference | Live | filename healed 2026-09-18 (align-docs identifier change, developer-approved 4b): doubled dot removed; formerly wsl-path-references..md |
