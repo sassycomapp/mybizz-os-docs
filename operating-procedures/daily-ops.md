@@ -29,9 +29,7 @@ Then run Start sequence above.
 mg-grant --path <folder> --count N
 ```
 
-`<folder>`: use the WSL forward-slash form (`/mnt/c/...`) when issuing from
-bash — backslash paths get eaten as escape characters and produce an
-unmatchable grant key (verified incident 2026-09-11). `N`: writes to allow.
+`<folder>`: Windows or WSL form, either works. `N`: writes to allow.
 Reads open for 30 minutes, no count needed. Closes automatically at 30
 minutes or when the write count hits zero, whichever's first.
 
@@ -64,7 +62,7 @@ git add -A
 git commit -m "your message here"
 git push origin main
 gbrain sync --source mb-3-cs-project-library
-gbrain embed --stale --source mb-3-cs-project-library
+gbrain embed --stale
 ```
 
 ```bash
@@ -73,7 +71,7 @@ git add -A
 git commit -m "your message here"
 git push origin master
 gbrain sync --source pdlf
-gbrain embed --stale --source pdlf
+gbrain embed --stale
 ```
 
 ```bash
@@ -82,14 +80,8 @@ git add -A
 git commit -m "your message here"
 git push origin master
 gbrain sync --source template-project-library
-gbrain embed --stale --source template-project-library
+gbrain embed --stale
 ```
-
-**Provisioning status (verified 2026-09-18):** the local folder
-`/mnt/c/dev/project-template` is not a git repository yet and no
-`template-project-library` gbrain source exists. Clone the GitHub template
-(`gh repo clone sassycomapp/template-project-library`) and register the gbrain
-source before relying on the commands above.
 
 **`template-project-library` is a GitHub template repository, not a normal
 project.** Never develop a new project inside this folder directly — use
@@ -242,7 +234,7 @@ not optional — it's what actually catches a phantom candidate (a
 proposed change for text that isn't really there).
 
 **Reference paths (wikilink retrofit):** skill `mb-wikilinks`; backups
-`C:\backup-mb-wikilinks\`; logs `C:\mybizz\logs\mb-wikilinks\`.
+`C:\backup-wikilinks\`; logs `C:\mybizz\logs\wikilinks\`.
 
 ---
 
@@ -266,7 +258,7 @@ to `C:\dev\...`).
 
 **Cause:** OpenCode has no built-in cleanup for stale `project`/`session`
 database rows (confirmed upstream gap — see
-`C:\mybizz\mybizz-config-docs\opencode\opencode-project-session-data-integrity.md`).
+`C:\mybizz\mybizz-os\opencode-project-session-data-integrity.md`).
 
 **Fix:** run the cleanup script — see that same document for the exact
 command and full path.
@@ -450,5 +442,21 @@ opencode web --hostname 0.0.0.0
 | Embedding     | OpenAI (text-embedding-3-large) | ✓ active                         |
 | Chat / Expand | OpenAI (gpt-5.2)                | ✓ active, will move to Anthropic |
 | Reranker      | ZeroEntropy                     | ✓ confirmed active               |
+
+## Cupcake (Enable/ Disable)
+
+documented in `cupcake-reference.md:275` (Disabling Cupcake — immediate, fully reversible):
+
+```
+mv ~/.config/opencode/plugin/cupcake.js ~/.config/opencode/plugin/cupcake.js.disabled
+```
+
+Restart OpenCode afterwards (plugin changes only load at process start). To re-enable:
+
+```
+mv ~/.config/opencode/plugin/cupcake.js.disabled ~/.config/opencode/plugin/cupcake.js
+```
+
+This matches the prior suspension described in `cupcake-explainer.md:260` — renaming the plugin out of its discoverable path, nothing else touched, and the `.bak-*` copies in the plugin folder confirm earlier uses.
 
 *That's it. Everything else lives in the reference docs.*

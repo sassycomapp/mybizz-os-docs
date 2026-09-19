@@ -17,14 +17,14 @@ doc-ids where basenames repeat.
 
 | doc-id | filename | folder | type | state | notes |
 |---|---|---|---|---|---|
-| deferred-and-unresolved-matters | deferred-and-unresolved-matters.md | . | explainer | Retired | moved to C:\data-mybizz-mgt\desktop\ 2026-09-17 |
-| dev-makepdlf-todo | dev-makepdlf-todo.md | . | explainer | Retired | moved to C:\data-mybizz-mgt\desktop\ 2026-09-17 |
-| environment-explainer | environment-explainer.md | . | explainer | Retired | moved to C:\pdlf\pdlf-library 2026-09-11 |
+| deferred-and-unresolved-matters | deferred-and-unresolved-matters.md | . | explainer | Retired | moved to C:\data-mybizz-mgt\desktop\ 2026-09-17; live at desktop per developer 2026-09-19 |
+| dev-makepdlf-todo | dev-makepdlf-todo.md | . | explainer | Retired | moved to C:\data-mybizz-mgt\desktop\ 2026-09-17; home confirmed by developer 2026-09-19 (canonical; divergent wip copy flagged) |
+| environment-explainer | environment-explainer.md | . | explainer | Live | returned from C:\pdlf\pdlf-library per developer instruction 2026-09-19 |
 | memory-functionality-audit | memory-functionality-audit.md | . | explainer | Live |  |
 | memory-master-explainer | memory-master-explainer.md | . | explainer | Live |  |
-| pdlf-explainer | pdlf-explainer.md | . | explainer | Retired | moved to C:\pdlf\pdlf-library\pdlf-explainer-docs\ as pdlf-system-explainer.md 2026-09-11 |
+| pdlf-explainer | pdlf-explainer.md | . | explainer | Live | returned from C:\pdlf\pdlf-library (was pdlf-system-explainer) per developer instruction 2026-09-19 |
 | pdlf-objective-review | pdlf-objective-review.md | . | explainer | Retired | moved to C:\pdlf\pdlf-library 2026-09-11 |
-| session-start-checklist-and-behavioral-principles | session-start-checklist-and-behavioral-principles.md | . | explainer | Retired | file not found on disk 2026-09-17 — superseded by operating-procedures/opening-and-closing.md + standing-instruction.md; retired by align-docs |
+| session-start-checklist-and-behavioral-principles | session-start-checklist-and-behavioral-principles.md | . | explainer | Retired | superseded 2026-09-17 by opening-and-closing.md + standing-instruction.md; restored to C:\mybizz\prompts\ 2026-09-19 per developer instruction (reference copy) |
 | skill-index | skill-index.md | . | explainer | Live |  |
 | close-out-process | operating-procedures/close-out-process.md | operating-procedures | procedural | Live |  |
 | daily-ops | operating-procedures/daily-ops.md | operating-procedures | procedural | Live |  |
@@ -39,3 +39,7 @@ doc-ids where basenames repeat.
 | mybizz-scope-list | os-reference-docs/mybizz-scope-list.md | os-reference-docs | scaffold | Live | scope scaffold — read at Phase 0 of every mb-docs-manager run |
 | repo-organization | os-reference-docs/repo-organization.md | os-reference-docs | reference | Live | GBrain sources / GitHub repos / local paths correlation table |
 | wsl-path-references | os-reference-docs/wsl-path-references.md | os-reference-docs | reference | Live | filename healed 2026-09-18 (align-docs identifier change, developer-approved 4b): doubled dot removed; formerly wsl-path-references..md |
+| intent-continuity-architectural-state-standard | intent-continuity-architectural-state-standard.md | . | standard | Live | 2026-09-19 | 2026-09-19 | | registered by align-docs 2026-09-19 (developer-created) |
+| intent-continuity-standard-effects | intent-continuity-standard-effects.md | . | explainer | Live | 2026-09-19 | 2026-09-19 | | registered by align-docs 2026-09-19 (developer-created) |
+| doc-skills-run-discipline | os-reference-docs/doc-skills-run-discipline.md | os-reference-docs | reference | Live | 2026-09-19 | 2026-09-19 | | shared run frame for documentation skills; registered by align-docs 2026-09-19 |
+| disable-enable-cupcake | operating-procedures/disable-enable-cupcake.md | operating-procedures | procedural | Live | 2026-09-19 | 2026-09-19 | | registered by align-docs 2026-09-19; relocated from mybizz-config-docs/cupcake per developer instruction |
