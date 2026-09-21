@@ -70,7 +70,7 @@ tail -20 /tmp/memory-governor-worker.log 2>/dev/null
 Pass: a live `app.worker` process; log shows no `permanently_failed`
 entries. No process = **WORKER DOWN — DEFECT** (promoted candidates then
 silently strand in the outbox). Remediation: start command in
-`memory-governor-reference.md` §Starting.
+[[memory-governor-reference|Usage, Invocation, and Incident Response]] §Starting.
 
 ### Check 4 — Outbox backlog (unprocessed and failed events)
 ```bash

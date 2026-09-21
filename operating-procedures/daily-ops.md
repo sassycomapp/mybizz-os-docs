@@ -39,14 +39,14 @@ mg-revoke --path <folder>
 
 Check active grants: `cat ~/.config/cupcake/policies/opencode/cup-grants-data.rego`
 
-Full mechanics: `cupcake-reference.md`, `cupcake-config.md`.
+Full mechanics: [[cupcake-reference|Usage, Invocation, and Worked Examples]], [[cupcake-config|Cupcake Configuration]].
 
 ---
 
 ## AFTER DOING WORK — run every time, for the repo you were working in
 
 As of 2026-08-05, every PDLF/dev-makepdlf-ecosystem source is GitHub-backed
-(see the `dev-tooling-source-repos-must-be-github-backed` global ADR).
+(see the [[adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]] global ADR).
 There is one workflow — no more "does this repo have a remote?" check.
 The only thing that varies per repo is the default branch name.
 
@@ -92,7 +92,7 @@ deliberately changing the scaffold itself.
 
 **New dev-tooling repos:** any new source added to gbrain for this ecosystem
 must get a GitHub remote at creation — see the
-`dev-tooling-source-repos-must-be-github-backed` ADR for the exact
+[[adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]] ADR for the exact
 `gh repo create` sequence. Don't let a new source sit local-only.
 
 **Other sources** (`mb4ecom-project-library`, `mb5pdlf-project-library`,
@@ -154,7 +154,7 @@ If `down`:
 sudo pg_ctlcluster 16 main start
 ```
 
-Details: `gbrain-config.md`.
+Details: [[gbrain-config|Configuration]].
 
 ---
 
@@ -197,7 +197,7 @@ gbrain sync --source <source-id>
 gbrain doctor
 ```
 
-Full mechanic: `gbrain-reference.md` → Troubleshooting.
+Full mechanic: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Troubleshooting.
 
 ---
 
@@ -258,7 +258,7 @@ to `C:\dev\...`).
 
 **Cause:** OpenCode has no built-in cleanup for stale `project`/`session`
 database rows (confirmed upstream gap — see
-`C:\mybizz\mybizz-os\opencode-project-session-data-integrity.md`).
+[[opencode-project-session-data-integrity|Project & Session Data Integrity]]).
 
 **Fix:** run the cleanup script — see that same document for the exact
 command and full path.
@@ -283,7 +283,7 @@ re-run any time; it does not touch project files.
 installed folder is prefixed (`gstack-qa/`), but the actual slash
 command is the **bare name** from that skill's own frontmatter —
 `/qa`, not `/gstack-qa`. Confirmed directly: the prefixed form returns
-nothing. See `gstack-skills-reference.md` for the full catalog using
+nothing. See [[gstack-skills-reference|GStack Skills Reference]] for the full catalog using
 correct names.
 
 ---
@@ -341,7 +341,7 @@ Symptom: dream-cycle symbol resolution finds nothing, or a code
 source's page count is suspiciously low. Usually a missing `strategy`
 field on the source (defaults to markdown-only, silently skips code).
 
-Full diagnosis and 3-step fix: `gbrain-reference.md` → Resolved
+Full diagnosis and 3-step fix: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved
 Incidents.
 
 ---
@@ -366,7 +366,7 @@ search for the rest of that session. Usually a leftover PGLite-era
 `pkill -f "gbrain serve"` step with no restart — no longer needed under
 Postgres (multi-writer). Remove that step from any script.
 
-Full story: `gbrain-explainer.md` §3.
+Full story: [[gbrain-explainer|Explainer]] §3.
 
 ---
 

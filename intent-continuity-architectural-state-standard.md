@@ -13,7 +13,7 @@ This standard defines the operational protocol for **OpenCode agents** maintaini
 
 Standard Retrieval-Augmented Generation (RAG) and long-context windows suffer from a core vulnerability: **retrieving historical context is not the same as verifying what is currently valid.** As projects grow, unverified context windows cause agents to re-introduce deprecated patterns, apply superseded decisions, or silently drop unstated constraints.
 
-This specification maps the **Intent Continuity Pipeline** directly onto the **Memory Ecosystem** (`memory-master-explainer`):
+This specification maps the **Intent Continuity Pipeline** directly onto the **Memory Ecosystem** ([[memory-master-explainer|Master Explainer]]):
 * **The Mirror Layer (GBrain Sync & Graphify)** provides candidate retrieval and code structure graphs.
 * **The Verification Protocol** operates as an in-memory execution gate to filter out superseded rules and out-of-scope constraints.
 * **The Durable Layer (Memory Governor via `mb-submit-memory`)** stores verified, permanent architectural decisions.
@@ -79,7 +79,7 @@ During active OpenCode development sessions, the agent scans recent user directi
 
 ### Step 2: Candidate Retrieval (Graphify AST + GBrain Hybrid Search)
 When an OpenCode task targets system component $C$:
-1. **Structural Relationships (Graphify):** Query Graphify for `EXTRACTED` dependency relationships connecting component $C$ to adjacent modules (e.g., `auth` connects to `security` and `api`).
+1. **Structural Relationships (Graphify):** Query Graphify for `EXTRACTED` dependency relationships connecting component $C$ to adjacent modules (e.g., `auth` connects to [[security|Security Check]] and [[api|Api]]).
 2. **Hybrid Search (GBrain):** Query GBrain across both mirrored documents and existing durable facts for records associated with component $C$ and its Graphify-linked neighbors.
 
 ### Step 3: Deterministic Verification & Supersession Protocol
@@ -151,7 +151,7 @@ mb-submit-memory \
 
 ## 5. Ecosystem Authority Hierarchy Standard
 
-When resolving conflicting context during code generation, OpenCode agents must strictly follow the established authority hierarchy (`memory-master-explainer`, Section 4):
+When resolving conflicting context during code generation, OpenCode agents must strictly follow the established authority hierarchy ([[memory-master-explainer|Master Explainer]], Section 4):
 
 1. **Current Repository Files, Explicit Prompt Directives, and Passing Tests** (Primary authority).
 2. **Graphify `EXTRACTED` Edges** (Deterministic structural AST truth).
@@ -168,4 +168,4 @@ When resolving conflicting context during code generation, OpenCode agents must 
 * **Non-Destructive Execution:** Verification logic runs purely in-memory during context building and does not modify local source files without explicit confirmation.
 
 ---
-*Companion Document: `memory-master-explainer.md`*
+*Companion Document: [[memory-master-explainer|Master Explainer]]*

@@ -82,7 +82,7 @@ a project — PDLF is what remains.
 **What it contains.** The PDLF application's own materials: the stepwise
 step files (46 steps, 36 real — the first ten are empty), the gates, the
 Postgres ledger, the specifications, checklists, registers. Some step files
-are built (e.g. `step-16-domain-modeling.md`); the rest are built one at a
+are built (e.g. [[step-16-domain-modeling|Step 16 Domain Modeling]]); the rest are built one at a
 time as each phase is reached — never in bulk.
 
 **Who it serves.** The PDLF layer, next. Everything in this layer exists to
@@ -113,7 +113,7 @@ never sees it.
 ## 5. The shipped estate — the Anvil applications
 
 **What it is.** The five-app structure on Anvil.works, per
-`adr-client-instance-architecture` and the related ADRs:
+[[adr-client-instance-architecture|Client Instance Architecture]] and the related ADRs:
 
 1. **`{slug}`** — the development workspace (all feature work).
 2. **`master_template`** — the sole source of all server-side logic and UI

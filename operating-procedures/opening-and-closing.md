@@ -21,7 +21,7 @@ session — which is why every new session starts fast.
 
 **Your files:**
 
-- Sessions log (the index): `C:\mybizz\logs\sessions-log\sessions-log.md`
+- Sessions log (the index): [[2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]]
 - The session summaries themselves: GBrain pages named `sessions/...`
 
 ---
@@ -71,4 +71,4 @@ no longer need. The AI deletes the GBrain page and removes the row from
 the log. Deletion is not immediate: a deleted page can be restored for
 three days. Facts from that session are not deleted with it — facts are
 removed only through the facts procedure (see
-`operating-procedures/gbrain/fact-save-and-recall.md`).
+[[fact-save-and-recall|Operating Procedure]]).

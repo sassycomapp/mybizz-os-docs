@@ -145,10 +145,10 @@ Section 7 later covers, in detail, only the steps that invoke an external GStack
 | 12 | Skill (conditional) | `/office-hours` — structured six-question idea interview. RUN/SKIP decision. |
 | 14 | Skill | `/plan-ceo-review` — leadership-priorities lens on the plan. |
 | 15 | Skill | `/plan-eng-review` — engineering-feasibility lens on the plan. |
-| 16 | Skill + GATE | `domain-modeling` — locks domain vocabulary and ADRs. Gate: `domain-locked`. |
+| 16 | Skill + GATE | [[step-16-domain-modeling|Step 16 Domain Modeling]] — locks domain vocabulary and ADRs. Gate: `domain-locked`. |
 | 17 | Manual | Developer creates the actual Anvil data tables in the Anvil IDE. |
 | 18 | Manual | Pull the resulting schema to local. |
-| 19 | Skill | `to-tickets` — breaks the locked plan into tracer-bullet tickets. |
+| 19 | Skill | [[step-19-to-tickets|Step 19 to Tickets]] — breaks the locked plan into tracer-bullet tickets. |
 | 20 | Skill | `/design-consultation` — produces the design direction document. |
 | 21 | Gate (OpenCode-native) | Concept sanity audit — full coherence check across everything decided so far. Gate: `concept-locked`. |
 | 22 | Tool | Magdoub wireframe skill, Phase 1 — structural black-and-white wireframes. |
@@ -170,7 +170,7 @@ Section 7 later covers, in detail, only the steps that invoke an external GStack
 | 38 | Skill | `/qa` — automated QA driving a real headless browser. |
 | 38A | OpenCode | Captures Anvil's own native `pip-audit` result, if the server environment was rebuilt this cycle. |
 | 39 | Skill + GATE | `triage` — processes review/QA findings. Gate: `build-verified`, evaluated once per feature. |
-| 40 | Skill (optional) | `improve-codebase-architecture` — read-only architecture health scan for this feature. RUN/SKIP decision, once per feature cycle. |
+| 40 | Skill (optional) | [[step-40-improve-codebase-architecture|Step 40 Improve Codebase Architecture]] — read-only architecture health scan for this feature. RUN/SKIP decision, once per feature cycle. |
 | 40B | OpenCode (conditional) | Applies only the specific fixes the developer approved from Step 40's findings. Runs only if Step 40 ran and found something. |
 | 41 | Skill | `/ship` — shipping mechanics. |
 | 42 | Manual | Publish to Staging — currently flagged for rebuild (see the Five-App Structure discussion, Section 2A onward; this step models a staging/production split the platform doesn't actually have). |
@@ -241,8 +241,8 @@ Now, the three skills invoked at specific, named points in the pipeline:
 | 12 | GStack `/office-hours` | A structured, six-question interview format — genuinely better than a freeform conversational exchange for surfacing an idea's real shape early. |
 | 14 | GStack `/plan-ceo-review` | A leadership-priorities lens on the plan — does this actually serve what the project is meant to achieve. |
 | 15 | GStack `/plan-eng-review` | An engineering-feasibility lens — is the plan actually buildable as stated, before any commitment is made to it. |
-| 16 | Matt Pocock `domain-modeling` (via `/grill-with-docs`) | Locks a shared, precise domain vocabulary and produces the ADRs that will govern the project — the foundation everything downstream builds on. |
-| 19 | Matt Pocock `to-tickets` | Breaks a locked plan into concrete, individually buildable tracer-bullet tickets, rather than one undifferentiated block of "build the feature." |
+| 16 | Matt Pocock [[step-16-domain-modeling|Step 16 Domain Modeling]] (via `/grill-with-docs`) | Locks a shared, precise domain vocabulary and produces the ADRs that will govern the project — the foundation everything downstream builds on. |
+| 19 | Matt Pocock [[step-19-to-tickets|Step 19 to Tickets]] | Breaks a locked plan into concrete, individually buildable tracer-bullet tickets, rather than one undifferentiated block of "build the feature." |
 | 20 | GStack `/design-consultation` | Structured design-system consultation, producing the actual design direction document. |
 | 22 | Magdoub wireframe skill (Phase 1) | Fast, structural black-and-white wireframes — validating layout and flow before any visual polish is invested. |
 | 23 | GStack `/plan-design-review` | A design-coherence lens on the plan, distinct from the engineering and leadership lenses that already ran. |
@@ -252,7 +252,7 @@ Now, the three skills invoked at specific, named points in the pipeline:
 | 37 | GStack `/review` | Structured code review, required to persist its findings to a named, checkable path rather than simply asserting a pass. |
 | 38 | GStack `/qa` | Automated QA that drives an actual headless browser — something the agent genuinely cannot do unaided at all, making this one of the clearest cases where a specialized skill earns its place outright. |
 | 39 | Matt Pocock `triage` | Categorizes, verifies, and labels every finding surfaced by review and QA, feeding the `build-verified` gate directly. |
-| 40 | Matt Pocock `improve-codebase-architecture` | An optional, strictly read-only architecture health scan — surfaces findings for your review, never applies anything itself. |
+| 40 | Matt Pocock [[step-40-improve-codebase-architecture|Step 40 Improve Codebase Architecture]] | An optional, strictly read-only architecture health scan — surfaces findings for your review, never applies anything itself. |
 | 41 | GStack `/ship` | Handles the actual shipping mechanics once a feature (or the whole project) is ready to move forward. |
 | 45 | GStack `/canary` | Canary-style monitoring once something reaches production. |
 

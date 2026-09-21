@@ -13,14 +13,14 @@ specifics. Duplicated process text in skill files is retired in favour of this d
 
 ## Scope authority
 
-- Read `C:\mybizz\mybizz-os-docs\os-reference-docs\mybizz-scope-list.md` at Phase 0 of
+- Read [[mybizz-scope-list|Mybizz Scope List]] at Phase 0 of
   every run. It is the single scope authority; the skills never carry their own scope
   lists and never edit it (developer-owned).
 - In-scope roots and exceptions come from that list alone. The list's criterion governs:
   an exception is content we never reference, in any form, at any time, ever.
 - Transient state (a project under development) is a scheduling question — when to work
   on it — never a scope question. Transient projects stay in scope.
-- Corpus enumeration within the roots: `repo-organization.md` (same folder).
+- Corpus enumeration within the roots: [[repo-organization|Repo organization]] (same folder).
 - Treatment rules — how in-scope content is handled — live in each skill, not here.
 
 ## Run frame (every run, in order)
@@ -38,7 +38,7 @@ specifics. Duplicated process text in skill files is retired in favour of this d
    destination is BACKUP_FAILED and aborts the run. Git history is never a substitute.
 5. **Working record.** One file in `in-progress\`, named with the run timestamp
    (Filename-Safe ISO 8601, UTC+2, per
-   `adr-timezone-utc-storage-display-conversion.md`), created the moment the run
+   [[adr-timezone-utc-storage-display-conversion|Client Timezone: IANA String, UTC Storage, Display-Time Conversion]]), created the moment the run
    begins. Append at every decision point — full findings report, approval decisions
    verbatim, exact before/after per edit, verification results — minimum four appends
    per run. Never batched to the end, never summarized down.
