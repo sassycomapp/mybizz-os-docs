@@ -1,11 +1,17 @@
 ---
 document: "Documentation Skills — Shared Run Discipline"
 doc-id: doc-skills-run-discipline
-state: Live
+state: Retired
 date-created: 2026-09-19
 ---
 
 # Documentation Skills — Shared Run Discipline
+
+> **RETIRED 2026-09-22.** Superseded by
+> `C:\mybizz\mybizz-config-docs\mb-doccycle\doccycle-run-discipline.md`
+> (mb-doccycle's shared run frame), per the docs-skills architecture WP1.
+> Retained in place as a historical record; do not follow this document for
+> current runs.
 
 Single source of the run frame for every documentation skill (mb-align-docs,
 mb-wikilinks, mb-docs-manager). Each skill points here at Phase 0 and adds only its own
