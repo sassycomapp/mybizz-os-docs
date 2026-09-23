@@ -23,6 +23,7 @@ This list is the single scope authority for the documentation skills. The skills
 at Phase 0 of every run; they never carry their own scope lists.
 
 Backups, archives, and retired material (snapshots, never live knowledge):
+"C:\dev\project-library-global\quarantine"
 
 "C:\backup-general"
 "C:\backup-mb-align-docs"
