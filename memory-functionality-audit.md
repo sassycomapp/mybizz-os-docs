@@ -1,10 +1,7 @@
 ---
-document: "Memory Functionality Audit — Full-System Procedure"
-doc-id: memory-functionality-audit
-state: Live
-date-created: 2026-09-09
+title: "memory-functionality-audit"
+doc-id: "memory-functionality-audit"
 ---
-
 # Memory Functionality Audit — Full-System Procedure
 
 Runnable, self-contained procedure for the OpenCode agent. Invoked whenever

@@ -1,10 +1,7 @@
 ---
-document: "Intent Continuity Standard — Effects"
-doc-id: intent-continuity-standard-effects
-state: Live
-date-created: 2026-09-19
+title: "intent-continuity-standard-effects"
+doc-id: "intent-continuity-standard-effects"
 ---
-
 Once you have fully integrated the **Intent Continuity Standard** into your Memory Ecosystem, you will notice distinct operational improvements across four main areas: **context management**, **long-term decision stability**, **open-code agent behavior**, and **system integrity**.
 
 Here is a breakdown of the specific, observable effects you will see:

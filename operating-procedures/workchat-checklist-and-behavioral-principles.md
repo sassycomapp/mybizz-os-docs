@@ -1,10 +1,7 @@
 ---
-document: "Workchat Checklist and Behavioral Principles"
-doc-id: workchat-checklist-and-behavioral-principles
-state: Live
-date-created: 2026-09-17
+title: "workchat-checklist-and-behavioral-principles"
+doc-id: "workchat-checklist-and-behavioral-principles"
 ---
-
 RE-ANCHOR — binding from this point until task scope changes.
 
 Session: state the project slug. Global + local AGENTS.md and the project

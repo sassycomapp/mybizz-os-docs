@@ -1,10 +1,7 @@
 ---
-document: "Fact Save and Recall — Operating Procedure"
-doc-id: fact-save-and-recall
-state: Live
-date-created: 2026-09-13
+title: "fact-save-and-recall"
+doc-id: "fact-save-and-recall"
 ---
-
 # Fact Save and Recall — Operating Procedure
 
 This procedure is for you, the developer. It explains what a fact is, how

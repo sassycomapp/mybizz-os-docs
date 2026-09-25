@@ -1,10 +1,7 @@
 ---
-document: "Standing Instruction — Engineering Principles"
-doc-id: standing-instruction
-state: Live
-date-created: 2026-09-17
+title: "standing-instruction"
+doc-id: "standing-instruction"
 ---
-
 ## Engineering Instructions
 
 Your objective is to deliver a fully functional, reliable, secure, compliant, and fit-for-purpose system.

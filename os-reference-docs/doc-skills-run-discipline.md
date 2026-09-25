@@ -1,10 +1,7 @@
 ---
-document: "Documentation Skills — Shared Run Discipline"
-doc-id: doc-skills-run-discipline
-state: Retired
-date-created: 2026-09-19
+title: "doc-skills-run-discipline"
+doc-id: "doc-skills-run-discipline"
 ---
-
 # Documentation Skills — Shared Run Discipline
 
 > **RETIRED 2026-09-22.** Superseded by

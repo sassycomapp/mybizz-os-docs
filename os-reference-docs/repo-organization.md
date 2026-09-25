@@ -1,10 +1,7 @@
 ---
-document: "data-mybizz-mgt — Repo organization"
-doc-id: repo-organization
-state: Live
-date-created: 2026-09-14
+title: "repo-organization"
+doc-id: "repo-organization"
 ---
-
 # Repo organization
 
 Correlation table of GBrain sources, GitHub repositories, and local paths.
@@ -34,4 +31,5 @@ folders with local policies run them; all folders always run the global rule set
 | data-mybizz-mgt (federated)    | data-mybizz-mgt (Private)                       | C:\data-mybizz-mgt                           | /mnt/c/data-mybizz-mgt                           | Ready — fallback (no skeleton)       |
 | pdlf (federated)               | pdlf (Private)                                  | C:\pdlf                                      | /mnt/c/pdlf                                      | Ready — fallback (no skeleton)       |
 | mb-doccycle                    | mb-doccycle (Private)                           | C:\mybizz\mb-doccycle                        | /mnt/c/mybizz/mb-doccycle                        | Ready — fallback (no skeleton)       |
+| mb-doc-maintainer              | mb-doc-maintainer (Private)                     | C:\mybizz\mb-doc-maintainer                  | /mnt/c/mybizz/mb-doc-maintainer                  | Ready — fallback (no skeleton)       |
 | anvil-agent-references-code    | anvil-agent-references (upstream: anvil-works)  | C:\mybizz\anvil-agent-references             | /mnt/c/mybizz/anvil-agent-references             | Ready — fallback (no skeleton)       |

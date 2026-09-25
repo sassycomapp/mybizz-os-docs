@@ -1,8 +1,6 @@
 ---
-document: "disable-enable-cupcake"
-doc-id: disable-enable-cupcake
-state: Live
-date-created: 2026-09-17
+title: "disable-enable-cupcake"
+doc-id: "disable-enable-cupcake"
 ---
 documented in [[cupcake-reference|Usage, Invocation, and Worked Examples]] (mybizz-config-docs), line 275 (Disabling Cupcake — immediate, fully reversible):
 

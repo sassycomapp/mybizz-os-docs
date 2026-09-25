@@ -1,10 +1,7 @@
 ---
-document: "Session Close-Out — Process Prompt (v2.1 — universal, context-based; proven 2026-09-14 live run)"
-doc-id: close-out-process
-state: Live
-date-created: 2026-09-14
+title: "close-out-process"
+doc-id: "close-out-process"
 ---
-
 # Session Close-Out — Process Prompt
 
 The developer says "close out" and pastes this file. The agent executes it

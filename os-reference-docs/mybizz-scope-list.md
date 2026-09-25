@@ -1,3 +1,10 @@
+---
+
+title: "mybizz-scope-list"
+doc-id: "mybizz-scope-list"
+
+---
+
 **In scope:**
 
 "C:\data-mybizz-mgt"
@@ -23,7 +30,8 @@ This list is the single scope authority for the documentation skills. The skills
 at Phase 0 of every run; they never carry their own scope lists.
 
 Backups, archives, and retired material (snapshots, never live knowledge):
-"C:\dev\project-library-global\quarantine"
+
+"C:\mybizz\backup-before"
 
 "C:\backup-general"
 "C:\backup-mb-align-docs"
@@ -41,6 +49,8 @@ Private and exempt data:
 
 "C:\_data-mybizz-exempt"
 "C:\_data-not mybizz"
+"C:\dev\dev-mb5pdlf"
+"C:\dev\dev-mb4ecom"
 
 Vendor clones, live tooling internals, and executable plumbing (the installed skills are
 the reference homes; the clones and scripts are supply):

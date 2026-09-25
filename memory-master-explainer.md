@@ -1,10 +1,7 @@
 ---
-document: "The Memory Ecosystem — Master Explainer"
-doc-id: memory-master-explainer
-state: Live
-date-created: 2026-09-05
+title: "memory-master-explainer"
+doc-id: "memory-master-explainer"
 ---
-
 # The Memory Ecosystem — Master Explainer
 
 ## 1. What This Actually Is

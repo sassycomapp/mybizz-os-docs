@@ -1,10 +1,7 @@
 ---
-document: "mg-grant --path <folder> --count N"
-doc-id: grant-paths
-state: Live
-date-created: 2026-09-17
+title: "grant-paths"
+doc-id: "grant-paths"
 ---
-
 mg-grant --path <folder> --count N
 
 mg-revoke --path <folder>

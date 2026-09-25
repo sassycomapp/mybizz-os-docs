@@ -1,10 +1,7 @@
 ---
-document: "OpenCode Agent Standard — Intent Continuity & Architectural State"
-doc-id: intent-continuity-architectural-state-standard
-state: Live
-date-created: 2026-09-19
+title: "intent-continuity-architectural-state-standard"
+doc-id: "intent-continuity-architectural-state-standard"
 ---
-
 # OpenCode Agent Standard: Intent Continuity & Architectural State
 
 ## 1. Executive Summary & Purpose

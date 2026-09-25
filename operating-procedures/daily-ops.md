@@ -1,3 +1,7 @@
+---
+title: "daily-ops"
+doc-id: "daily-ops"
+---
 # Daily Operations — Quick Reference
 
 ---

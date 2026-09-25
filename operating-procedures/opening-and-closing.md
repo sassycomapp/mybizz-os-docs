@@ -1,10 +1,7 @@
 ---
-document: "Session Opening and Closing — Operating Procedure"
-doc-id: opening-and-closing
-state: Live
-date-created: 2026-09-13
+title: "opening-and-closing"
+doc-id: "opening-and-closing"
 ---
-
 # Session Opening and Closing — Operating Procedure
 
 This procedure is for you, the developer. It explains what you do to close
