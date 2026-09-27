@@ -1,11 +1,17 @@
 ---
+
 title: "wsl-path-references"
 doc-id: "wsl-path-references"
+
 ---
+
+## Skills
+
+\\wsl.localhost\Ubuntu\home\dev-p\.config\opencode\skills
+
 ## AGENTS.md
 
 \\\wsl.localhost\Ubuntu\home\dev-p\.config\opencode\AGENTS.md
-
 
 ## Cupcake Policies (.rego)
 
