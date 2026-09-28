@@ -1,5 +1,4 @@
 ---
-
 title: "mybizz-scope-list"
 doc-id: "mybizz-scope-list"
 
@@ -52,6 +51,8 @@ Private and exempt data:
 "C:\dev\dev-mb5pdlf"
 "C:\dev\dev-mb4ecom"
 
+"C:\dev\project-template"
+
 Vendor clones, live tooling internals, and executable plumbing (the installed skills are
 the reference homes; the clones and scripts are supply):
 
@@ -61,6 +62,8 @@ the reference homes; the clones and scripts are supply):
 "C:\mybizz\gstack"
 "C:\mybizz\gbrain"
 "C:\mybizz\scripts"
+"C:\mybizz\mb-doc-auditor" (source repo — developer decision 2026-09-28)
+"C:\mybizz\mb-doc-maintainer" (source repo — developer decision 2026-09-28)
 
 Transient working state (regenerated, wiped, or rewritten — never referenceable):
 
