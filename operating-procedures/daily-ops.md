@@ -27,13 +27,21 @@ Then run Start sequence above.
 
 ---
 
+## Kill WSL:
+
+In PowerShell:
+
+PS C:\Users\dev-p> wsl --shutdown
+
 ## CROSS-PROJECT FILE ACCESS — GRANT / REVOKE
 
 ```bash
 mg-grant --path <folder> --count N
 ```
 
-`<folder>`: Windows or WSL form, either works. `N`: writes to allow.
+`<folder>`: WSL forward-slash form (`/mnt/c/...`) — required, not optional.
+Windows backslash paths are consumed as escape characters and can never
+match (verified 2026-09-11). `N`: writes to allow.
 Reads open for 30 minutes, no count needed. Closes automatically at 30
 minutes or when the write count hits zero, whichever's first.
 
@@ -238,7 +246,7 @@ not optional — it's what actually catches a phantom candidate (a
 proposed change for text that isn't really there).
 
 **Reference paths (wikilink retrofit):** skill `mb-wikilinks`; backups
-`C:\backup-wikilinks\`; logs `C:\mybizz\logs\wikilinks\`.
+`C:\backup-mb-wikilinks\`; logs `C:\mybizz\logs\mb-wikilinks\`.
 
 ---
 
@@ -438,6 +446,51 @@ opencode web --hostname 0.0.0.0
 | Tab           | Switch Plan / Build mode    |
 | Ctrl+G        | Stop the agent mid-response |
 | Ctrl+X then N | New session                 |
+
+---
+
+## I-HAVE-ADHD SKILL (installed 2026-09-19, always-on)
+
+The skill enforces action-first output: it leads with the next action, numbers
+multi-step work, and suppresses tangents. Installed globally; the always-on
+flag injects the ruleset into every new session.
+
+| Action                             | Command                                                |
+| ---------------------------------- | ------------------------------------------------------ |
+| Invoke for one session             | `/i-have-adhd` in the OpenCode chat                    |
+| Turn off mid-session               | type `stop adhd mode` or `normal mode` in the chat     |
+| Turn always-on off for good        | `rm ~/.config/opencode/.i-have-adhd-always`            |
+| Turn always-on back on             | `touch ~/.config/opencode/.i-have-adhd-always`         |
+| One deep-design session without it | rename the flag file before starting, restore it after |
+| Update the skill                   | `npx skills add ayghri/i-have-adhd -a opencode -y -g`  |
+| Verify the whole wiring            | `node /mnt/c/mybizz/scripts/verify-i-have-adhd.mjs`    |
+
+Install layout (do not move one piece without the others):
+
+- Skill store: `~/.agents/skills/i-have-adhd/` (the `skills` CLI canonical copy).
+- Discovery: `~/.config/opencode/skills/i-have-adhd` is a symlink to the store.
+- Plugin: `~/.config/opencode/plugin/i-have-adhd.mjs`, registered in
+  `~/.config/opencode/opencode.jsonc` under `"plugin"`.
+- Command: `~/.config/opencode/command/i-have-adhd.md`.
+- Path fix: `~/.config/skills` is a symlink to `~/.config/opencode/skills`;
+  the plugin resolves its ruleset through it. Deleting it stops the always-on
+  injection silently.
+- Always-on flag: `~/.config/opencode/.i-have-adhd-always`.
+
+Uninstall completely:
+
+```bash
+rm ~/.config/opencode/plugin/i-have-adhd.mjs
+rm ~/.config/opencode/command/i-have-adhd.md
+rm ~/.config/opencode/skills/i-have-adhd
+rm ~/.config/skills
+rm ~/.config/opencode/.i-have-adhd-always
+rm -rf ~/.agents/skills/i-have-adhd
+```
+
+Then remove the `"plugin"` entry from `~/.config/opencode/opencode.jsonc` and
+restart OpenCode. Config loads once at startup, so any wiring change needs a
+restart to take effect.
 
 ---
 

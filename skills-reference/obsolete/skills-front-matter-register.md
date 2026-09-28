@@ -912,3 +912,8 @@ license: MIT
 compatibility: No runtime dependency. Host-neutral guidance for authorized software engineering work.
 
 ---
+
+---
+
+This document is incomplete as it is a WIP work in progress
+This data is better suited to a table than a prose format

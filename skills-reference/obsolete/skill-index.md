@@ -16,10 +16,12 @@ entry exists but its target is missing.
 ## GStack
 
 ### gstack (main)
+
 - gstack (repo root) — C:\mybizz\gstack\SKILL.md — working
 - gstack (opencode copy) — C:\mybizz\gstack\.opencode\skills\gstack\SKILL.md — working
 
 ### gstack-* skills (real path: C:\mybizz\gstack\.opencode\skills\<name>\SKILL.md)
+
 - gstack-autoplan — working
 - gstack-benchmark — working
 - gstack-benchmark-models — working
@@ -75,6 +77,7 @@ entry exists but its target is missing.
 - gstack-upgrade — working
 
 ### GStack — broken discovery entries
+
 - codex — ~/.config/opencode/skills/codex -> C:\mybizz\skills\codex\ — BROKEN (target directory C:\mybizz\skills does not exist)
 - connect-chrome — ~/.config/opencode/skills/connect-chrome -> C:\mybizz\skills\connect-chrome\ — BROKEN (target directory C:\mybizz\skills does not exist)
 - hackernews-frontpage — ~/.config/opencode/skills/hackernews-frontpage -> C:\mybizz\skills\browser-skills\hackernews-frontpage\ — BROKEN (target directory C:\mybizz\skills does not exist)
@@ -84,6 +87,7 @@ entry exists but its target is missing.
 ## Anvil
 
 Real path: C:\mybizz\anvil-agent-references\skills\<name>\SKILL.md
+
 - anvil-yaml — working
 - client-forms — working
 - client-modules — working
@@ -95,6 +99,7 @@ Real path: C:\mybizz\anvil-agent-references\skills\<name>\SKILL.md
 ## Matt Pocock
 
 Real path: C:\mybizz\matt-pocock-skills-source\skills\<category>\<name>\SKILL.md
+
 - ask-matt — working
 - claude-handoff — working
 - code-review — working
@@ -142,6 +147,7 @@ Real path: C:\mybizz\matt-pocock-skills-source\skills\<category>\<name>\SKILL.md
 ## Custom Skills (mb-*)
 
 Real path: ~/.config/opencode/skills/<name>\SKILL.md
+
 - mb-align-docs — working
 - mb-compile-rules — working
 - mb-docs-manager — working
@@ -163,10 +169,6 @@ Real path: ~/.config/opencode/skills/<name>\SKILL.md
 
 ---
 
-## PDLF
-
-- pdlf — ~/.config/opencode/skills/pdlf/SKILL.md -> C:\pdlf\skill\SKILL.md — BROKEN (target file does not exist; C:\pdlf exists but has no skill\ subdirectory)
-
 ---
 
 ## Totals
@@ -174,3 +176,7 @@ Real path: ~/.config/opencode/skills/<name>\SKILL.md
 - Total skills listed: 108
 - Working: 104
 - Broken: 4 (codex, connect-chrome, hackernews-frontpage, pdlf)
+
+---
+
+This document is incomplete as it is a WIP work in progress
