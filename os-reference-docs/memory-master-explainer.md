@@ -27,6 +27,7 @@ One thing is deliberately *outside* the ecosystem: the **memory functionality au
 | Graphify | deterministic code-structure truth | mirror-derived | manual-on-demand | `graphify/` |
 | PostgreSQL | physical foundation (two instances) | substrate | boot-durable | `postgresql/` |
 | Cupcake | mechanical policy enforcement | substrate | every tool call | `cupcake/` |
+| mb-memory-system-diagnostic | whole-ecosystem health check (on-demand, gated) | verification | manual, explicit-only | `mb-memory-system-diagnostic/` |
 
 Every component is managed under the same config-management pattern — its spec, exam plan, exam report, log, learnings, and exam skill — described as a system in Section 7.
 
@@ -39,6 +40,7 @@ Every component is managed under the same config-management pattern — its spec
 - **Graphify** — `C:\mybizz\mybizz-config-docs\graphify\: `graphify-explainer.md` · `graphify-reference.md` · `graphify-learnings.md` — canonical skill: `~/.config/opencode/skills/graphify/SKILL.md` (the subject skill).
 - **PostgreSQL** — `C:\mybizz\mybizz-config-docs\postgresql\: `postgresql-explainer.md` · `postgresql-reference.md` · `postgresql-learnings.md` — canonical skill: `~/.config/opencode/skills/mb-config-postgresql/SKILL.md`.
 - **Cupcake** — `C:\mybizz\mybizz-config-docs\cupcake\: `cupcake-explainer.md` · `cupcake-reference.md` · `cupcake-learnings.md` — canonical skill: `~/.config/opencode/skills/mb-config-cupcake/SKILL.md`.
+- **mb-memory-system-diagnostic** — `C:\mybizz\mybizz-config-docs\mb-memory-system-diagnostic\: `mb-memory-system-diagnostic-explainer.md` · `mb-memory-system-diagnostic-reference.md` · `mb-memory-system-diagnostic-learnings.md` — canonical skill: `~/.config/opencode/skills/mb-memory-system-diagnostic/SKILL.md` (the subject skill itself; invocation explicit-only — never auto-triggered). Its config-management exam module is `mb-config-mb-memory-system-diagnostic` (installed `~/.config/opencode/skills/mb-config-mb-memory-system-diagnostic/SKILL.md`); exam run #1 verified live 2026-09-28 (HEALTHY); the diagnostic's own first live run, same day: 10/10 sections — 7 PASS, 3 REMEDIATED in-run.
 
 ---
 
