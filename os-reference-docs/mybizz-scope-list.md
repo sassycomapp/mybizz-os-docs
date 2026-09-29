@@ -1,6 +1,6 @@
 ---
 title: "mybizz-scope-list"
-doc-id: "mybizz-scope-list"
+doc-id: "mb-a5a87568"
 
 ---
 

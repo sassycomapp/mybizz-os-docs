@@ -1,6 +1,6 @@
 ---
 title: "grant-paths"
-doc-id: "grant-paths"
+doc-id: "mb-f8fd29c2"
 ---
 mg-grant --path <folder> --count N
 

@@ -1,6 +1,6 @@
 ---
 title: "environment-explainer"
-doc-id: "environment-explainer"
+doc-id: "mb-849fc961"
 ---
 # The Environment Explainer — the pre-makePDLF, makePDLF, PDLF, and shipped layers
 
@@ -45,7 +45,7 @@ of web applications through PDLF) trustworthy and efficient.
 - **The memory system**: GBrain (semantic memory, Postgres, MCP), the
   memory governor (the gate for durable-memory writes, two processes: API
   + worker), `mb-submit-memory` (the governed submission path),
-  [[memory-functionality-audit]] (the health-check procedure, reports to
+  memory-functionality-audit (the health-check procedure, reports to
   `C:\mybizz\memory-audit-reports\`).
 - **The security systems**: the security-global library (54 documents, seven
   categories, `sec-` prefix — the authority on what "secure" means here);
@@ -268,7 +268,7 @@ whole system.
    platform without [[adr-dependency-based-not-multi-tenant]] supplied
    first.
 5. **Every governed system has a health procedure** — e.g.
-   [[memory-functionality-audit]] for the memory system — and the audit
+   memory-functionality-audit for the memory system — and the audit
    reports are dated, saved, and appended with their remediation.
 6. **Nothing ships silently.** The shipping boundary is checked, not
    assumed — in both directions.
@@ -279,7 +279,7 @@ whole system.
 
 - [[memory-master-explainer]] (mybizz-os-docs repo: `C:\mybizz\mybizz-os-docs\`) — the memory system's four
   mechanisms and the governor's processes.
-- [[memory-functionality-audit]] (mybizz-os-docs repo: `C:\mybizz\mybizz-os-docs\`) — the memory-system health
+- memory-functionality-audit (mybizz-os-docs repo: `C:\mybizz\mybizz-os-docs\`) — the memory-system health
   procedure.
 - `mybizz-config-docs/` — the component suites: `memory-governor/`,
   `mb-submit-memory/`, `mb-compile-rules/`, `mb-sentinel-review/`,

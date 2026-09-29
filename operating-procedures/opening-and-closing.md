@@ -1,6 +1,6 @@
 ---
 title: "opening-and-closing"
-doc-id: "opening-and-closing"
+doc-id: "mb-d8690fef"
 ---
 # Session Opening and Closing — Operating Procedure
 

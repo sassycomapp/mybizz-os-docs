@@ -1,6 +1,6 @@
 ---
 title: "skills-usage-guide"
-doc-id: "skills-usage-guide"
+doc-id: "mb-84d02901"
 ---
 
 # Skills Usage Guide

@@ -1,6 +1,6 @@
 ---
 title: "session-start-checklist-and-behavioral-principles"
-doc-id: "session-start-checklist-and-behavioral-principles"
+doc-id: "mb-8ae4911d"
 ---
 RE-ANCHOR — binding from this point until task scope changes.
 

@@ -1,6 +1,6 @@
 ---
 title: "daily-ops"
-doc-id: "daily-ops"
+doc-id: "mb-2d7af6f7"
 ---
 # Daily Operations — Quick Reference
 
