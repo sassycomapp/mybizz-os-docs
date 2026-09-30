@@ -57,6 +57,10 @@ Full mechanics: [[cupcake-reference|Usage, Invocation, and Worked Examples]], [[
 
 ## AFTER DOING WORK — run every time, for the repo you were working in
 
+**Since 2026-09-30 the standing sync is one script:** `bash /mnt/c/mybizz/scripts/sync-gbrain.sh`. It syncs every registered source (no git pull), collects the links (`gbrain extract --stale`) and embeds. Run it after you commit documentation changes that agents should find; it takes about two minutes and is safe to repeat. The per-repo commands below still work for a single source. GBrain does not watch your files, so nothing is searchable until a sync runs.
+
+**Committing in WSL runs the commit hook (`mb-doc-check`).** It adds a title and a permanent `doc-id` to new documents, repairs links after a rename or move, and turns links to a deleted document into plain words. It stops the commit only when a link you just typed points to nothing, or to a name several documents share, or when frontmatter is broken — it prints the line. To skip it once: `git commit --no-verify`.
+
 As of 2026-08-05, every PDLF/dev-makepdlf-ecosystem source is GitHub-backed
 (see the [[adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]] global ADR).
 There is one workflow — no more "does this repo have a remote?" check.
@@ -139,6 +143,10 @@ corrections (no renames, moves, or retires).
 gbrain doctor
 ```
 
+Expected result since 2026-09-30: overall **30/100**, and the only FAIL is `cycle_freshness` (dream cycles have not run for most sources — by design). Scoring: minus 20 per FAIL, minus 5 per WARN. A different FAIL, or a lower score with new FAIL lines, needs attention. The baseline is saved as `~/backups/doctor-after-sync2.txt`.
+
+Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Upgrading.
+
 ---
 
 ## GBRAIN TEST — confirm search is working
@@ -210,6 +218,23 @@ gbrain doctor
 ```
 
 Full mechanic: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Troubleshooting.
+
+---
+
+## FIX: A SYNC ENDS WITH AN ERROR
+
+Read the last run first:
+
+```bash
+LOG=$(ls -t /mnt/c/mybizz/logs/gbrain-logs/sync-*.log | head -1)
+grep -E '^ERROR|not found|BLOCKED|Could not resolve' "$LOG" | cut -c1-200
+```
+
+- **`Source "<id>" not found or is archived`, for every source:** the brain default names a deleted source (seen 2026-09-30). `gbrain config get sources.default`, then `gbrain sources default default`.
+- **`git pull failed … Could not resolve host`:** a passing network problem; the sync is incomplete and safe to retry. The script no longer pulls.
+- **`Sync BLOCKED … 1 file(s) failed`:** one file has invalid frontmatter. `gbrain frontmatter validate <repo-path>` names it; quote the offending value (for example a title with a colon), commit, sync again.
+
+Full mechanics: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved Incidents.
 
 ---
 

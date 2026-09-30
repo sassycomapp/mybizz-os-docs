@@ -42,3 +42,19 @@ mv ~/.config/opencode/plugin/cupcake.js.disabled ~/.config/opencode/plugin/cupca
 ```
 
 This matches the prior suspension described in [[cupcake-explainer|Mechanical Policy Enforcement for AI Coding Agents]] (mybizz-config-docs), line 260 — renaming the plugin out of its discoverable path, nothing else touched, and the `.bak-*` copies in the plugin folder confirm earlier uses.
+
+## GBrain and the memory system (WSL)
+
+`\\wsl.localhost\Ubuntu\home\dev-p\gbrain` — the live GBrain install (a Git checkout)  
+`\\wsl.localhost\Ubuntu\home\dev-p\.gbrain` — GBrain settings (contains keys — private)  
+`\\wsl.localhost\Ubuntu\home\dev-p\backups` — pre-upgrade backups (private)  
+`\\wsl.localhost\Ubuntu\home\dev-p\memory-governor` — the memory governor  
+`\\wsl.localhost\Ubuntu\home\dev-p\.config\systemd\user` — the governor's two service unit files
+
+## Scripts and logs (on C:\)
+
+`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.roots`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
+`C:\mybizz\logs\gbrain-logs\` — sync logs  
+`C:\mybizz\logs\mb-submit-memory\` — submission logs
+
+Run the sync: `bash /mnt/c/mybizz/scripts/sync-gbrain.sh`
