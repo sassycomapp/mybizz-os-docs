@@ -17,7 +17,7 @@ sequence only.
    right after a maintainer run audits a clean queue.
 2. **mb-config-manager runs after any new skill or system is added.** A new
    skill is not "documented" until its config-manager run has completed
-   (suite build-out, exam skill, register row). Current example:
+   (suite build-out, exam skill, register The use of registers has been discontinued. Please review row). Current example:
    mb-memory-system-diagnostic.
 3. **`gbrain doctor --fast` runs before a full `mb-config-gbrain` exam.**
    Fast check first; escalate to the full exam only when it flags something
@@ -76,7 +76,7 @@ rule).
 ## 9. /mb-memory-system-diagnostic — user invoked
 
 **When:** after any memory-system change, or when memory health is in
-question. Pending its own config-manager run (register gap 1). Renamed from
+question. Pending its own config-manager run (register The use of registers has been discontinued. Please review gap 1). Renamed from
 `/memory-system-diagnostic` 2026-09-28.
 
 ## 10. /mb-config-gbrain — user invoked

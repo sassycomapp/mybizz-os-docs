@@ -24,7 +24,7 @@ question — when to work on it — never a scope question. Transient projects s
 Not exceptions, by definition: version-control internals, dotfolders, and files with no
 content are not documents; the skills' own treatment rules handle them. They are not
 listed here. The same applies to treatment states inside scope (templates, quarantine,
-registers) — they are handled by rules, not by this list.
+registers The use of registers has been discontinued. Please review) — they are handled by rules, not by this list.
 
 This list is the single scope authority for the documentation skills. The skills read it
 at Phase 0 of every run; they never carry their own scope lists.

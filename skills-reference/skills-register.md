@@ -4,7 +4,7 @@ doc-id: "mb-42cc5415"
 updated: "2026-10-01"
 ---
 
-# Skills Register
+# Skills Register The use of registers has been discontinued. Please review
 
 Single reference for every skill installed on this machine: where it is
 installed, where its documentation lives, what class it is, and its current
@@ -37,7 +37,7 @@ GBrain's own skills.
 - **Classes.** *Operational* = the skill does work. *Config-management* = the
   skill examines/verifies a system's configuration. A system may have both.
 - **States.** `Installed` (live) · `Deferred` (deliberately postponed, per
-  config-manager register) · `Pending` (suite incomplete, work queued) ·
+  config-manager register The use of registers has been discontinued. Please review) · `Pending` (suite incomplete, work queued) ·
   `Retired` (no longer managed) · `Gap` (missing piece recorded).
 - **Paths.** Installed paths are WSL paths. From Windows, prepend
   `\\wsl.localhost\Ubuntu\`. Doc folders are Windows paths under
@@ -58,7 +58,7 @@ GBrain's own skills.
 | mb-archify-scope            | agent                                       | `mb-archify-scope/SKILL.md`                                     | documented inside `C:\mybizz\mybizz-config-docs\archify\` (own folder empty) | wrong — doc-style fields on installed copy | Installed                                         |
 | mb-memory-system-diagnostic | user                                        | `mb-memory-system-diagnostic/SKILL.md`                          | `C:\mybizz\mybizz-config-docs\mb-memory-system-diagnostic\`                  | OK                                         | Pending (config-manager run outstanding)          |
 | secure-software-engineering | agent                                       | `secure-software-engineering/SKILL.md`                          | none                                                                         | OK                                         | Gap (no doc copy)                                 |
-| mb-config-manager           | user (via `config-setup-prompt.md` + agent) | not installed as a skill                                        | `C:\mybizz\mybizz-config-docs\mb-config-manager\`                            | OK                                         | Active (excluded from its own register by design) |
+| mb-config-manager           | user (via `config-setup-prompt.md` + agent) | not installed as a skill                                        | `C:\mybizz\mybizz-config-docs\mb-config-manager\`                            | OK                                         | Active (excluded from its own register The use of registers has been discontinued. Please review by design) |
 | archify                     | agent                                       | `archify/SKILL.md`; source `C:\mybizz\archify\archify\SKILL.md` | `C:\mybizz\mybizz-config-docs\archify\`                                      | OK                                         | Installed                                         |
 | graphify                    | agent                                       | `graphify/SKILL.md`                                             | `C:\mybizz\mybizz-config-docs\graphify\`                                     | OK                                         | Installed                                         |
 
@@ -123,7 +123,7 @@ server-code.
 ## 6. Retired skills (not installed; kept here to prevent re-documentation)
 
 mb-align-docs, mb-docs-manager, mb-wikilinks, mb-doccycle — all superseded
-(see config-manager register, 2026-09-22 and 2026-09-27).
+(see config-manager register The use of registers has been discontinued. Please review, 2026-09-22 and 2026-09-27).
 
 ## 7. Known gaps
 
@@ -140,7 +140,7 @@ mb-align-docs, mb-docs-manager, mb-wikilinks, mb-doccycle — all superseded
 
 1. **Out of service by intent.** The codex, connect-chrome, and
    hackernews-frontpage discovery entries are permanently retired. They are
-   not defects; do not repair or re-register them.
+   not defects; do not repair or re-register The use of registers has been discontinued. Please review them.
 2. **Skill output locations are fixed by design.** Run outputs live at
    `C:\mybizz\logs\` (8 lanes: cupcake, gbrain-logs, github-logs,
    mb-doc-maintainer, mb-submit-memory, mb-sysdoc-creator, mb-wikilinks,

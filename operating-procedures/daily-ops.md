@@ -132,7 +132,7 @@ next — before considering the documentation environment stable:
 /mb-align-docs (project-name)
 ```
 
-This catches register or front-matter drift that Docs Manager's structural
+This catches register The use of registers has been discontinued. Please review or front-matter drift that Docs Manager's structural
 changes may have introduced. Skip if the Docs Manager run was text-only
 corrections (no renames, moves, or retires).
 
@@ -425,7 +425,7 @@ Task Scheduler action that invokes WSL:
 wsl.exe -d Ubuntu -u dev-p bash <full-script-path>
 ```
 
-Never register a scheduled task with a bare `wsl.exe` call.
+Never register The use of registers has been discontinued. Please review a scheduled task with a bare `wsl.exe` call.
 
 ---
 
