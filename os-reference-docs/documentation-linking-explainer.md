@@ -45,7 +45,7 @@ in lower case, with spaces turned into hyphens and without `.md`. `Tools and app
 repository becomes `tools-and-apps/strix`. The hook uses GBrain's own rule, so the name it writes
 is the name GBrain expects.
 
-**Three frontmatter fields.** Every document starts with `title`, `doc-id` and `updated`.
+**Three frontmatter fields.** Every document starts with `title`, `doc-id` and `updated`, except the files and folders listed in [[[mybizz-config-docs:mb-doc-check/doc-check-config]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-config.md).
 - `title` is the file name without `.md`.
 - `doc-id` is a permanent random code such as `mb-3fa91c2e`. It is created once and never changes,
   whatever happens to the file.
