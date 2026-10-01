@@ -1,6 +1,7 @@
 ---
 title: "fact-save-and-recall"
 doc-id: "mb-fdee2c8e"
+updated: "2026-10-01"
 ---
 # Fact Save and Recall — Operating Procedure
 

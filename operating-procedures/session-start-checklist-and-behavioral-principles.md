@@ -1,6 +1,7 @@
 ---
 title: "session-start-checklist-and-behavioral-principles"
 doc-id: "mb-8ae4911d"
+updated: "2026-10-01"
 ---
 RE-ANCHOR — binding from this point until task scope changes.
 

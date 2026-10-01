@@ -1,6 +1,7 @@
 ---
 title: "workchat-checklist-and-behavioral-principles"
 doc-id: "mb-7c7a997e"
+updated: "2026-10-01"
 ---
 RE-ANCHOR — binding from this point until task scope changes.
 
