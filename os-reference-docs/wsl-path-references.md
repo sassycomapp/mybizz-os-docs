@@ -1,6 +1,7 @@
 ---
 title: "wsl-path-references"
 doc-id: "mb-8904e69d"
+updated: "2026-10-01"
 
 ---
 
@@ -29,7 +30,7 @@ doc-id: "mb-8904e69d"
 
 ## Cupcake - Enable, disable
 
-documented in [[cupcake-reference|Usage, Invocation, and Worked Examples]] (mybizz-config-docs), line 275 (Disabling Cupcake — immediate, fully reversible):
+documented in [[[mybizz-config-docs:cupcake/cupcake-reference|Usage, Invocation, and Worked Examples]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-reference.md) (mybizz-config-docs), line 275 (Disabling Cupcake — immediate, fully reversible):
 
 ```
 mv ~/.config/opencode/plugin/cupcake.js ~/.config/opencode/plugin/cupcake.js.disabled
@@ -41,7 +42,7 @@ Restart OpenCode afterwards (plugin changes only load at process start). To re-e
 mv ~/.config/opencode/plugin/cupcake.js.disabled ~/.config/opencode/plugin/cupcake.js
 ```
 
-This matches the prior suspension described in [[cupcake-explainer|Mechanical Policy Enforcement for AI Coding Agents]] (mybizz-config-docs), line 260 — renaming the plugin out of its discoverable path, nothing else touched, and the `.bak-*` copies in the plugin folder confirm earlier uses.
+This matches the prior suspension described in [[[mybizz-config-docs:cupcake/cupcake-explainer|Mechanical Policy Enforcement for AI Coding Agents]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-explainer.md) (mybizz-config-docs), line 260 — renaming the plugin out of its discoverable path, nothing else touched, and the `.bak-*` copies in the plugin folder confirm earlier uses.
 
 ## GBrain and the memory system (WSL)
 

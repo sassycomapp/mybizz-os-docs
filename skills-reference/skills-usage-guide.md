@@ -1,12 +1,13 @@
 ---
 title: "skills-usage-guide"
 doc-id: "mb-84d02901"
+updated: "2026-10-01"
 ---
 
 # Skills Usage Guide
 
 When to invoke each managed skill. Inventory, paths, and states live in
-[[skills-register|Skills Register]] — this document covers invocation and
+[[[mybizz-os-docs:skills-reference/skills-register|Skills Register]]](C:/mybizz/mybizz-os-docs/skills-reference/skills-register.md) — this document covers invocation and
 sequence only.
 
 ## Ordering rules

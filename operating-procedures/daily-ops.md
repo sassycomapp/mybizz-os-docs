@@ -1,6 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
+updated: "2026-10-01"
 ---
 # Daily Operations — Quick Reference
 
@@ -51,7 +52,7 @@ mg-revoke --path <folder>
 
 Check active grants: `cat ~/.config/cupcake/policies/opencode/cup-grants-data.rego`
 
-Full mechanics: [[cupcake-reference|Usage, Invocation, and Worked Examples]], [[cupcake-config|Cupcake Configuration]].
+Full mechanics: [[[mybizz-config-docs:cupcake/cupcake-reference|Usage, Invocation, and Worked Examples]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-reference.md), [[[mybizz-config-docs:cupcake/cupcake-config|Cupcake Configuration]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-config.md).
 
 ---
 
@@ -62,7 +63,7 @@ Full mechanics: [[cupcake-reference|Usage, Invocation, and Worked Examples]], [[
 **Committing in WSL runs the commit hook (`mb-doc-check`).** It adds a title and a permanent `doc-id` to new documents, repairs links after a rename or move, and turns links to a deleted document into plain words. It stops the commit only when a link you just typed points to nothing, or to a name several documents share, or when frontmatter is broken — it prints the line. To skip it once: `git commit --no-verify`.
 
 As of 2026-08-05, every PDLF/dev-makepdlf-ecosystem source is GitHub-backed
-(see the [[adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]] global ADR).
+(see the [[[default:adr-global/adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]]](C:/dev/project-library-global/adr-global/adr-dev-tooling-source-repos-must-be-github-backed.md) global ADR).
 There is one workflow — no more "does this repo have a remote?" check.
 The only thing that varies per repo is the default branch name.
 
@@ -108,7 +109,7 @@ deliberately changing the scaffold itself.
 
 **New dev-tooling repos:** any new source added to gbrain for this ecosystem
 must get a GitHub remote at creation — see the
-[[adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]] ADR for the exact
+[[[default:adr-global/adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]]](C:/dev/project-library-global/adr-global/adr-dev-tooling-source-repos-must-be-github-backed.md) ADR for the exact
 `gh repo create` sequence. Don't let a new source sit local-only.
 
 **Other sources** (`mb4ecom-project-library`, `mb5pdlf-project-library`,
@@ -145,7 +146,7 @@ gbrain doctor
 
 Expected result since 2026-09-30: overall **30/100**, and the only FAIL is `cycle_freshness` (dream cycles have not run for most sources — by design). Scoring: minus 20 per FAIL, minus 5 per WARN. A different FAIL, or a lower score with new FAIL lines, needs attention. The baseline is saved as `~/backups/doctor-after-sync2.txt`.
 
-Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Upgrading.
+Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Upgrading.
 
 ---
 
@@ -174,7 +175,7 @@ If `down`:
 sudo pg_ctlcluster 16 main start
 ```
 
-Details: [[gbrain-config|Configuration]].
+Details: [[[mybizz-config-docs:gbrain/gbrain-config|Configuration]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-config.md).
 
 ---
 
@@ -217,7 +218,7 @@ gbrain sync --source <source-id>
 gbrain doctor
 ```
 
-Full mechanic: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Troubleshooting.
+Full mechanic: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Troubleshooting.
 
 ---
 
@@ -234,7 +235,7 @@ grep -E '^ERROR|not found|BLOCKED|Could not resolve' "$LOG" | cut -c1-200
 - **`git pull failed … Could not resolve host`:** a passing network problem; the sync is incomplete and safe to retry. The script no longer pulls.
 - **`Sync BLOCKED … 1 file(s) failed`:** one file has invalid frontmatter. `gbrain frontmatter validate <repo-path>` names it; quote the offending value (for example a title with a colon), commit, sync again.
 
-Full mechanics: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved Incidents.
+Full mechanics: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Resolved Incidents.
 
 ---
 
@@ -295,7 +296,7 @@ to `C:\dev\...`).
 
 **Cause:** OpenCode has no built-in cleanup for stale `project`/`session`
 database rows (confirmed upstream gap — see
-[[opencode-project-session-data-integrity|Project & Session Data Integrity]]).
+[[[mybizz-config-docs:opencode/opencode-project-session-data-integrity|Project & Session Data Integrity]]](C:/mybizz/mybizz-config-docs/opencode/opencode-project-session-data-integrity.md)).
 
 **Fix:** run the cleanup script — see that same document for the exact
 command and full path.
@@ -320,7 +321,7 @@ re-run any time; it does not touch project files.
 installed folder is prefixed (`gstack-qa/`), but the actual slash
 command is the **bare name** from that skill's own frontmatter —
 `/qa`, not `/gstack-qa`. Confirmed directly: the prefixed form returns
-nothing. See [[gstack-skills-reference|GStack Skills Reference]] for the full catalog using
+nothing. See [[[mybizz-config-docs:gstack/gstack-skills-reference|GStack Skills Reference]]](C:/mybizz/mybizz-config-docs/gstack/gstack-skills-reference.md) for the full catalog using
 correct names.
 
 ---
@@ -378,7 +379,7 @@ Symptom: dream-cycle symbol resolution finds nothing, or a code
 source's page count is suspiciously low. Usually a missing `strategy`
 field on the source (defaults to markdown-only, silently skips code).
 
-Full diagnosis and 3-step fix: [[gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved
+Full diagnosis and 3-step fix: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Resolved
 Incidents.
 
 ---
@@ -403,7 +404,7 @@ search for the rest of that session. Usually a leftover PGLite-era
 `pkill -f "gbrain serve"` step with no restart — no longer needed under
 Postgres (multi-writer). Remove that step from any script.
 
-Full story: [[gbrain-explainer|Explainer]] §3.
+Full story: [[[mybizz-config-docs:gbrain/gbrain-explainer|Explainer]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-explainer.md) §3.
 
 ---
 

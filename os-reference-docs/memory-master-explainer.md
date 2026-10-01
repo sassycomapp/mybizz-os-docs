@@ -1,6 +1,7 @@
 ---
 title: "memory-master-explainer"
 doc-id: "mb-982b5db3"
+updated: "2026-10-01"
 ---
 # The Memory Ecosystem — Master Explainer
 
@@ -188,6 +189,6 @@ The whole memory family is under standing configuration management with complete
 
 ---
 
-*Companion documents: the full memory-system map lives here; each component suite's explainer, reference, learnings, and canonical skill (installed in WSL) are listed per component in Section 2. The audit of this ecosystem: Full-System Procedure (memory functionality audit) (this repo) — deliberately outside the family, by design. The architecture standard: [[config-manager-explainer|Explainer]] (mybizz-config-docs).*
+*Companion documents: the full memory-system map lives here; each component suite's explainer, reference, learnings, and canonical skill (installed in WSL) are listed per component in Section 2. The audit of this ecosystem: Full-System Procedure (memory functionality audit) (this repo) — deliberately outside the family, by design. The architecture standard: [[[mybizz-config-docs:mb-config-manager/config-manager-explainer|Explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md) (mybizz-config-docs).*
 
 *End of document*

@@ -1,6 +1,7 @@
 ---
 title: "opening-and-closing"
 doc-id: "mb-d8690fef"
+updated: "2026-10-01"
 ---
 # Session Opening and Closing — Operating Procedure
 
@@ -18,7 +19,7 @@ session — which is why every new session starts fast.
 
 **Your files:**
 
-- Sessions log (the index): [[2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]]
+- Sessions log (the index): [[[mybizz-config-docs:facts/2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]]](C:/mybizz/mybizz-config-docs/facts/2026-09-15-session-numbers-from-sessions-log.md)
 - The session summaries themselves: GBrain pages named `sessions/...`
 
 ---
@@ -68,4 +69,4 @@ no longer need. The AI deletes the GBrain page and removes the row from
 the log. Deletion is not immediate: a deleted page can be restored for
 three days. Facts from that session are not deleted with it — facts are
 removed only through the facts procedure (see
-[[fact-save-and-recall|Operating Procedure]]).
+[[[mybizz-os-docs:operating-procedures/fact-save-and-recall|Operating Procedure]]](C:/mybizz/mybizz-os-docs/operating-procedures/fact-save-and-recall.md)).

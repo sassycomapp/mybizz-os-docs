@@ -1,6 +1,7 @@
 ---
 title: "close-out-process"
 doc-id: "mb-ed0bf026"
+updated: "2026-10-01"
 ---
 # Session Close-Out — Process Prompt
 
@@ -21,7 +22,7 @@ genuinely ambiguous, the agent asks one focused question instead of
 guessing — never defaults silently.
 
 Self-contained: where the outer procedure documents are guard-blocked for
-agent reads (e.g. [[opening-and-closing|Operating Procedure]] — sensitive-file class), this
+agent reads (e.g. [[[mybizz-os-docs:operating-procedures/opening-and-closing|Operating Procedure]]](C:/mybizz/mybizz-os-docs/operating-procedures/opening-and-closing.md) — sensitive-file class), this
 prompt is the authoritative procedure. Proven end-to-end live on
 2026-09-14 (session 2026-09-14-002); v2.1 encodes that run's challenges,
 their solutions, and the developer's refinement that the process is
@@ -29,9 +30,9 @@ context-based, not memory-specific.
 
 Reference files (developer-side; agent reads what the guards allow):
 - `C:\mybizz\logs\gbrain-logs\facts-log\facts-log.md` — index of saved facts
-- [[2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]] — index of session pages
-- [[opening-and-closing|Operating Procedure]]
-- [[fact-save-and-recall|Operating Procedure]]
+- [[[mybizz-config-docs:facts/2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]]](C:/mybizz/mybizz-config-docs/facts/2026-09-15-session-numbers-from-sessions-log.md) — index of session pages
+- [[[mybizz-os-docs:operating-procedures/opening-and-closing|Operating Procedure]]](C:/mybizz/mybizz-os-docs/operating-procedures/opening-and-closing.md)
+- [[[mybizz-os-docs:operating-procedures/fact-save-and-recall|Operating Procedure]]](C:/mybizz/mybizz-os-docs/operating-procedures/fact-save-and-recall.md)
 
 ---
 
@@ -51,7 +52,7 @@ Reference files (developer-side; agent reads what the guards allow):
    developer-run command with its exact text; results return verbatim and
    are recorded developer-verified.
 4. **Logs are indices; GBrain is the record.** `facts-log.md` and
-   [[2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]] are brief, append-only indices. The durable record is
+   [[[mybizz-config-docs:facts/2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]]](C:/mybizz/mybizz-config-docs/facts/2026-09-15-session-numbers-from-sessions-log.md) are brief, append-only indices. The durable record is
    GBrain: the session summary page must be substantial — full context,
    decisions, quirks, dispositions, standards the developer set.
 5. **One approval gate.** The developer approves exactly once per close-out:
