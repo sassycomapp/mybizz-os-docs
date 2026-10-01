@@ -1,13 +1,14 @@
 ---
 title: "skills-register"
 doc-id: "mb-42cc5415"
+updated: "2026-10-01"
 ---
 
 # Skills Register
 
 Single reference for every skill installed on this machine: where it is
 installed, where its documentation lives, what class it is, and its current
-state. Companion document: [[skills-usage-guide|Skills Usage Guide]] (when to
+state. Companion document: [[[mybizz-os-docs:skills-reference/skills-usage-guide|Skills Usage Guide]]](C:/mybizz/mybizz-os-docs/skills-reference/skills-usage-guide.md) (when to
 invoke each skill).
 
 ## 1. Scope
@@ -48,8 +49,8 @@ GBrain's own skills.
 
 | Skill                       | Invoked by                                  | Installed path (`~/.config/opencode/skills/…`)                  | Doc folder                                                                   | Frontmatter                                | State                                             |
 | --------------------------- | ------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------- |
-| mb-doc-maintainer           | user + agent                                | `mb-doc-maintainer/SKILL.md`                                    | `C:\mybizz\mybizz-config-docs\mb-doc-maintainer\`                            | OK                                         | Installed                                         |
-| mb-doc-auditor              | user                                        | `mb-doc-auditor/SKILL.md`                                       | `C:\mybizz\mybizz-config-docs\mb-doc-auditor\`                               | OK                                         | Installed                                         |
+|                             |                                             |                                                                 |                                                                              |                                            |                                                   |
+|                             |                                             |                                                                 |                                                                              |                                            |                                                   |
 | mb-submit-memory            | user                                        | `mb-submit-memory/SKILL.md`                                     | `C:\mybizz\mybizz-config-docs\mb-submit-memory\`                             | OK                                         | Installed                                         |
 | mb-sysdoc-creator           | user                                        | `mb-sysdoc-creator/SKILL.md`                                    | `C:\mybizz\mybizz-config-docs\mb-sysdoc-creator\`                            | OK                                         | Deferred (exam)                                   |
 | mb-compile-rules            | user                                        | `mb-compile-rules/SKILL.md`                                     | `C:\mybizz\mybizz-config-docs\mb-compile-rules\`                             | OK                                         | Deferred (exam)                                   |
@@ -82,8 +83,8 @@ states: Installed.
 | mb-config-gbrain-dream-cycle     | `gbrain-dream-cycle\`     |
 | mb-config-anvil-agent-references | `anvil-agent-references\` |
 | mb-config-i-have-adhd            | `i-have-adhd\`            |
-| mb-config-doc-maintainer         | `mb-doc-maintainer\`      |
-| mb-config-doc-auditor            | `mb-doc-auditor\`         |
+|                                  |                           |
+|                                  |                           |
 | mb-config-mb-submit-memory       | `mb-submit-memory\`       |
 
 ## 5. Suites (represented at suite level; members listed for completeness)
