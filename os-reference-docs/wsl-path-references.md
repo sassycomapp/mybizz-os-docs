@@ -48,14 +48,15 @@ This matches the prior suspension described in [[[mybizz-config-docs:cupcake/cu
 
 `\\wsl.localhost\Ubuntu\home\dev-p\gbrain` — the live GBrain install (a Git checkout)  
 `\\wsl.localhost\Ubuntu\home\dev-p\.gbrain` — GBrain settings (contains keys — private)  
-`\\wsl.localhost\Ubuntu\home\dev-p\backups` — pre-upgrade backups (private)  
+`\\wsl.localhost\Ubuntu\home\dev-p\backups` — pre-upgrade backups and the logs of `commit-all.sh` (private)  
 `\\wsl.localhost\Ubuntu\home\dev-p\memory-governor` — the memory governor  
 `\\wsl.localhost\Ubuntu\home\dev-p\.config\systemd\user` — the governor's two service unit files
 
 ## Scripts and logs (on C:\)
 
-`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.roots`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
+`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `commit-all.sh`, `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.sources`, `mb-doc-check.roots`, `rollout-repo.sh`, `rollout-all.sh`, `log-row.sh`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
 `C:\mybizz\logs\gbrain-logs\` — sync logs  
 `C:\mybizz\logs\mb-submit-memory\` — submission logs
 
-Run the sync: `bash /mnt/c/mybizz/scripts/sync-gbrain.sh`
+Commit, update GBrain and push everything: `bash /mnt/c/mybizz/scripts/commit-all.sh "message"`  
+Run only the GBrain update: `bash /mnt/c/mybizz/scripts/sync-gbrain.sh`

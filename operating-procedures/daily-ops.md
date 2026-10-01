@@ -56,40 +56,28 @@ Full mechanics: [[[mybizz-config-docs:cupcake/cupcake-reference|Usage, Invocatio
 
 ---
 
-## AFTER DOING WORK — run every time, for the repo you were working in
+## AFTER DOING WORK — run every time
 
-**Since 2026-09-30 the standing sync is one script:** `bash /mnt/c/mybizz/scripts/sync-gbrain.sh`. It syncs every registered source (no git pull), collects the links (`gbrain extract --stale`) and embeds. Run it after you commit documentation changes that agents should find; it takes about two minutes and is safe to repeat. The per-repo commands below still work for a single source. GBrain does not watch your files, so nothing is searchable until a sync runs.
+One command commits, updates GBrain and pushes all eight documentation repositories:
 
-**Committing in WSL runs the commit hook (`mb-doc-check`).** It adds a title and a permanent `doc-id` to new documents, repairs links after a rename or move, and turns links to a deleted document into plain words. It stops the commit only when a link you just typed points to nothing, or to a name several documents share, or when frontmatter is broken — it prints the line. To skip it once: `git commit --no-verify`.
+```bash
+bash /mnt/c/mybizz/scripts/commit-all.sh "what you did"
+```
+
+Run it from WSL after any documentation work, in any repository. It takes a few minutes, because GBrain re-reads what changed. The full procedure, what to do when a repository is blocked, and how to add a new repository: [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md). To see first what would be committed: `bash /mnt/c/mybizz/scripts/commit-all.sh --status`.
+
+**The commit hook (`mb-doc-check`) runs inside every commit.** It gives every document its title, permanent `doc-id` and `updated` date, writes every link in the standard form, repairs links after a rename or move, turns links to a deleted document into plain words, and stores the files with LF line endings. It stops a commit only when a link you just typed points to nothing or to a name several documents share, or when the frontmatter is damaged; it prints the line. Never skip it with `--no-verify`. How it works and why: [[[mybizz-os-docs:os-reference-docs/documentation-linking-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/documentation-linking-explainer.md).
 
 As of 2026-08-05, every PDLF/dev-makepdlf-ecosystem source is GitHub-backed
 (see the [[[default:adr-global/adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]]](C:/dev/project-library-global/adr-global/adr-dev-tooling-source-repos-must-be-github-backed.md) global ADR).
 There is one workflow — no more "does this repo have a remote?" check.
 The only thing that varies per repo is the default branch name.
 
+**Repositories `commit-all.sh` does not cover.** Commit these by hand: the template repository below, the code repositories, and the two dormant libraries (`mb4ecom-project-library`, `mb5pdlf-project-library`).
+
 | Repo                       | Local path                                                      | GitHub                                                                         | Default branch |
 | -------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------- |
-| `mb-3-cs-project-library`  | `/mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library`                | (existing remote)                                                              | `main`         |
-| `pdlf`                     | `/mnt/c/pdlf`                                                   | `github.com/sassycomapp/pdlf` (private)                                        | `master`       |
 | `template-project-library` | `/mnt/c/dev/project-template/dev-(SLUG)/(slug)-project-library` | `github.com/sassycomapp/template-project-library` (private, **template repo**) | `master`       |
-
-```bash
-cd /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library
-git add -A
-git commit -m "your message here"
-git push origin main
-gbrain sync --source mb-3-cs-project-library
-gbrain embed --stale
-```
-
-```bash
-cd /mnt/c/pdlf
-git add -A
-git commit -m "your message here"
-git push origin master
-gbrain sync --source pdlf
-gbrain embed --stale
-```
 
 ```bash
 cd "/mnt/c/dev/project-template/dev-(SLUG)/(slug)-project-library"
@@ -112,8 +100,7 @@ must get a GitHub remote at creation — see the
 [[[default:adr-global/adr-dev-tooling-source-repos-must-be-github-backed|All Dev-Tooling Source Repositories Must Be GitHub-Backed]]](C:/dev/project-library-global/adr-global/adr-dev-tooling-source-repos-must-be-github-backed.md) ADR for the exact
 `gh repo create` sequence. Don't let a new source sit local-only.
 
-**Other sources** (`mb4ecom-project-library`, `mb5pdlf-project-library`,
-`project-library-global`, `dev-makepdlf`, `dev-root-hub`, code repos, etc.)
+**Other sources** (`mb4ecom-project-library`, `mb5pdlf-project-library`, the code repos, etc.)
 — add their local_path, remote, and branch here once confirmed. Check with:
 
 ```bash
@@ -146,7 +133,7 @@ gbrain doctor
 
 Expected result since 2026-09-30: overall **30/100**, and the only FAIL is `cycle_freshness` (dream cycles have not run for most sources — by design). Scoring: minus 20 per FAIL, minus 5 per WARN. A different FAIL, or a lower score with new FAIL lines, needs attention. The baseline is saved as `~/backups/doctor-after-sync2.txt`.
 
-Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Upgrading.
+Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Upgrading.
 
 ---
 
@@ -218,7 +205,7 @@ gbrain sync --source <source-id>
 gbrain doctor
 ```
 
-Full mechanic: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Troubleshooting.
+Full mechanic: [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Troubleshooting.
 
 ---
 
@@ -235,31 +222,17 @@ grep -E '^ERROR|not found|BLOCKED|Could not resolve' "$LOG" | cut -c1-200
 - **`git pull failed … Could not resolve host`:** a passing network problem; the sync is incomplete and safe to retry. The script no longer pulls.
 - **`Sync BLOCKED … 1 file(s) failed`:** one file has invalid frontmatter. `gbrain frontmatter validate <repo-path>` names it; quote the offending value (for example a title with a colon), commit, sync again.
 
-Full mechanics: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Resolved Incidents.
+Full mechanics: [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved Incidents.
 
 ---
 
 ## CHECK WHAT'S NOT COMMITTED YET
 
-Run per-repo, for whichever repo(s) you worked in:
-
 ```bash
-cd /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library
-git status --porcelain
+bash /mnt/c/mybizz/scripts/commit-all.sh --status
 ```
 
-```bash
-cd /mnt/c/pdlf
-git status --porcelain
-```
-
-```bash
-cd "/mnt/c/dev/project-template/dev-(SLUG)/(slug)-project-library"
-git status --porcelain
-```
-
-Empty output means clean. Any lines printed mean uncommitted tracked
-changes — see the `sync_freshness` fix above for why this matters.
+Shows the uncommitted changes of all eight repositories and changes nothing. `(nothing to commit)` means that repository is clean. Any lines printed mean uncommitted changes — see the `sync_freshness` fix above for why this matters.
 
 ---
 
@@ -379,7 +352,7 @@ Symptom: dream-cycle symbol resolution finds nothing, or a code
 source's page count is suspiciously low. Usually a missing `strategy`
 field on the source (defaults to markdown-only, silently skips code).
 
-Full diagnosis and 3-step fix: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Resolved
+Full diagnosis and 3-step fix: [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved
 Incidents.
 
 ---

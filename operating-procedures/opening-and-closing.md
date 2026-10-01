@@ -21,6 +21,8 @@ session — which is why every new session starts fast.
 
 - Sessions log (the index): [[[mybizz-config-docs:facts/2026-09-15-session-numbers-from-sessions-log|session numbers come from the sessions log]]](C:/mybizz/mybizz-config-docs/facts/2026-09-15-session-numbers-from-sessions-log.md)
 - The session summaries themselves: GBrain pages named `sessions/...`
+- The close-out prompt the AI follows: [[[mybizz-os-docs:operating-procedures/close-out-process]]](C:/mybizz/mybizz-os-docs/operating-procedures/close-out-process.md)
+- The commit step that ends every close-out: [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md)
 
 ---
 
@@ -30,21 +32,29 @@ When you are done working, simply say:
 
 > close out
 
-The AI then does the following, in order: it writes the session summary as
-a GBrain page; it picks the next free number for the log; it draws up a
-short list of durable facts from the session (rules, decisions, gotchas)
-and checks each one against what GBrain already knows; and it shows you
-that list. You read the list once. You can cross out or reword anything,
-then give one approval — you do not approve each item separately.
+The AI then does the following, in order: it writes a short session summary
+as a GBrain page (the documents hold the detail; the page says what happened
+and where to look); it draws up a short list of durable facts (rules,
+decisions, gotchas), leaving out anything a document already says, and checks
+only the important ones against what GBrain already knows; and it shows you
+that list together with the sessions-log row and the files that changed. You
+read it once. You can cross out or reword anything, then give one approval —
+you do not approve each item separately.
 
-After your approval the AI finishes on its own: important facts are saved
-the governed way (through `mb-submit-memory`, so they can be trusted
-later), advisory notes are saved directly, one row is added to the sessions
-log with the number, date, topic, subject, title, and the exact GBrain page
-name, and the AI confirms to you what was saved.
+After your approval the AI saves the advisory notes directly and, for any
+rule or decision that must be trusted later, writes a file for the memory
+governor. Then it gives you one block to paste into the WSL terminal. The
+block adds the row to the sessions log (a small helper numbers it, so you
+never type or look up a number) and runs `commit-all.sh`, which commits all
+eight repositories, updates GBrain and pushes everything. Only when governed
+facts were submitted do you paste a second block, which approves them for the
+governor. The AI then confirms what was saved.
 
-That is your entire job at close-out: say "close out", review one list,
-say yes.
+Most sessions have no rule or decision to protect, so they close with the
+first block only.
+
+That is your entire job at close-out: say "close out", review one list, say
+yes, paste one block.
 
 ## Opening a past session in a new session
 
