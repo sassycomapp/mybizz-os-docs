@@ -41,15 +41,21 @@ At any point in a session, say:
 
 > save these as facts
 
-(or close out a session — the close-out routine does the same thing
-automatically). The AI writes the candidate facts as one short list,
-checks them against what GBrain already knows, and shows you the list with
-a flag on anything that contradicts an existing fact. You read the list
-once, cross out or reword anything, and give one approval.
+(or close out a session — see [[[mybizz-os-docs:operating-procedures/opening-and-closing]]](C:/mybizz/mybizz-os-docs/operating-procedures/opening-and-closing.md); the close-out routine
+does the same thing automatically). The AI writes the candidate facts as one
+short list. It leaves out anything a document already says, and it checks
+only the governed ones — the rules and decisions — against what GBrain
+already knows, with a flag on anything that contradicts an existing fact.
+You read the list once, cross out or reword anything, and give one approval.
 
-The AI then saves the approved facts the correct way for each kind, adds a
-row to the facts log for every fact saved, and confirms to you what was
-saved, with each fact's reference number (for example fact-47).
+After your approval the AI saves the advisory facts directly and writes a
+file for each governed fact, which goes through the Memory Governor. Then it
+gives you one block to paste into the WSL terminal. The block adds one row to
+the facts log for each fact (a small helper numbers the row, so you never
+type a number) and runs `commit-all.sh`. Only when governed facts were
+submitted do you paste a second block, which approves them. The AI then
+confirms what was saved, with each fact's reference number (for example
+fact-47).
 
 ## Recalling facts
 
@@ -60,6 +66,11 @@ You never need to remember fact numbers. In any session:
   fact numbers it used.
 - Ask to see the whole list: "show me the facts log." The table shows
   every durable fact with its number, date, subject, and text.
+
+Governed facts are stored in their own GBrain source, `memory-governor-code`,
+which an ordinary search from a documentation folder does not read. If a
+governed fact does not come up when you ask, look for it in the facts log,
+which lists every fact. A search that names that source finds it.
 
 ## Retiring an outdated fact
 
