@@ -76,7 +76,7 @@ Do this once for each new repository, in this order:
 6. Bring the existing documents under the rules: `bash /mnt/c/mybizz/scripts/rollout-repo.sh <folder>`.
 7. Add the folder to the list in `commit-all.sh`, and a row to [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
 
-The repositories `mb4ecom-project-library` and `mb5pdlf-project-library`, and the code repositories, are not covered yet.
+The repositories `mb4ecom-project-library` and `mb5pdlf-project-library` are not covered yet. Code repositories are outside these operations; this procedure is about documentation only.
 
 ## After a GBrain upgrade
 

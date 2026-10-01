@@ -73,7 +73,7 @@ As of 2026-08-05, every PDLF/dev-makepdlf-ecosystem source is GitHub-backed
 There is one workflow — no more "does this repo have a remote?" check.
 The only thing that varies per repo is the default branch name.
 
-**Repositories `commit-all.sh` does not cover.** Commit these by hand: the template repository below, the code repositories, and the two dormant libraries (`mb4ecom-project-library`, `mb5pdlf-project-library`).
+**Repositories `commit-all.sh` does not cover.** Commit these by hand: the template repository below and the two dormant libraries (`mb4ecom-project-library`, `mb5pdlf-project-library`).
 
 | Repo                       | Local path                                                      | GitHub                                                                         | Default branch |
 | -------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------- |
@@ -133,7 +133,7 @@ gbrain doctor
 
 Expected result since 2026-09-30: overall **30/100**, and the only FAIL is `cycle_freshness` (dream cycles have not run for most sources — by design). Scoring: minus 20 per FAIL, minus 5 per WARN. A different FAIL, or a lower score with new FAIL lines, needs attention. The baseline is saved as `~/backups/doctor-after-sync2.txt`.
 
-Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Upgrading.
+Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the procedure is in [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Upgrading.
 
 ---
 
@@ -205,7 +205,7 @@ gbrain sync --source <source-id>
 gbrain doctor
 ```
 
-Full mechanic: [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Troubleshooting.
+Full mechanic: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Troubleshooting.
 
 ---
 
@@ -222,7 +222,7 @@ grep -E '^ERROR|not found|BLOCKED|Could not resolve' "$LOG" | cut -c1-200
 - **`git pull failed … Could not resolve host`:** a passing network problem; the sync is incomplete and safe to retry. The script no longer pulls.
 - **`Sync BLOCKED … 1 file(s) failed`:** one file has invalid frontmatter. `gbrain frontmatter validate <repo-path>` names it; quote the offending value (for example a title with a colon), commit, sync again.
 
-Full mechanics: [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved Incidents.
+Full mechanics: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Resolved Incidents.
 
 ---
 
@@ -352,7 +352,7 @@ Symptom: dream-cycle symbol resolution finds nothing, or a code
 source's page count is suspiciously low. Usually a missing `strategy`
 field on the source (defaults to markdown-only, silently skips code).
 
-Full diagnosis and 3-step fix: [[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]] → Resolved
+Full diagnosis and 3-step fix: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Commands, Mechanics, Incidents, Troubleshooting]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-reference.md) → Resolved
 Incidents.
 
 ---
