@@ -1,7 +1,7 @@
 ---
 title: "close-out-process"
 doc-id: "mb-ed0bf026"
-updated: "2026-10-01"
+updated: "2026-10-02"
 ---
 # Session Close-Out — Process Prompt
 
@@ -68,11 +68,14 @@ page says what happened and where to look. The write creates a file in the repos
   developer to paste it). Flag anything that is not this session's work; the developer decides
   whether to keep or restore it before the block runs.
 - **Present once**, in one message: the candidates table (subject, fact text, routing,
-  confidence, conflict flags), the proposed sessions-log row without a number, and the flagged
-  files. Then STOP. The approval may cancel, amend, reword or re-route; the amended set is final.
+  confidence, conflict flags), the proposed sessions-log row without a number, the flagged files, and the project documents (Step 2a). Then STOP. The approval may cancel, amend, reword or re-route; the amended set is final.
 - Log formats (dates `YYYY/MM/DD`):
   - sessions-log: `| No. | Date | Topic | Subject | Title | GBrain page name |`
   - facts-log: `| No. | Date | Subject | Title | Fact | GBrain reference |`
+
+## Step 2a — agent: the project documents
+
+When the session worked in one of the five projects (`makepdlf`, `mb-3-cs`, `mb4ecom`, `mb5pdlf`, `pdlf`), run `/mb-project-docs` for that project, up to its Step 6. Its presentation (the changes to config, explainer and README, the statements that were no longer true, and the changed lines of `AGENTS.md`) is part of the gate message. After the approval, carry out its Step 7: write the files and add its copy line to the terminal block, before `commit-all.sh`. When the session worked in no project, skip this step.
 
 ## Step 3 — agent: after the approval
 
@@ -88,7 +91,7 @@ page says what happened and where to look. The write creates a file in the repos
 
 ## Step 4 — developer: terminal block 1
 
-The agent writes this block fully literal. The governor part appears only when governed facts
+The agent writes this block fully literal. It also carries the copy line of Step 2a when the skill produced a reference file. The governor part appears only when governed facts
 were approved. The credential lives in `~/memory-governor/.env`; the agent never sources it.
 
 ```bash
