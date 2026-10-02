@@ -1,7 +1,7 @@
 ---
 title: "memory-master-explainer"
 doc-id: "mb-982b5db3"
-updated: "2026-10-01"
+updated: "2026-10-02"
 ---
 # The Memory Ecosystem — Master Explainer
 
@@ -155,7 +155,7 @@ The "why of each path is the guarantee that path uniquely provides: the governed
 
 **Two servers, one port.** PostgreSQL on each side of the WSL boundary listens on the same port, and a call made from the wrong side silently connects to the wrong server. Every database check names its instance explicitly.
 
-**Facts are stored per source, and governed facts sit in one source.** (Corrected 2026-09-30; the earlier text called the brain brain-global.) GBrain stores every fact in a source, and `recall` reads the selected source — in GBrain 0.59.18.0 also every federated source, for a local call without an explicit source. The gate's worker sets the brain default to the owning project before each write, but GBrain ranks the source whose folder contains the worker's current folder above that default, and the worker runs in the folder of the source `memory-governor-code`. So governed facts land there (verified 2026-09-30: 49 → 50 after a governed submission), and that source is not federated. Project isolation is enforced by the gate itself: every governed fact is stamped with its owning project, and visibility is mapped from declared scope. The consequence for reading: `mb-submit-memory`'s fact searches from a documentation session cannot see governed facts (the recall gap). The remedy is an open developer decision.
+**Facts are stored per source, and each governed fact goes to its owning project's source.** GBrain stores every fact in a source, and `recall` reads the facts of one source. The gate's worker names the owning project's own documentation source on every write, so a governed fact lands with the documents it belongs to (a federated source), and its fact file is a document that an ordinary search finds. Project isolation is enforced by the gate itself: every governed fact is stamped with its owning project, and visibility is mapped from declared scope. A governed fact written before 2026-10-01 may still sit in `memory-governor-code`.
 
 **The ungoverned quick path is real and deliberate.** The memory tool surface exists in every session, enabled; the gate was built knowing it would. The discipline that routes durable submissions through the gate is documented, not mechanical.
 
@@ -185,7 +185,7 @@ The whole memory family is under standing configuration management with complete
 
 **The maintenance rule (developer-stated, standing): this document is passed to every memory-component run and must be updated by each such session to reflect current verified state. It is the cross-component coordination point, and a stale version defeats its purpose. At that run's close-out, the update is committed and pushed to `mybizz-os-docs` as its own commit — standing authorization, not re-decided per run.
 
-**Genuinely open, system-level decisions.** Whether the shared guidance block and Graphify's scope configuration should ever be committed to travel with the repo, versus staying local-only. Whether the remaining governance-conflict design (rules that block by default where conversational approval is invisible) stays as accepted friction or is revisited. The standing upgrade policy: never upgrade on newness; an upgrade is a developer decision (the one of 2026-09-30 was made for cross-repository links). Whether governed facts should stay in `memory-governor-code`, given the recall gap. Graphify's git-hooks decision is a tripwire, contingent on the graph output staying gitignored; re-examine explicitly if that ever changes.
+**Genuinely open, system-level decisions.** Whether the shared guidance block and Graphify's scope configuration should ever be committed to travel with the repo, versus staying local-only. Whether the remaining governance-conflict design (rules that block by default where conversational approval is invisible) stays as accepted friction or is revisited. The standing upgrade policy: never upgrade on newness; an upgrade is a developer decision (the one of 2026-09-30 was made for cross-repository links). Graphify's git-hooks decision is a tripwire, contingent on the graph output staying gitignored; re-examine explicitly if that ever changes.
 
 ---
 

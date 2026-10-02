@@ -1,7 +1,7 @@
 ---
 title: "fact-save-and-recall"
 doc-id: "mb-fdee2c8e"
-updated: "2026-10-01"
+updated: "2026-10-02"
 ---
 # Fact Save and Recall — Operating Procedure
 
@@ -67,10 +67,7 @@ You never need to remember fact numbers. In any session:
 - Ask to see the whole list: "show me the facts log." The table shows
   every durable fact with its number, date, subject, and text.
 
-Governed facts are stored in their own GBrain source, `memory-governor-code`,
-which an ordinary search from a documentation folder does not read. If a
-governed fact does not come up when you ask, look for it in the facts log,
-which lists every fact. A search that names that source finds it.
+Every governed fact is saved into the documentation of its own project and also exists as a fact file there, so an ordinary GBrain search finds it.
 
 ## Retiring an outdated fact
 
