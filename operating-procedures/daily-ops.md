@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-01"
+updated: "2026-10-02"
 ---
 # Daily Operations — Quick Reference
 
@@ -56,9 +56,21 @@ Full mechanics: [[[mybizz-config-docs:cupcake/cupcake-reference|Usage, Invocatio
 
 ---
 
+## END OF A SESSION — CLOSE OUT
+
+Say "close out" when you finish working in a project. The AI then:
+
+1. Writes a short session page for GBrain and lists the durable facts of the session.
+2. Runs `/mb-project-docs` for the project you are in. It creates or updates the project's config, its `AGENTS.md` (through a reference file) and its explainer, and creates or amends the README that points to them.
+3. Shows everything once, for one approval: the facts, the sessions-log row, the changed files, the changes to the project documents and the changed lines of `AGENTS.md`.
+
+After you approve, the AI gives you one block to paste. It adds the log rows, copies the project's reference file over its `AGENTS.md` (`agents-from-reference.sh`), and runs `commit-all.sh`. The AI never commits, never pushes and never writes `AGENTS.md` itself. Procedures: [[[mybizz-os-docs:operating-procedures/close-out-process]]](C:/mybizz/mybizz-os-docs/operating-procedures/close-out-process.md) and [[[mybizz-config-docs:mb-project-docs/project-docs-reference]]](C:/mybizz/mybizz-config-docs/mb-project-docs/project-docs-reference.md). In a code repository the three files are in `theme\docs` and you commit them yourself. If the Anvil app does not exist yet, the skill stops and tells you to create it.
+
+---
+
 ## AFTER DOING WORK — run every time
 
-One command commits, updates GBrain and pushes all eight documentation repositories:
+At the end of a session in a project, use close out (above); it ends with this command. For other documentation work, one command commits, updates GBrain and pushes all eight documentation repositories:
 
 ```bash
 bash /mnt/c/mybizz/scripts/commit-all.sh "what you did"
@@ -233,6 +245,27 @@ bash /mnt/c/mybizz/scripts/commit-all.sh --status
 ```
 
 Shows the uncommitted changes of all eight repositories and changes nothing. `(nothing to commit)` means that repository is clean. Any lines printed mean uncommitted changes — see the `sync_freshness` fix above for why this matters.
+
+---
+
+## REBUILD THE DOCMAP
+
+```bash
+python3 /mnt/c/mybizz/scripts/build-docmap.py           # shows what would change, changes nothing
+python3 /mnt/c/mybizz/scripts/build-docmap.py --write   # rewrites the folder trees of docmap.md
+```
+
+Only the folder trees are rebuilt. Existing descriptions are kept; new folders and files are added marked "(new — add a description)"; entries that no longer exist are removed. Commit the result with `commit-all.sh`.
+
+---
+
+## TEST mb-doc-check
+
+```bash
+bash /mnt/c/mybizz/mybizz-config-docs/gbrain/tests/run-tests.sh
+```
+
+It must end with `OK` (143 tests). Run it after any change to `mb-doc-check.py`, and with `slug-selftest` after a GBrain upgrade.
 
 ---
 
