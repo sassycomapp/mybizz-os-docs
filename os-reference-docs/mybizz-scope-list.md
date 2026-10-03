@@ -1,9 +1,14 @@
 ---
 title: "mybizz-scope-list"
 doc-id: "mb-a5a87568"
-updated: "2026-10-01"
+updated: "2026-10-03"
 
 ---
+
+**What this list is.** The recorded scope of the Mybizz documentation corpus. The roots
+under "In scope" are inside it; the paths under Exceptions are the content that is never
+referenced, in any form, at any time; everything else is in scope. **No tool reads this
+list** — it stands as the record of the decision.
 
 **In scope:**
 
@@ -15,28 +20,22 @@ updated: "2026-10-01"
 
 "C:\pdlf"
 
-**Exceptions — one list, applies to every documentation skill (mb-align-docs, mb-wikilinks, mb-docs-manager):**
+**Exceptions — one list:**
 
 Criterion: an exception is content we never reference, in any form, at any time, ever.
 Nothing else is excluded. Transient state (a project under development) is a scheduling
 question — when to work on it — never a scope question. Transient projects stay in scope.
 
 Not exceptions, by definition: version-control internals, dotfolders, and files with no
-content are not documents; the skills' own treatment rules handle them. They are not
+content are not documents. They are not
 listed here. The same applies to treatment states inside scope (templates, quarantine,
 registers The use of registers has been discontinued. Please review) — they are handled by rules, not by this list.
-
-This list is the single scope authority for the documentation skills. The skills read it
-at Phase 0 of every run; they never carry their own scope lists.
 
 Backups, archives, and retired material (snapshots, never live knowledge):
 
 "C:\mybizz\backup-before"
 
 "C:\backup-general"
-"C:\backup-mb-align-docs"
-"C:\backup-mb-docs-manager"
-"C:\backup-mb-wikilinks"
 "C:\backup-wsl"
 "C:\backup-daily"
 "C:\backup-dream-cycle"
@@ -63,8 +62,6 @@ the reference homes; the clones and scripts are supply):
 "C:\mybizz\gstack"
 "C:\mybizz\gbrain"
 "C:\mybizz\scripts"
-"C:\mybizz\mb-doc-auditor" (source repo — developer decision 2026-09-28)
-"C:\mybizz\mb-doc-maintainer" (source repo — developer decision 2026-09-28)
 
 Transient working state (regenerated, wiped, or rewritten — never referenceable):
 

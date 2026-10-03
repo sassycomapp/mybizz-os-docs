@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-10-01"
+updated: "2026-10-03"
 
 ---
 
@@ -38,7 +38,7 @@ folders with local policies run them; all folders always run the global rule set
 
 ## Notes
 
-**Verified 2026-09-30** against `gbrain sources list` (15 sources). The two documentation-skill sources (`mb-doc-maintainer`, `mb-doc-auditor`) were removed by the developer and are no longer listed.
+**Verified 2026-09-30** against `gbrain sources list` (15 sources).
 
 **Federation states** (the mark after the source id): `federated` — appears in every other source's default search and may write links into other sources; `unset` — never set: the source stays out of other sources' searches, but a session working inside it can still read the federated sources; `isolated` — set explicitly with `gbrain sources unfederate`: cut off in both directions. Every documentation source is federated (developer, 2026-09-30). The four code sources are deliberately left `unset`.
 

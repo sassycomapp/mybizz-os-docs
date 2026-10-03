@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-02"
+updated: "2026-10-03"
 ---
 # Daily Operations — Quick Reference
 
@@ -32,7 +32,9 @@ Then run Start sequence above.
 
 In PowerShell:
 
+```
 PS C:\Users\dev-p> wsl --shutdown
+```
 
 ## CROSS-PROJECT FILE ACCESS — GRANT / REVOKE
 
@@ -121,21 +123,7 @@ gbrain sources status
 
 ---
 
-## RUN MB-ALIGN-DOCS AFTER A DOCS MANAGER RUN THAT DID STRUCTURAL CHANGES
-
-If Docs Manager renamed, moved, or retired files within a project-library
-(or project-library-global), run mb-align-docs against that same project
-next — before considering the documentation environment stable:
-
-```
-/mb-align-docs (project-name)
-```
-
-This catches register The use of registers has been discontinued. Please review or front-matter drift that Docs Manager's structural
-changes may have introduced. Skip if the Docs Manager run was text-only
-corrections (no renames, moves, or retires).
-
----
+# 
 
 ## GBRAIN HEALTH CHECK
 
@@ -269,16 +257,13 @@ It must end with `OK` (143 tests). Run it after any change to `mb-doc-check.py`,
 
 ---
 
-## PATTERN: BULK RETROFIT / MASS-EDIT TASKS (e.g. wikilinks, frontmatter passes)
+## PATTERN: BULK RETROFIT / MASS-EDIT TASKS (e.g. frontmatter passes)
 
 An agent's own summary count of a multi-file retrofit is not reliable
 evidence the work is correct. Always recount against the itemized
 detail, and treat a post-apply diff check against backups as required,
 not optional — it's what actually catches a phantom candidate (a
 proposed change for text that isn't really there).
-
-**Reference paths (wikilink retrofit):** skill `mb-wikilinks`; backups
-`C:\backup-mb-wikilinks\`; logs `C:\mybizz\logs\mb-wikilinks\`.
 
 ---
 
