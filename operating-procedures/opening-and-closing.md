@@ -1,7 +1,7 @@
 ---
 title: "opening-and-closing"
 doc-id: "mb-d8690fef"
-updated: "2026-10-01"
+updated: "2026-10-04"
 ---
 # Session Opening and Closing — Operating Procedure
 
@@ -45,8 +45,7 @@ After your approval the AI saves the advisory notes directly and, for any
 rule or decision that must be trusted later, writes a file for the memory
 governor. Then it gives you one block to paste into the WSL terminal. The
 block adds the row to the sessions log (a small helper numbers it, so you
-never type or look up a number) and runs `commit-all.sh`, which commits all
-eight repositories, updates GBrain and pushes everything. Only when governed
+never type or look up a number) and runs `commit-all.sh`, which commits the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md), updates GBrain and pushes everything. Only when governed
 facts were submitted do you paste a second block, which approves them for the
 governor. The AI then confirms what was saved.
 

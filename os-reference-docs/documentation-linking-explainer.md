@@ -1,7 +1,7 @@
 ---
 title: "documentation-linking-explainer"
 doc-id: "mb-15cd9959"
-updated: "2026-10-01"
+updated: "2026-10-04"
 ---
 # Documentation linking — Explainer
 
@@ -12,7 +12,7 @@ repositories and their GBrain sources are listed in [[[mybizz-os-docs:os-referen
 
 ## 1. What this actually is
 
-Every link from one document to another, in all eight documentation repositories, is stored in
+Every link from one document to another, in the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md), is stored in
 one fixed form:
 
 `[[[source-id:page-name]]](C:/full/windows/path.md)`
@@ -34,8 +34,7 @@ and stops a commit that contains a link pointing to nothing.
 
 ## 2. The system in plain terms
 
-**The eight repositories.** `mybizz-os-docs`, `mybizz-config-docs`, `data-mybizz-mgt`, `pdlf`,
-`dev-root`, `makepdlf-project-library`, `mb-3-cs-project-library` and `project-library-global`.
+**The repositories.** The documentation repositories are listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md).
 Each is also a GBrain source with its own id; the full list is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md). A small
 file, `mb-doc-check.sources`, tells the hook which folder is which source id. A second file,
 `mb-doc-check.roots`, lists the folders a link may point into.
@@ -92,7 +91,7 @@ write, and a program that converts the second into the first. No one has to reme
 the link names that repository. A link with only a name reaches only its own repository. The hook
 knows which folder is which source from `mb-doc-check.sources`, so the writer never has to. A link
 is followed across repositories when the page that holds it sits in a repository that is
-federated, which all eight are. The code repositories are deliberately not.
+federated, which all of them are. The code repositories are deliberately not.
 
 **The full path outside the link.** MarkText opens the file named in the round brackets. A full
 Windows path depends only on the target document: it does not depend on where the linking document
@@ -150,7 +149,7 @@ Windows program bypass it.
 - **Write links as `[[name]]` or `[[name|text]]`.** Never write the full form by hand. When the hook
   reports a shared name, write `[[source-id:name]]` as the message shows. Put a path in backticks
   when it only states where something is.
-- **Commit with one command.** `commit-all.sh` commits the eight repositories, updates GBrain and
+- **Commit with one command.** `commit-all.sh` commits the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md), updates GBrain and
   pushes. Never skip the hook with `--no-verify`. The procedure is [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md).
 - **Let GBrain read links across repositories.** `sync-gbrain.sh` ends with a full read of the
   database (`gbrain extract links --source db`). That step is what writes links between

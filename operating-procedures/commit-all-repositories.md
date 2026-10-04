@@ -1,13 +1,13 @@
 ---
 title: "commit-all-repositories"
 doc-id: "mb-313772ce"
-updated: "2026-10-01"
+updated: "2026-10-04"
 ---
 # Commit, update GBrain and push all repositories
 
-The one procedure to follow every time you finish work on any of the eight documentation repositories. It keeps every repository committed, GBrain current and GitHub up to date at the same time. It is the "after doing work" step of [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md).
+The one procedure to follow every time you finish work on any of the fifteen documentation repositories. It keeps every repository committed, GBrain current and GitHub up to date at the same time. It is the "after doing work" step of [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md).
 
-The eight repositories: `mybizz-os-docs`, `mybizz-config-docs`, `data-mybizz-mgt`, `pdlf`, `dev-root`, `makepdlf-project-library`, `mb-3-cs-project-library`, `project-library-global`. The full list with paths and GBrain sources is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
+The fifteen repositories: `mybizz-os-docs`, `mybizz-config-docs`, `data-mybizz-mgt`, `pdlf`, `dev-root`, `makepdlf-project-library`, `mb-3-cs-project-library`, `project-library-global`, `mb-archify-scope`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`. The full list with paths and GBrain sources is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
 
 ## Every time
 

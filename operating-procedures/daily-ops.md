@@ -72,7 +72,7 @@ After you approve, the AI gives you one block to paste. It adds the log rows, co
 
 ## AFTER DOING WORK — run every time
 
-At the end of a session in a project, use close out (above); it ends with this command. For other documentation work, one command commits, updates GBrain and pushes all eight documentation repositories:
+At the end of a session in a project, use close out (above); it ends with this command. For other documentation work, one command commits, updates GBrain and pushes the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md):
 
 ```bash
 bash /mnt/c/mybizz/scripts/commit-all.sh "what you did"
@@ -232,7 +232,7 @@ Full mechanics: [[[mybizz-config-docs:gbrain/gbrain-reference|Reference: Command
 bash /mnt/c/mybizz/scripts/commit-all.sh --status
 ```
 
-Shows the uncommitted changes of all eight repositories and changes nothing. `(nothing to commit)` means that repository is clean. Any lines printed mean uncommitted changes — see the `sync_freshness` fix above for why this matters.
+Shows the uncommitted changes of the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md) and changes nothing. `(nothing to commit)` means that repository is clean. Any lines printed mean uncommitted changes — see the `sync_freshness` fix above for why this matters.
 
 ---
 

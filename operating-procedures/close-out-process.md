@@ -1,7 +1,7 @@
 ---
 title: "close-out-process"
 doc-id: "mb-ed0bf026"
-updated: "2026-10-02"
+updated: "2026-10-04"
 ---
 # Session Close-Out — Process Prompt
 
@@ -36,8 +36,7 @@ Reference: `C:\mybizz\logs\gbrain-logs\facts-log\facts-log.md` (index of saved f
    the proposed sessions-log row, and the list of changed files. After the gate it is execution only.
 4. **GBrain is the record; the logs are indices.** The log rows are appended by `log-row.sh`,
    which numbers each row itself. The agent never numbers a row and never writes to a log.
-5. **The agent never commits.** The developer's block runs `commit-all.sh`, which commits all
-   eight repositories, updates GBrain and pushes.
+5. **The agent never commits.** The developer's block runs `commit-all.sh`, which commits the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md), updates GBrain and pushes.
 6. **No placeholders.** A block contains only values that are already known. Anything that
    exists only in a previous block's output goes into a second, fully literal block.
 7. **Nothing left open.** A step the agent cannot complete becomes a numbered command in the

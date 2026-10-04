@@ -1,7 +1,7 @@
 ---
 title: "frontmatter conventions"
 doc-id: "mb-f484bbdf"
-updated: "2026-10-01"
+updated: "2026-10-04"
 ---
 frontmatter conventions:
 
@@ -15,7 +15,7 @@ updated:
 ---
 ```
 
-This applies to every document in the eight documentation repositories, including documentation skills. The files and folders the program skips are listed in [[[mybizz-config-docs:mb-doc-check/doc-check-config]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-config.md). Documentation skills are present on C:\ and serve only documentation purposes. They are not installed skills.
+This applies to every document in the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md), including documentation skills. The files and folders the program skips are listed in [[[mybizz-config-docs:mb-doc-check/doc-check-config]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-config.md). Documentation skills are present on C:\ and serve only documentation purposes. They are not installed skills.
 
 - `title`: the file name without `.md`, in double quotes.
 - `doc-id`: a permanent random code such as `mb-3fa91c2e`. It never changes, not even when the file is renamed or moved.

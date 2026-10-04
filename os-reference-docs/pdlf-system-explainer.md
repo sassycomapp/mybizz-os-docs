@@ -1,7 +1,7 @@
 ---
 title: "pdlf-system-explainer"
 doc-id: "mb-4aed4ae2"
-updated: "2026-10-03"
+updated: "2026-10-04"
 ---
 # PDLF — The Project Development Lifecycle Framework
 
@@ -291,7 +291,7 @@ What you actually get from working inside PDLF, rather than directing an agent t
 
 ## 10. Supporting Infrastructure — documentation upkeep
 
-PDLF does not operate in isolation, and it's worth being explicit about what supports it and how. As PDLF itself grows — and it already spans dozens of specifications, policies, ADRs, templates, and individual stepwise skill files, with more added as the remaining phases of the framework are built out — that body of documentation is kept honest by the same machinery as every other project's: /mb-project-docs keeps the canonical documents (config, reference, explainer, README) accurate against the real state during close-out ([[[mybizz-os-docs:operating-procedures/close-out-process]]](C:/mybizz/mybizz-os-docs/operating-procedures/close-out-process.md)), mb-doc-check keeps every document's frontmatter and links correct at every commit ([[[mybizz-config-docs:mb-doc-check/doc-check-explainer]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-explainer.md)), and commit-all.sh commits the eight documentation repositories, updates GBrain and pushes ([[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md)). PDLF enforces rigorous discipline on every application it builds; the same standard of honesty applies to PDLF's own documentation, so the framework holding everything else accountable is held to the identical standard itself.
+PDLF does not operate in isolation, and it's worth being explicit about what supports it and how. As PDLF itself grows — and it already spans dozens of specifications, policies, ADRs, templates, and individual stepwise skill files, with more added as the remaining phases of the framework are built out — that body of documentation is kept honest by the same machinery as every other project's: /mb-project-docs keeps the canonical documents (config, reference, explainer, README) accurate against the real state during close-out ([[[mybizz-os-docs:operating-procedures/close-out-process]]](C:/mybizz/mybizz-os-docs/operating-procedures/close-out-process.md)), mb-doc-check keeps every document's frontmatter and links correct at every commit ([[[mybizz-config-docs:mb-doc-check/doc-check-explainer]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-explainer.md)), and commit-all.sh commits the documentation repositories, updates GBrain and pushes ([[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md)). PDLF enforces rigorous discipline on every application it builds; the same standard of honesty applies to PDLF's own documentation, so the framework holding everything else accountable is held to the identical standard itself.
 
 ## 11. Closing
 
