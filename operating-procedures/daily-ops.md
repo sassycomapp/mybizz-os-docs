@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-03"
+updated: "2026-10-04"
 ---
 # Daily Operations — Quick Reference
 
@@ -287,7 +287,7 @@ to `C:\dev\...`).
 
 **Cause:** OpenCode has no built-in cleanup for stale `project`/`session`
 database rows (confirmed upstream gap — see
-[[[mybizz-config-docs:opencode/opencode-project-session-data-integrity|Project & Session Data Integrity]]](C:/mybizz/mybizz-config-docs/opencode/opencode-project-session-data-integrity.md)).
+`C:\mybizz\mybizz-os\opencode-project-session-data-integrity.md`).
 
 **Fix:** run the cleanup script — see that same document for the exact
 command and full path.

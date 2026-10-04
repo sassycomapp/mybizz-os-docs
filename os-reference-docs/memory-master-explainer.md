@@ -1,7 +1,7 @@
 ---
 title: "memory-master-explainer"
 doc-id: "mb-982b5db3"
-updated: "2026-10-02"
+updated: "2026-10-04"
 ---
 # The Memory Ecosystem — Master Explainer
 
@@ -13,7 +13,7 @@ The system is organised around **two storage layers**. The **mirror layer** is a
 
 **The cast of actors, in one line each.** GBrain is the store itself — it holds both layers and answers questions about them. The **Dream Cycle** is GBrain's own deepening process, turning stored content into more structured understanding. **Memory Governor**, a gatekeeping service with its own API, decides whether a newly generated candidate deserves to become durable memory at all. **mb-submit-memory** is the sanctioned front door of that gate — the way anything read from a real file reaches the decision. **Graphify** completely independently knows what the code structurally is, via deterministic parsing. **PostgreSQL** is the physical foundation underneath the store and the gate. **Cupcake** is a mechanical enforcement layer beneath everything, inspecting every agent tool call against compiled policy. Of these, PostgreSQL and Cupcake are *indirectly* related to the memory work itself — they hold it up and police it, but they are not memory mechanisms; the other five are the memory mechanisms proper. The Governor's API is part of Memory Governor, not a separate member.
 
-One thing is deliberately *outside* the ecosystem: the **memory functionality audit** (Full-System Procedure (memory functionality audit) in this repo) is an audit *of* this ecosystem, so it lives outside it — a system should not audit itself. It is referenced here where its role is needed and never treated as a family member.
+One thing is deliberately *outside* the ecosystem: the **memory functionality audit** (`memory-functionality-audit.md` (memory functionality audit) in this repo) is an audit *of* this ecosystem, so it lives outside it — a system should not audit itself. It is referenced here where its role is needed and never treated as a family member.
 
 ---
 
@@ -189,6 +189,6 @@ The whole memory family is under standing configuration management with complete
 
 ---
 
-*Companion documents: the full memory-system map lives here; each component suite's explainer, reference, learnings, and canonical skill (installed in WSL) are listed per component in Section 2. The audit of this ecosystem: Full-System Procedure (memory functionality audit) (this repo) — deliberately outside the family, by design. The architecture standard: [[[mybizz-config-docs:mb-config-manager/config-manager-explainer|Explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md) (mybizz-config-docs).*
+*Companion documents: the full memory-system map lives here; each component suite's explainer, reference, learnings, and canonical skill (installed in WSL) are listed per component in Section 2. The audit of this ecosystem: `memory-functionality-audit.md` (memory functionality audit) (this repo) — deliberately outside the family, by design. The architecture standard: [[[mybizz-config-docs:mb-config-manager/config-manager-explainer|Explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md) (mybizz-config-docs).*
 
 *End of document*
