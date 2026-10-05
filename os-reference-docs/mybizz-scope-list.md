@@ -1,7 +1,7 @@
 ---
 title: "mybizz-scope-list"
 doc-id: "mb-a5a87568"
-updated: "2026-10-03"
+updated: "2026-10-05"
 
 ---
 
@@ -28,8 +28,8 @@ question — when to work on it — never a scope question. Transient projects s
 
 Not exceptions, by definition: version-control internals, dotfolders, and files with no
 content are not documents. They are not
-listed here. The same applies to treatment states inside scope (templates, quarantine,
-registers The use of registers has been discontinued. Please review) — they are handled by rules, not by this list.
+listed here. The same applies to treatment states inside scope (templates, quarantine) —
+they are handled by rules, not by this list.
 
 Backups, archives, and retired material (snapshots, never live knowledge):
 

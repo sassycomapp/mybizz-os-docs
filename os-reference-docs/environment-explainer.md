@@ -1,7 +1,7 @@
 ---
 title: "environment-explainer"
 doc-id: "mb-849fc961"
-updated: "2026-10-01"
+updated: "2026-10-05"
 ---
 # The Environment Explainer — the pre-makePDLF, makePDLF, PDLF, and shipped layers
 
@@ -79,7 +79,7 @@ a project — PDLF is what remains.
 
 **What it contains.** The PDLF application's own materials: the stepwise
 step files (46 steps, 36 real — the first ten are empty), the gates, the
-Postgres ledger, the specifications, checklists, registers The use of registers has been discontinued. Please review. Some step files
+Postgres ledger, the specifications, checklists. Some step files
 are built (e.g. [[[makepdlf-project-library:stepwise/step-16-domain-modeling|Step 16 Domain Modeling]]](C:/dev/dev-makepdlf/makepdlf-project-library/stepwise/step-16-domain-modeling.md)); the rest are built one at a
 time as each phase is reached — never in bulk.
 

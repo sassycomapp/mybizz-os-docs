@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-04"
+updated: "2026-10-05"
 ---
 # Daily Operations — Quick Reference
 
@@ -416,7 +416,7 @@ Task Scheduler action that invokes WSL:
 wsl.exe -d Ubuntu -u dev-p bash <full-script-path>
 ```
 
-Never register The use of registers has been discontinued. Please review a scheduled task with a bare `wsl.exe` call.
+Never register a scheduled task with a bare `wsl.exe` call.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "pdlf-explainer"
 doc-id: "mb-4ba5a053"
-updated: "2026-10-04"
+updated: "2026-10-05"
 ---
 # PDLF — The Project Development Lifecycle Framework
 *What it is, where it came from, why it exists, and what it does for you*
@@ -45,7 +45,7 @@ There are real limitations too, worth stating plainly rather than glossing over.
 
 A structural fact about Anvil worth understanding: an app's server-side code, by default, only runs inside Anvil's own hosted environment or the standalone app server — it isn't something arbitrary external Python code can simply call into or drive directly. The **Anvil Uplink** is the mechanism that closes this gap. It's a lightweight Python library that lets code running anywhere — a local script, a CI job, an agent's own test harness — connect to a live Anvil app and either call its server functions or expose new ones, over a real network connection to the actual running app.
 
-There are two distinct Uplink privilege levels, and the distinction matters for how PDLF uses it. A **Server Uplink** connection behaves exactly like code running inside the app's own server module — full access to Data Tables, user management, and every `@anvil.server.callable` function, in both directions. A **Client Uplink** connection instead behaves like ordinary front-end form code — it can call already-exposed server functions, but cannot touch Data Tables directly or register The use of registers has been discontinued. Please review new server functions of its own, the same restricted trust level browser-side code always has.
+There are two distinct Uplink privilege levels, and the distinction matters for how PDLF uses it. A **Server Uplink** connection behaves exactly like code running inside the app's own server module — full access to Data Tables, user management, and every `@anvil.server.callable` function, in both directions. A **Client Uplink** connection instead behaves like ordinary front-end form code — it can call already-exposed server functions, but cannot touch Data Tables directly or register new server functions of its own, the same restricted trust level browser-side code always has.
 
 This is precisely the mechanism PDLF's own internal three-level feature testing depends on. Step 35's build loop tests every feature at three levels — pure logic, integration, and manual verification — and the integration level is where Uplink does its real work: rather than testing server-side logic in isolation with mocked inputs, PDLF's testing connects to the actual running app via the Uplink and calls its real server functions over a real connection, the same way the deployed application itself would be called. This is a meaningfully stronger test than pure unit testing alone — it exercises the genuine boundary between client and server exactly as production traffic would cross it, not an approximation of that boundary.
 
