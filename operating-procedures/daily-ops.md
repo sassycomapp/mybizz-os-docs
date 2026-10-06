@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-05"
+updated: "2026-10-06"
 ---
 # Daily Operations — Quick Reference
 
@@ -11,7 +11,8 @@ updated: "2026-10-05"
 
 ```bash
 cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
-opencode web --hostname 0.0.0.0  <<Check the model>>
+opencode web --hostname 0.0.0.0
+#  <<Check the model>>
 ```
 
 Then open browser: `http://localhost:3000`
@@ -30,11 +31,16 @@ Then run Start sequence above.
 
 ## Kill WSL:
 
-In PowerShell:
+1. In WSL: `systemctl --user stop memory-governor-api memory-governor-worker`
+2. In WSL: `sudo pg_ctlcluster 16 main stop`
+3. Confirm: `pg_lsclusters` shows the cluster `down`, and
+   `systemctl --user is-active memory-governor-api memory-governor-worker`
+   shows `inactive` for both.
+4. In PowerShell: `wsl --shutdown`
 
-```
-PS C:\Users\dev-p> wsl --shutdown
-```
+`wsl --shutdown` stops Linux instantly; PostgreSQL then has to recover on
+the next start — stopping the services first avoids that. Full procedure:
+[[[mybizz-config-docs:postgresql/postgresql-reference|Reference: Commands, Procedures, and Troubleshooting]]](C:/mybizz/mybizz-config-docs/postgresql/postgresql-reference.md) → Clean shutdown.
 
 ## CROSS-PROJECT FILE ACCESS — GRANT / REVOKE
 
@@ -149,7 +155,7 @@ Should return results. If toast error appears — see Fix below.
 
 ## POSTGRESQL SURVIVING A WSL RESTART
 
-Auto-starts on boot (`/etc/wsl.conf`). If GBrain won't connect after a
+Auto-starts with WSL (systemd, `postgresql.service`). If GBrain won't connect after a
 restart, check this first:
 
 ```bash
@@ -405,11 +411,12 @@ Full story: [[[mybizz-config-docs:gbrain/gbrain-explainer|Explainer]]](C:/mybizz
 wrong Linux user/home directory, or fails outright with a
 `WSL_E_USER_NOT_FOUND` error.
 
-**Cause:** this machine has two WSL distros installed. A bare `wsl.exe`
-call uses whichever distro is set as *default* — which is not
-necessarily the one `dev-p` actually lives in.
+**Cause:** a bare `wsl.exe` call depends on which WSL installation is the
+default and on that installation's default user. Naming both makes the
+task independent of those settings. This machine has one WSL installation,
+`Ubuntu`, and it is the default.
 
-**Fix:** always specify both the distro and the user explicitly in any
+**Fix:** always specify both the installation and the user explicitly in any
 Task Scheduler action that invokes WSL:
 
 ```

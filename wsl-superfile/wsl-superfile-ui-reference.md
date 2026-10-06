@@ -1,8 +1,11 @@
 ---
+
 title: "wsl-superfile-ui-reference"
 doc-id: "mb-8680c2bd"
-updated: "2026-10-04"
+updated: "2026-10-06"
+
 ---
+
 # wsl-superfile-ui-reference
 
 ![](C:/Users/dev-p/AppData/Roaming/marktext/images/2026-10-04-12-21-57-image.png)
