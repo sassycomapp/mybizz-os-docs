@@ -35,7 +35,7 @@ mg-grant --path <folder> --count N
 
 `<folder>`: WSL forward-slash form (`/mnt/c/...`) — required, not optional.
 Windows backslash paths are consumed as escape characters and can never
-match (verified 2026-09-11). `N`: writes to allow.
+match. `N`: writes to allow.
 Reads open for 30 minutes, no count needed. Closes automatically at 30
 minutes or when the write count hits zero, whichever's first.
 
@@ -96,7 +96,7 @@ Never upgrade GBrain with `gbrain self-upgrade` or `gbrain upgrade` — the proc
 gbrain query "client instance architecture"
 ```
 
-Should return results. If toast error appears — see Fix below.
+Should return results.
 
 ### CHECK WHAT'S NOT COMMITTED YET
 
@@ -104,7 +104,7 @@ Should return results. If toast error appears — see Fix below.
 bash /mnt/c/mybizz/scripts/commit-all.sh --status
 ```
 
-Shows the uncommitted changes of the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md) and changes nothing. `(nothing to commit)` means that repository is clean. Any lines printed mean uncommitted changes — see the `sync_freshness` fix above for why this matters.
+Shows the uncommitted changes of the documentation repositories listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md) and changes nothing. `(nothing to commit)` means that repository is clean. Any lines printed mean uncommitted changes — see the `sync_freshness` fix in section 5 for why this matters.
 
 ### REBUILD THE DOCMAP
 
@@ -121,7 +121,7 @@ Only the folder trees are rebuilt. Existing descriptions are kept; new folders a
 bash /mnt/c/mybizz/mybizz-config-docs/gbrain/tests/run-tests.sh
 ```
 
-It must end with `OK` (143 tests). Run it after any change to `mb-doc-check.py`, and with `slug-selftest` after a GBrain upgrade.
+It must end with `OK`. Run it after any change to `mb-doc-check.py`, and with `slug-selftest` after a GBrain upgrade.
 
 ### Tell the Agent to Search GBrain
 
@@ -192,8 +192,7 @@ cd <repo-path>
 git status --porcelain
 ```
 
-If that shows output, commit and push it (see "AFTER DOING WORK"
-above), then:
+If that shows output, commit and push it with commit all (section 2), then:
 
 ```bash
 gbrain sync --source <source-id>
@@ -352,7 +351,6 @@ Restart OpenCode from WSL:
 
 ```bash
 pkill -f "opencode web"
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
 opencode web --hostname 0.0.0.0
 ```
 

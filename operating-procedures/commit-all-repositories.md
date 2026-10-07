@@ -90,5 +90,5 @@ All in `C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`):
 |---|---|
 | `commit-all.sh` | This procedure. |
 | `sync-gbrain.sh` | Updates GBrain from all sources. |
-| `mb-doc-check.py`, `.sources`, `.roots` | The commit hook and its settings. |
+| `mb-doc-check.py`, `.sources` | The commit hook and its settings. |
 | `rollout-repo.sh` | Brings one repository under the rules. |

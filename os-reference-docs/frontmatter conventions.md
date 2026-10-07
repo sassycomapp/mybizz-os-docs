@@ -1,7 +1,7 @@
 ---
 title: "frontmatter conventions"
 doc-id: "mb-f484bbdf"
-updated: "2026-10-04"
+updated: "2026-10-07"
 ---
 frontmatter conventions:
 
@@ -40,4 +40,3 @@ d) `obsolete` folders are never touched by the hook.
 
 The GBrain side of these rules is in [[[mybizz-config-docs:gbrain/gbrain-doc-contract]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-doc-contract.md).
 
-**Awaiting re-certification by the developer.** The last certification (2026/09/27) covered the text before the changes of 2026-10-01.
