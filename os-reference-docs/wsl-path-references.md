@@ -17,7 +17,9 @@ updated: "2026-10-07"
 
 ## Cupcake Policies (.rego)
 
+```
 \\\wsl.localhost\Ubuntu\home\dev-p\.config\cupcake\policies\opencode
+```
 
 ## Cupcake Plugin
 
