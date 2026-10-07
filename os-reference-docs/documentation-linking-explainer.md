@@ -1,7 +1,7 @@
 ---
 title: "documentation-linking-explainer"
 doc-id: "mb-15cd9959"
-updated: "2026-10-04"
+updated: "2026-10-07"
 ---
 # Documentation linking — Explainer
 
@@ -171,8 +171,8 @@ Windows program bypass it.
   boundaries.
 - **Not good for:** reading the documents on GitHub, where the local paths do not open; moving a
   repository to another drive or folder, because every path to it would be wrong; links into the
-  code repositories, the two dormant libraries and the memory governor's folder, which are outside
-  the eight and have no clickable path.
+  code repositories and the memory governor's folder, which are not on the commit-all list and
+  have no clickable path.
 
 ## 7. S.W.O.T.
 

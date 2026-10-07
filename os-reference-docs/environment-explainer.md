@@ -1,7 +1,7 @@
 ---
 title: "environment-explainer"
 doc-id: "mb-849fc961"
-updated: "2026-10-05"
+updated: "2026-10-07"
 ---
 # The Environment Explainer — the pre-makePDLF, makePDLF, PDLF, and shipped layers
 
@@ -46,8 +46,8 @@ of web applications through PDLF) trustworthy and efficient.
 - **The memory system**: GBrain (semantic memory, Postgres, MCP), the
   memory governor (the gate for durable-memory writes, two processes: API
   + worker), `mb-submit-memory` (the governed submission path),
-  memory-functionality-audit (the health-check procedure, reports to
-  `C:\mybizz\memory-audit-reports\`).
+    `memory-functionality-audit.md` (the health-check procedure, reports to
+    `C:\mybizz\memory-audit-reports\`).
 - **The security systems**: the security-global library (54 documents, seven
   categories, `sec-` prefix — the authority on what "secure" means here);
   Cupcake (mechanical policy enforcement, reactivated 2026-09-08); Sentinel
@@ -56,7 +56,7 @@ of web applications through PDLF) trustworthy and efficient.
 - **The supporting tooling**: Graphify (code/document structure knowledge),
   GStack and the other installed skill sets, the documentation suites in
   `mybizz-config-docs`, the master explainer in `mybizz-os-docs`, and this
-  document in `mybizz-os-docs`.
+  document in the PDLF library (`C:\pdlf\pdlf-library\`).
 
 **Who it serves.** The developer and the agents, now. Nothing in this
 layer ships to clients or to Anvil. Its outputs flow *into* higher layers
@@ -80,7 +80,7 @@ a project — PDLF is what remains.
 **What it contains.** The PDLF application's own materials: the stepwise
 step files (46 steps, 36 real — the first ten are empty), the gates, the
 Postgres ledger, the specifications, checklists. Some step files
-are built (e.g. [[[makepdlf-project-library:stepwise/step-16-domain-modeling|Step 16 Domain Modeling]]](C:/dev/dev-makepdlf/makepdlf-project-library/stepwise/step-16-domain-modeling.md)); the rest are built one at a
+are built (e.g. `step-16-domain-modeling.md`); the rest are built one at a
 time as each phase is reached — never in bulk.
 
 **Who it serves.** The PDLF layer, next. Everything in this layer exists to
@@ -111,7 +111,7 @@ never sees it.
 ## 5. The shipped estate — the Anvil applications
 
 **What it is.** The five-app structure on Anvil.works, per
-[[[default:adr-global/adr-client-instance-architecture|Client Instance Architecture]]](C:/dev/project-library-global/adr-global/adr-client-instance-architecture.md) and the related ADRs:
+`adr-client-instance-architecture` and the related ADRs:
 
 1. **`{slug}`** — the development workspace (all feature work).
 2. **`master_template`** — the sole source of all server-side logic and UI
@@ -218,12 +218,15 @@ anything built into `master_template` must run with no GBrain, no disk, no
 support stack. The runtime layer is self-sufficient by design constraint —
 simple, secure, robust, fit for purpose, in isolation.
 
-**The two-databases pothole.** `localhost:5432` is a different server on
-each side: WSL runs PostgreSQL 16 (GBrain's `gbrain` database, the memory
-governor's `memory_governor` database); Windows runs PostgreSQL 15 (the
-PDLF `pdlf` ledger). A psql call made from WSL without the documented
-PowerShell bridge **silently connects to the wrong server** — it does not
-fail visibly. All ledger access goes through the bridge, always.
+**The two-databases pothole.** Port 5432 serves Instance B everywhere: WSL
+runs PostgreSQL 16 (GBrain's `gbrain` database, the memory governor's
+`memory_governor` database) on 5432, and Windows' 5432 listener is WSL's
+port relay to that same Instance B. The PDLF ledger (PostgreSQL 15 on
+Windows) therefore listens on **5433**. A psql call made from WSL without
+the documented PowerShell bridge **silently connects to the wrong server** —
+it does not fail visibly; a bare Windows connection to 5432 always reaches
+Instance B, never the ledger. All ledger access goes through the bridge
+with `-p 5433`, always.
 
 **The multi-tenancy default.** AI assistants default to multi-tenancy
 patterns when building SaaS-style code. In this platform they are
@@ -269,7 +272,7 @@ whole system.
    platform without [[[default:adr-global/adr-dependency-based-not-multi-tenant]]](C:/dev/project-library-global/adr-global/adr-dependency-based-not-multi-tenant.md) supplied
    first.
 5. **Every governed system has a health procedure** — e.g.
-   memory-functionality-audit for the memory system — and the audit
+   `memory-functionality-audit.md` for the memory system — and the audit
    reports are dated, saved, and appended with their remediation.
 6. **Nothing ships silently.** The shipping boundary is checked, not
    assumed — in both directions.
@@ -280,7 +283,7 @@ whole system.
 
 - [[[mybizz-os-docs:os-reference-docs/memory-master-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/memory-master-explainer.md) (mybizz-os-docs repo: `C:\mybizz\mybizz-os-docs\`) — the memory system's four
   mechanisms and the governor's processes.
-- memory-functionality-audit (mybizz-os-docs repo: `C:\mybizz\mybizz-os-docs\`) — the memory-system health
+- `memory-functionality-audit.md` (mybizz-os-docs repo: `C:\mybizz\mybizz-os-docs\`) — the memory-system health
   procedure.
 - `mybizz-config-docs/` — the component suites: `memory-governor/`,
   `mb-submit-memory/`, `mb-compile-rules/`, `mb-sentinel-review/`,

@@ -1,13 +1,13 @@
 ---
 title: "commit-all-repositories"
 doc-id: "mb-313772ce"
-updated: "2026-10-04"
+updated: "2026-10-07"
 ---
 # Commit, update GBrain and push all repositories
 
-The one procedure to follow every time you finish work on any of the fifteen documentation repositories. It keeps every repository committed, GBrain current and GitHub up to date at the same time. It is the "after doing work" step of [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md).
+The one procedure to follow every time you finish work on any documentation repository on the commit-all list. It keeps every repository committed, GBrain current and GitHub up to date at the same time. It is the "after doing work" step of [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md).
 
-The fifteen repositories: `mybizz-os-docs`, `mybizz-config-docs`, `data-mybizz-mgt`, `pdlf`, `dev-root`, `makepdlf-project-library`, `mb-3-cs-project-library`, `project-library-global`, `mb-archify-scope`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`. The full list with paths and GBrain sources is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
+The repositories on the commit-all list: `mybizz-os-docs`, `mybizz-config-docs`, `data-mybizz-mgt`, `pdlf`, `dev-root`, `makepdlf-project-library`, `mb-3-cs-project-library`, `mb4ecom-project-library`, `mb5pdlf-project-library`, `project-library-global`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`. The full list with paths and GBrain sources is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
 
 ## Every time
 
@@ -70,13 +70,13 @@ Do this once for each new repository, in this order:
 
 1. Create the GitHub repository and clone it under `C:\`.
 2. Add it to GBrain and make it federated: `gbrain sources add <id> --path <folder>` and `gbrain sources federate <id>`.
-3. Add one line `<id> = <folder>` to `mb-doc-check.sources`, and the folder to `mb-doc-check.roots`, both in `C:\mybizz\scripts\`.
+3. Add one line `<id> = <folder>` to `mb-doc-check.sources` in `C:\mybizz\scripts\`.
 4. Install the hook: `python3 /mnt/c/mybizz/scripts/mb-doc-check.py install-hook --repo <folder>`.
 5. Run `sources-check`. It must say `everything matches`.
 6. Bring the existing documents under the rules: `bash /mnt/c/mybizz/scripts/rollout-repo.sh <folder>`.
 7. Add the folder to the list in `commit-all.sh`, and a row to [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
 
-The repositories `mb4ecom-project-library` and `mb5pdlf-project-library` are not covered yet. Code repositories are outside these operations; this procedure is about documentation only.
+The list holds every documentation repository. Three kinds of repository stay off it: the Anvil code repositories, because a commit there is a deliberate code change; the memory governor's code, which is committed by hand; and the Anvil reference clone, which is Anvil's own repository and is never pushed.
 
 ## After a GBrain upgrade
 

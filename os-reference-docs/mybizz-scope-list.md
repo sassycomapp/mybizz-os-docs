@@ -1,7 +1,7 @@
 ---
 title: "mybizz-scope-list"
 doc-id: "mb-a5a87568"
-updated: "2026-10-05"
+updated: "2026-10-07"
 
 ---
 
@@ -48,8 +48,6 @@ Private and exempt data:
 
 "C:\_data-mybizz-exempt"
 "C:\_data-not mybizz"
-"C:\dev\dev-mb5pdlf"
-"C:\dev\dev-mb4ecom"
 
 "C:\dev\project-template"
 
@@ -73,7 +71,6 @@ depth (includes "C:\data-mybizz-mgt\temp")
 
 Disposable and template projects:
 
-"C:\dev\dev-mb5pdlf" (disposable test project, reset repeatedly during PDLF development)
 "C:\dev\project-template" (template source; real projects receive their content at Step 11 init)
 
 Anvil code repositories — class rule: any folder containing an anvil.yaml, current or

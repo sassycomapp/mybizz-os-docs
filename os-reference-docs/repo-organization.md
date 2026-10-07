@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-10-04"
+updated: "2026-10-07"
 
 ---
 
@@ -25,6 +25,7 @@ folders with local policies run them; all folders always run the global rule set
 | mb-3-cs-code (unset)                   | mb-3-cs (Public)                                                                                | C:\dev\dev-mb-3-cs\mb-3-cs                   | /mnt/c/dev/dev-mb-3-cs/mb-3-cs                   | Ready — initialized (placeholder)    | No                   |
 | mb-3-cs-project-library (federated)    | mb-3-cs-project-library (Private)                                                               | C:\dev\dev-mb-3-cs\mb-3-cs-project-library   | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library   | Ready — initialized (placeholder)    | Yes                  |
 | mb-archify-scope (federated)           | mb-archify-scope (Private)                                                                      | C:\mybizz\mb-archify-scope                  | /mnt/c/mybizz/mb-archify-scope                   | Ready — fallback (no skeleton)       | No                   |
+| mb-close-out (federated)               | mb-close-out (Private)                                                                          | C:\mybizz\mb-close-out                  | /mnt/c/mybizz/mb-close-out                   | Ready — fallback (no skeleton)       | No                   |
 | mb-compile-rules (federated)           | mb-compile-rules (Private)                                                                      | C:\mybizz\mb-compile-rules                  | /mnt/c/mybizz/mb-compile-rules                   | Ready — fallback (no skeleton)       | No                   |
 | mb-memory-system-diagnostic (federated) | mb-memory-system-diagnostic (Private)                                                          | C:\mybizz\mb-memory-system-diagnostic       | /mnt/c/mybizz/mb-memory-system-diagnostic        | Ready — fallback (no skeleton)       | No                   |
 | mb-project-docs (federated)            | mb-project-docs (Private)                                                                       | C:\mybizz\mb-project-docs                   | /mnt/c/mybizz/mb-project-docs                    | Ready — fallback (no skeleton)       | No                   |
@@ -51,4 +52,4 @@ folders with local policies run them; all folders always run the global rule set
 
 **Note on `anvil-agent-references-code`:** this source is a read-only clone of Anvil's own public repository, `github.com/anvil-works/anvil-agent-references`, at `C:\mybizz\anvil-agent-references`. Anvil publishes it. It is not one of the developer's repositories, and it has no GitHub repository of the developer's own. It is separate from `anvil-docs` in the source `default` (`project-library-global`), which is the developer's own compilation of Anvil documentation. The developer's stated reason for the `-code` in its source id is to distinguish it from the developer's own documentation folder `anvil-agent-references/` in `mybizz-config-docs`. The source is isolated, so it is searched only when named explicitly. It is updated by hand (`git -C /mnt/c/mybizz/anvil-agent-references pull`); the standing sync script does not pull.
 
-**Commit hook and `commit-all.sh`:** they apply to the fifteen documentation repositories — `default`, `dev-root-hub`, `makepdlf-project-library`, `mb-3-cs-project-library`, `mb-archify-scope`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They do not cover the two dormant libraries (`mb4ecom-project-library`, `mb5pdlf-project-library`), the code repositories, the Anvil clone or the memory governor's folder.
+**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `dev-root-hub`, `makepdlf-project-library`, `mb-3-cs-project-library`, `mb4ecom-project-library`, `mb5pdlf-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They do not cover the code repositories, the Anvil clone or the memory governor's folder.
