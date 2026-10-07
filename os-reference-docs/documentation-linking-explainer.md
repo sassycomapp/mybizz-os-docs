@@ -36,8 +36,7 @@ and stops a commit that contains a link pointing to nothing.
 
 **The repositories.** The documentation repositories are listed in [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md).
 Each is also a GBrain source with its own id; the full list is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md). A small
-file, `mb-doc-check.sources`, tells the hook which folder is which source id. A second file,
-`mb-doc-check.roots`, lists the folders a link may point into.
+file, `mb-doc-check.sources`, tells the hook which folder is which source id.
 
 **The page name.** GBrain names a page after its file: the path from the root of the repository,
 in lower case, with spaces turned into hyphens and without `.md`. `Tools and apps/Strix.md` in a
@@ -157,8 +156,7 @@ Windows program bypass it.
   into another repository, so a lighter second pass finds nothing to do.
 - **Keep the source map true.** `mb-doc-check.sources` must match GBrain's list of sources.
   `mb-doc-check.py sources-check` compares them and must say "everything matches".
-- **Adding a repository** means adding it to GBrain and federating it, adding a line to
-  `mb-doc-check.sources` and a folder to `mb-doc-check.roots`, installing the hook, and bringing its
+- **Adding a repository** means adding it to GBrain and federating it, adding a line to `mb-doc-check.sources`, installing the hook, and bringing its
   existing documents under the rules with `rollout-repo.sh`.
 
 ## 6. Suitability
@@ -182,8 +180,7 @@ Links across repositories reach GBrain. Documents are checked as they enter hist
 **Weaknesses.** The long form is noisy to read in raw text, and in MarkText it shows its brackets.
 The paths tie the documents to this computer's folder layout. Only commits made in WSL are covered.
 
-**Opportunities.** Bringing the two dormant libraries and, if wanted, other repositories under the
-same rules. Using the stable `doc-id` for further automatic checks.
+**Opportunities.** Bringing other repositories under the same rules, if wanted. Using the stable `doc-id` for further automatic checks.
 
 **Threats.** A commit with `--no-verify` leaves a document in the wrong form. A mismatch between
 `mb-doc-check.sources` and GBrain's source list makes links point to a source that does not exist.

@@ -34,19 +34,7 @@ updated: "2026-10-07"
 
 ## Cupcake - Enable, disable
 
-documented in [[[mybizz-config-docs:cupcake/cupcake-reference|Usage, Invocation, and Worked Examples]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-reference.md) (mybizz-config-docs), line 275 (Disabling Cupcake — immediate, fully reversible):
-
-```
-mv ~/.config/opencode/plugin/cupcake.js ~/.config/opencode/plugin/cupcake.js.disabled
-```
-
-Restart OpenCode afterwards (plugin changes only load at process start). To re-enable:
-
-```
-mv ~/.config/opencode/plugin/cupcake.js.disabled ~/.config/opencode/plugin/cupcake.js
-```
-
-This matches the prior suspension described in [[[mybizz-config-docs:cupcake/cupcake-explainer|Mechanical Policy Enforcement for AI Coding Agents]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-explainer.md) (mybizz-config-docs), line 260 — renaming the plugin out of its discoverable path, nothing else touched, and the `.bak-*` copies in the plugin folder confirm earlier uses.
+The procedure is in [[[mybizz-config-docs:cupcake/cupcake-reference|Cupcake reference]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-reference.md), section "Disabling Cupcake".
 
 ## GBrain and the memory system (WSL)
 
@@ -58,7 +46,7 @@ This matches the prior suspension described in [[[mybizz-config-docs:cupcake/cu
 
 ## Scripts and logs (on C:\)
 
-`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `commit-all.sh`, `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.sources`, `mb-doc-check.roots`, `rollout-repo.sh`, `rollout-all.sh`, `log-row.sh`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
+`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `commit-all.sh`, `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.sources`, `rollout-repo.sh`, `rollout-all.sh`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
 `C:\mybizz\logs\gbrain-logs\` — sync logs  
 `C:\mybizz\logs\mb-submit-memory\` — submission logs
 

@@ -1,7 +1,7 @@
 ---
 title: "opencode-reset-management"
 doc-id: "mb-d38a6f54"
-updated: "2026-10-01"
+updated: "2026-10-07"
 ---
 # OpenCode Reset Management (WSL)
 
@@ -11,19 +11,7 @@ First, fully exit any active OpenCode TUI, web client, Desktop connection, or ba
 
 ## STOP / RESTART OPENCODE
 
-```bash
-pkill -f "opencode web"
-opencode web --hostname 0.0.0.0 
-# *****CHECK THE MODEL*****
-```
-
-## Safe cache reset
-
-Paste this into the WSL terminal:
-
-```bash
-rm -rf -- "$(opencode debug paths cache)" "$(opencode debug paths state)" "$(opencode debug paths tmp)" && echo "OpenCode cache, state, and temporary files cleared."
-```
+See [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md), section 1.
 
 This clears:
 
