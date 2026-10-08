@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-07"
+updated: "2026-10-08"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -55,7 +55,7 @@ Several frameworks now exist to keep AI coding agents disciplined; the most wide
 
 ## 2. The four layers
 
-The environment is described in four layers, always named by what they are. Every decision names its layer first, because a proposal that is correct in one layer is often wrong in another. The authoritative description is [[[mybizz-os-docs:os-reference-docs/environment-explainer|the environment explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/environment-explainer.md).
+The environment is described in four layers, always named by what they are. Every decision names its layer first, because a proposal that is correct in one layer is often wrong in another.
 
 | Layer | What it is | Who it serves | Part of MyBizz-OS? |
 |---|---|---|---|
@@ -76,7 +76,7 @@ The environment is described in four layers, always named by what they are. Ever
 
 ### What it is
 
-PDLF is a **single, continuous, stage-gated build pipeline** that takes a client application from first idea to production and beyond. Every step's output becomes the next step's input; nothing can be silently skipped; every step leaves a permanent record. It is described in full in [[[mybizz-os-docs:os-reference-docs/pdlf-explainer|the PDLF explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/pdlf-explainer.md).
+PDLF is a **single, continuous, stage-gated build pipeline** that takes a client application from first idea to production and beyond. Every step's output becomes the next step's input; nothing can be silently skipped; every step leaves a permanent record. It is described in full in [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer|the PDLF explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md).
 
 In outline:
 
@@ -320,12 +320,13 @@ These are the rules every component obeys. Each one exists because its absence c
 4. **Agents never commit, push or handle credentials.** Those are always the developer's terminal actions.
 5. **Files outrank memory.** GBrain is advisory; a real file always wins.
 6. **One fact, one home.** Every fact lives in exactly one document; others point to it. Duplicates drift.
-7. **Verify; never assume.** A claim that cannot be checked is recorded as open, not written as true. A skill is read before it is trusted by its name.
+7. **Verify; never assume.** A claim that cannot be checked is recorded as open, not written as true. A skill is read before it is trusted by its name. In a chain of commands, each step checks its result before the next one runs, so a failure stops the chain instead of writing silently into the wrong place.
 8. **Present is not working, and completed is not worked.** Existence is never taken as proof of function.
 9. **Nothing is skipped silently.** A step that cannot be done stops with options; it is never quietly passed over.
 10. **Name the layer, the instance and the installation.** Every decision names its layer; every database command names its instance and port; every scheduled WSL command names the installation and user.
 11. **Nothing runs in the background without being reported.** What is scheduled reports its result; what is not scheduled runs only when asked.
 12. **The system may observe itself, never change itself.** A proposal to change how the system behaves passes through the same review as any other change.
+13. **A false alarm is a fault in the detector.** An alarm with a real cause of little consequence is noted and set aside. An alarm with no cause at all means the check itself is wrong, and the check gets fixed.
 
 ---
 
@@ -420,7 +421,7 @@ The applications PDLF builds run on Anvil.works in a fixed five-application stru
 4. **One application per paying client**, which inherits everything from the master.
 5. **The management application** for MyBizz itself (planned).
 
-Each client application has its own database ([[[default:adr-global/adr-dependency-based-not-multi-tenant|the isolation decision]]](C:/dev/project-library-global/adr-global/adr-dependency-based-not-multi-tenant.md), [[[default:adr-global/adr-client-instance-architecture|the client instance architecture]]](C:/dev/project-library-global/adr-global/adr-client-instance-architecture.md)), so one client's data is structurally unreachable from another's. Multi-tenant patterns — one shared database filtered by client — are forbidden by a sealed decision, because they would replace structural isolation with a filter that can fail. Only the application's own code and theme travel to Anvil; nothing from MyBizz-OS is present at runtime. Detail: [[[mybizz-os-docs:os-reference-docs/environment-explainer|the environment explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/environment-explainer.md), Section 5, and the global decisions in `C:\dev\project-library-global\adr-global\`.
+Each client application has its own database ([[[default:adr-global/adr-dependency-based-not-multi-tenant|the isolation decision]]](C:/dev/project-library-global/adr-global/adr-dependency-based-not-multi-tenant.md), [[[default:adr-global/adr-client-instance-architecture|the client instance architecture]]](C:/dev/project-library-global/adr-global/adr-client-instance-architecture.md)), so one client's data is structurally unreachable from another's. Multi-tenant patterns — one shared database filtered by client — are forbidden by a sealed decision, because they would replace structural isolation with a filter that can fail. Only the application's own code and theme travel to Anvil; nothing from MyBizz-OS is present at runtime. Detail: the global decisions in `C:\dev\project-library-global\adr-global\`.
 
 ---
 
@@ -477,7 +478,7 @@ Every component, once. The family numbers refer to Section 5.
 | Everything (`es.exe`), mgrep | 5.7 | Windows | File and content search | This document |
 | n8n | 5.7 | Windows | Available for process linking; unused | This document |
 | Google Calendar | 5.7 | External | Maintenance reminders | This document |
-| PDLF | 3 | WSL and Windows | The build framework | [[[mybizz-os-docs:os-reference-docs/pdlf-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/pdlf-explainer.md) |
+| PDLF | 3 | WSL and Windows | The build framework | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md) |
 | The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[makepdlf-project-library:specifications-local/spec-postgres-ledger]]](C:/dev/dev-makepdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md) |
 | mb-3-cs (MyBizz CS) | 10 (output, not a component) | Anvil | The MyBizz product, to be built through PDLF | [[[mb-3-cs-project-library:docs-local/positioning-strategy]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/positioning-strategy.md) |
 | makePDLF | 3 (builder, not a component) | Windows (repository) | The project that builds PDLF | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory.md) |
@@ -488,8 +489,7 @@ Every component, once. The family numbers refer to Section 5.
 
 | To understand | Read |
 |---|---|
-| The layers | [[[mybizz-os-docs:os-reference-docs/environment-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/environment-explainer.md) |
-| PDLF in full | [[[mybizz-os-docs:os-reference-docs/pdlf-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/pdlf-explainer.md) |
+| PDLF in full | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md) |
 | The memory family as a whole | [[[mybizz-os-docs:os-reference-docs/memory-master-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/memory-master-explainer.md) |
 | Daily practice | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
 | Closing a session | [[[mybizz-os-docs:operating-procedures/opening-and-closing]]](C:/mybizz/mybizz-os-docs/operating-procedures/opening-and-closing.md) |

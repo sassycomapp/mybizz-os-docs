@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-10-07"
+updated: "2026-10-08"
 
 ---
 
@@ -39,6 +39,7 @@ folders with local policies run them; all folders always run the global rule set
 | memory-governor-code (unset)           | memory-governor (Private)                                                                       | No windows path (Only WSL path by decision)  | /home/dev-p/memory-governor                      | Ready — fallback (no skeleton)       | No                   |
 | mybizz-config-docs (federated)         | mybizz-config-docs (Private)                                                                    | C:\mybizz\mybizz-config-docs                 | /mnt/c/mybizz/mybizz-config-docs                 | Ready — initialized (placeholder)    | yes                  |
 | mybizz-os-docs (federated)             | mybizz-os-docs (Private)                                                                        | C:\mybizz\mybizz-os-docs                     | /mnt/c/mybizz/mybizz-os-docs                     | Ready — fallback (no skeleton)       | Yes                  |
+| mybizz-scripts-code (unset)            | mybizz-scripts (Private)                                                                        | C:\mybizz\scripts                            | /mnt/c/mybizz/scripts                            | Ready — fallback (no skeleton)       | No                   |
 | data-mybizz-mgt (federated)            | data-mybizz-mgt (Private)                                                                       | C:\data-mybizz-mgt                           | /mnt/c/data-mybizz-mgt                           | Ready — fallback (no skeleton)       | No                   |
 | pdlf (federated)                       | pdlf (Private)                                                                                  | C:\pdlf                                      | /mnt/c/pdlf                                      | Ready — fallback (no skeleton)       | Yes                  |
 
@@ -46,10 +47,10 @@ folders with local policies run them; all folders always run the global rule set
 
 **Verified against `gbrain sources list`.**
 
-**Federation states** (the mark after the source id): `federated` — appears in every other source's default search and may write links into other sources; `unset` — never set: the source stays out of other sources' searches, but a session working inside it can still read the federated sources; `isolated` — set explicitly with `gbrain sources unfederate`: cut off in both directions. Every documentation source is federated. The four code sources are deliberately left `unset`.
+**Federation states** (the mark after the source id): `federated` — appears in every other source's default search and may write links into other sources; `unset` — never set: the source stays out of other sources' searches, but a session working inside it can still read the federated sources; `isolated` — set explicitly with `gbrain sources unfederate`: cut off in both directions. Every documentation source is federated. The five code sources are deliberately left `unset`.
 
 **Names:** the Anvil project names are `mb-3-cs`, `mb4ecom` and `mb5pdlf`; they do not contain `-code`. `-code` appears only in some GBrain source ids.
 
 **Note on `anvil-agent-references-code`:** this source is a read-only clone of Anvil's own public repository, `github.com/anvil-works/anvil-agent-references`, at `C:\mybizz\anvil-agent-references`. Anvil publishes it. It is not one of the developer's repositories, and it has no GitHub repository of the developer's own. It is separate from `anvil-docs` in the source `default` (`project-library-global`), which is the developer's own compilation of Anvil documentation. The developer's stated reason for the `-code` in its source id is to distinguish it from the developer's own documentation folder `anvil-agent-references/` in `mybizz-config-docs`. The source is isolated, so it is searched only when named explicitly. It is updated by hand (`git -C /mnt/c/mybizz/anvil-agent-references pull`); the standing sync script does not pull.
 
-**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `dev-root-hub`, `makepdlf-project-library`, `mb-3-cs-project-library`, `mb4ecom-project-library`, `mb5pdlf-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They do not cover the code repositories, the Anvil clone or the memory governor's folder.
+**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `dev-root-hub`, `makepdlf-project-library`, `mb-3-cs-project-library`, `mb4ecom-project-library`, `mb5pdlf-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They also cover the scripts repository, `mybizz-scripts`. They do not cover the other code repositories, the Anvil clone or the memory governor's folder.
