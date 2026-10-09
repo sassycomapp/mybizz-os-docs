@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-08"
+updated: "2026-10-09"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -94,7 +94,7 @@ PDLF exists so that a non-technical developer can direct an AI agent to build so
 
 ### The ledger — memory that cannot silently lie
 
-PDLF's record is a PostgreSQL database, the **ledger**, holding projects, steps, gates, deviations, thinking checkpoints, ideal-state criteria and security findings. The ledger is the single source of truth: if it is not in the ledger, it did not happen. The report the developer reads after each step, the Step Receipt, is generated directly from the ledger row, so the agent's account and the actual record can never differ. The schema and connection rules are in [[[makepdlf-project-library:specifications-local/spec-postgres-ledger|the ledger specification]]](C:/dev/dev-makepdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md).
+PDLF's record is a PostgreSQL database, the **ledger**, holding projects, steps, gates, deviations, thinking checkpoints, ideal-state criteria and security findings. The ledger is the single source of truth: if it is not in the ledger, it did not happen. The report the developer reads after each step, the Step Receipt, is generated directly from the ledger row, so the agent's account and the actual record can never differ. The schema and connection rules are in [[[pdlf:makepdlf-project-library/specifications-local/spec-postgres-ledger|the ledger specification]]](C:/pdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md).
 
 ### How MyBizz-OS underpins PDLF
 
@@ -479,7 +479,7 @@ Every component, once. The family numbers refer to Section 5.
 | n8n | 5.7 | Windows | Available for process linking; unused | This document |
 | Google Calendar | 5.7 | External | Maintenance reminders | This document |
 | PDLF | 3 | WSL and Windows | The build framework | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md) |
-| The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[makepdlf-project-library:specifications-local/spec-postgres-ledger]]](C:/dev/dev-makepdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md) |
+| The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[pdlf:makepdlf-project-library/specifications-local/spec-postgres-ledger]]](C:/pdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md) |
 | mb-3-cs (MyBizz CS) | 10 (output, not a component) | Anvil | The MyBizz product, to be built through PDLF | [[[mb-3-cs-project-library:docs-local/positioning-strategy]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/positioning-strategy.md) |
 | makePDLF | 3 (builder, not a component) | Windows (repository) | The project that builds PDLF | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory.md) |
 
