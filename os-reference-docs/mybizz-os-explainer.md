@@ -35,7 +35,7 @@ This document states what the system is and why. It does not repeat the detail h
 
 ## 1A. What makes MyBizz-OS distinctive
 
-Several frameworks now exist to keep AI coding agents disciplined; the most widely used ones organise work into stages with a human approval between planning and building. MyBizz-OS shares that idea and goes further in specific, checkable ways. The full assessment, including the comparison with named frameworks, is [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-objective-review|the PDLF objective review]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-objective-review.md).
+Several frameworks now exist to keep AI coding agents disciplined; the most widely used ones organise work into stages with a human approval between planning and building. MyBizz-OS shares that idea and goes further in specific, checkable ways. The full assessment, including the comparison with named frameworks, is [[[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]]](C:/pdlf/obsolete/pdlf-objective-review.md).
 
 - **A real database ledger, not files.** Most comparable tools keep their working state in text files. PDLF records every step, gate and decision in a database whose structure enforces its own consistency.
 - **A record that cannot differ from what happened.** The report the developer reads after each step is generated from the database row the step wrote, not composed afterwards by the agent.
@@ -90,7 +90,7 @@ In outline:
 
 ### Why it exists
 
-PDLF exists so that a non-technical developer can direct an AI agent to build software for paying clients and be justified in trusting the result. It provides continuity (nothing is lost between sessions), enforcement (no step runs before its dependencies), traceability (every step leaves a record), disciplined use of skills (a skill is used only where it genuinely does better than the agent alone), and compounding knowledge (each project starts from everything earlier projects learned). An independent assessment is in [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-objective-review|the PDLF objective review]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-objective-review.md).
+PDLF exists so that a non-technical developer can direct an AI agent to build software for paying clients and be justified in trusting the result. It provides continuity (nothing is lost between sessions), enforcement (no step runs before its dependencies), traceability (every step leaves a record), disciplined use of skills (a skill is used only where it genuinely does better than the agent alone), and compounding knowledge (each project starts from everything earlier projects learned). An independent assessment is in [[[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]]](C:/pdlf/obsolete/pdlf-objective-review.md).
 
 ### The ledger — memory that cannot silently lie
 
@@ -118,7 +118,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 ### makePDLF — the project that builds PDLF
 
-PDLF does not yet exist in finished form. It is being built by a development project, **makePDLF** (`C:\dev\dev-makepdlf\makepdlf-project-library`), one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery. The modules have reserved places in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step) and are moved there once, when all steps are complete; makePDLF is then archived. PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/artifact-lifecycle%20explainer.md).
+PDLF does not yet exist in finished form. It is being built by a development project, **makePDLF** (`C:\dev\dev-makepdlf\makepdlf-project-library`), one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery. The modules have reserved places in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step) and are moved there once, when all steps are complete; makePDLF is then archived. PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
 
 Two placeholder projects belong to this picture. **mb5pdlf** is the test project on which makePDLF and PDLF will be proven. **mb4ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 
