@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-09"
+updated: "2026-10-10"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -94,7 +94,7 @@ PDLF exists so that a non-technical developer can direct an AI agent to build so
 
 ### The ledger — memory that cannot silently lie
 
-PDLF's record is a PostgreSQL database, the **ledger**, holding projects, steps, gates, deviations, thinking checkpoints, ideal-state criteria and security findings. The ledger is the single source of truth: if it is not in the ledger, it did not happen. The report the developer reads after each step, the Step Receipt, is generated directly from the ledger row, so the agent's account and the actual record can never differ. The schema and connection rules are in [[[pdlf:makepdlf-project-library/specifications-local/spec-postgres-ledger|the ledger specification]]](C:/pdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md).
+PDLF's record is a PostgreSQL database, the **ledger**, holding projects, steps, gates, deviations, thinking checkpoints, ideal-state criteria and security findings. The ledger is the single source of truth: if it is not in the ledger, it did not happen. The report the developer reads after each step, the Step Receipt, is generated directly from the ledger row, so the agent's account and the actual record can never differ. The schema and connection rules are in [[[pdlf:pdlf-library/specifications-local/spec-postgres-ledger|the ledger specification]]](C:/pdlf/pdlf-library/specifications-local/spec-postgres-ledger.md).
 
 ### How MyBizz-OS underpins PDLF
 
@@ -118,7 +118,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 ### makePDLF — the project that builds PDLF
 
-PDLF does not yet exist in finished form. It is being built by a development project, **makePDLF** (`C:\dev\dev-makepdlf\makepdlf-project-library`), one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery. The modules have reserved places in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step) and are moved there once, when all steps are complete; makePDLF is then archived. PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-expl-orchestrator-agent|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-expl-orchestrator-agent.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-expl-artifact-lifecycle|the life of an artifact]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-expl-artifact-lifecycle.md).
+PDLF does not yet exist in finished form. It is being built by a development project, **makePDLF** (`C:\dev\dev-makepdlf\makepdlf-project-library`), one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery. The modules have reserved places in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step) and are moved there once, when all steps are complete; makePDLF is then archived. PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/artifact-lifecycle%20explainer.md).
 
 Two placeholder projects belong to this picture. **mb5pdlf** is the test project on which makePDLF and PDLF will be proven. **mb4ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 
@@ -479,9 +479,9 @@ Every component, once. The family numbers refer to Section 5.
 | n8n | 5.7 | Windows | Available for process linking; unused | This document |
 | Google Calendar | 5.7 | External | Maintenance reminders | This document |
 | PDLF | 3 | WSL and Windows | The build framework | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md) |
-| The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[pdlf:makepdlf-project-library/specifications-local/spec-postgres-ledger]]](C:/pdlf/makepdlf-project-library/specifications-local/spec-postgres-ledger.md) |
+| The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[pdlf:pdlf-library/specifications-local/spec-postgres-ledger]]](C:/pdlf/pdlf-library/specifications-local/spec-postgres-ledger.md) |
 | mb-3-cs (MyBizz CS) | 10 (output, not a component) | Anvil | The MyBizz product, to be built through PDLF | [[[mb-3-cs-project-library:docs-local/positioning-strategy]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/positioning-strategy.md) |
-| makePDLF | 3 (builder, not a component) | Windows (repository) | The project that builds PDLF | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-expl-app-factory.md) |
+| makePDLF | 3 (builder, not a component) | Windows (repository) | The project that builds PDLF | [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md) |
 
 ---
 
