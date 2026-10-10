@@ -1,7 +1,7 @@
 ---
 title: "wsl-superfile-reference"
 doc-id: "mb-4576a90a"
-updated: "2026-10-04"
+updated: "2026-10-10"
 ---
 # WSL Superfile Reference
 
@@ -37,29 +37,29 @@ spf
 
 ## Paths
 
-### Launch Superfile with the MakePDLF project library
+### Launch Superfile with the PDLF folder
 
 Run these commands in your WSL Bash terminal:
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
-This opens Superfile at the MakePDLF project-library folder.
+This opens Superfile at the PDLF folder.
 
 ### Project path reference
 
 Windows Explorer path:
 
 ```text
-C:\dev\dev-makepdlf\makepdlf-project-library
+C:\pdlf
 ```
 
 Equivalent WSL Bash path:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 ### Understand the Windows-to-WSL path conversion
@@ -70,8 +70,7 @@ In WSL, Windows drive letters are normally mounted under `/mnt`.
 | ---------------------------------------------- | -------------------------------------------------- |
 | `C:\`                                          | `/mnt/c/`                                          |
 | `C:\dev`                                       | `/mnt/c/dev`                                       |
-| `C:\dev\dev-makepdlf`                          | `/mnt/c/dev/dev-makepdlf`                          |
-| `C:\dev\dev-makepdlf\makepdlf-project-library` | `/mnt/c/dev/dev-makepdlf/makepdlf-project-library` |
+| `C:\pdlf` | `/mnt/c/pdlf` |
 
 Windows uses backslashes: `\`
 
@@ -89,7 +88,7 @@ ls -la
 Expected `pwd` output:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 To open the exact current WSL folder in Windows Explorer:
@@ -115,13 +114,13 @@ spf
 From a specific folder:
 
 ```bash
-spf /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+spf /mnt/c/pdlf
 ```
 
 Recommended everyday method:
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
@@ -312,7 +311,7 @@ Then type part of a file or folder name.
 For example, to find a document called:
 
 ```text
-makepdlf-design-notes.md
+pdlf-design-notes.md
 ```
 
 You could type:
@@ -571,7 +570,7 @@ w
 2. Press `n` to create a second panel.
 3. In the first panel, navigate to the source folder containing the image.
 4. Press `Tab` to switch to the second panel.
-5. Navigate to the destination folder in the MakePDLF project library.
+5. Navigate to the destination folder in the PDLF folder.
 6. Press `Tab` to return to the source panel.
 7. Highlight the image.
 8. Press `Ctrl + C`.
@@ -717,8 +716,7 @@ This pins or unpins the current folder in the Superfile sidebar.
 Useful folders to pin may include:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
-/mnt/c/dev/dev-makepdlf
+/mnt/c/pdlf
 /mnt/c/Users/<your-Windows-user>/Downloads
 ```
 
@@ -793,14 +791,14 @@ Useful folders to pin may include:
 
 ---
 
-## MakePDLF everyday workflow
+## PDLF everyday workflow
 
 This is a safe, simple workflow for ordinary use.
 
 ### Open the project library
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
@@ -910,12 +908,12 @@ Git can usually recognise moves and renames after the fact, but using `git mv` a
 
 ### Add a short `mpl` command
 
-This opens Superfile directly in the MakePDLF project library.
+This opens Superfile directly in the PDLF folder.
 
 Run once:
 
 ```bash
-echo "alias mpl='cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library && spf'" >> ~/.bashrc
+echo "alias mpl='cd /mnt/c/pdlf && spf'" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -965,14 +963,14 @@ Normally, when you quit Superfile, Bash remains in the folder where you original
 For example:
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
 If you browse to another folder and quit, Bash normally remains at:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 Superfile can be configured so that, when you quit, Bash changes into the last folder you visited.
@@ -1090,10 +1088,10 @@ explorer.exe .
 
 If Explorer and Superfile show the same files, Superfile is working correctly.
 
-For the MakePDLF project library, use:
+For the PDLF folder, use:
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
@@ -1197,8 +1195,8 @@ Before using copy, move, rename, or delete:
 ## Quick-start card
 
 ```text
-Start at MakePDLF project library:
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+Start at PDLF folder:
+cd /mnt/c/pdlf
 spf
 
 Move:

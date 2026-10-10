@@ -53,22 +53,21 @@ Several frameworks now exist to keep AI coding agents disciplined; the most wide
 
 ---
 
-## 2. The four layers
+## 2. The three layers
 
-The environment is described in four layers, always named by what they are. Every decision names its layer first, because a proposal that is correct in one layer is often wrong in another.
+The environment is described in three layers, always named by what they are. Every decision names its layer first, because a proposal that is correct in one layer is often wrong in another.
 
 | Layer | What it is | Who it serves | Part of MyBizz-OS? |
 |---|---|---|---|
-| **The pre-makePDLF layer** | The supporting systems: memory, enforcement, security, workflow skills, documentation, maintenance | The developer and the agents, now | Yes — its foundation |
-| **The makePDLF layer** | The development project that is building PDLF, step by step | PDLF, next | No — it is the project that builds a part of the system |
+| **The supporting-systems layer** | The supporting systems: memory, enforcement, security, workflow skills, documentation, maintenance | The developer and the agents, now | Yes — its foundation |
 | **The PDLF layer** | The finished build framework: the harness in which client applications are made | The developer, during each client build | Yes — its purpose |
 | **The shipped estate** | The Anvil applications PDLF produces, running for clients | Clients and their users | No — it is the system's output |
 
-**MyBizz-OS is the pre-makePDLF layer plus the PDLF layer.** makePDLF is temporary scaffolding: when every PDLF step is built, its outputs are moved once into PDLF and the makePDLF project is archived. The shipped estate is what the system makes; nothing from MyBizz-OS travels into it.
+**MyBizz-OS is the supporting-systems layer plus the PDLF layer.** The shipped estate is what the system makes; nothing from MyBizz-OS travels into it.
 
 **The standing caution.** None of MyBizz-OS exists at runtime inside a client application. Memory, enforcement and the documentation estate stay on this computer. Anything built into a client application must work entirely on its own.
 
-**In one picture:** pre-makePDLF layer → makePDLF project → PDLF → shipped estate, with makePDLF drawn as the builder of PDLF rather than a stage of the system.
+**In one picture:** supporting-systems layer → PDLF → shipped estate.
 
 ---
 
@@ -116,11 +115,11 @@ PDLF's record is a PostgreSQL database, the **ledger**, holding projects, steps,
 
 A finished, tested, security-reviewed Anvil application, in the five-application structure that MyBizz uses for every client (Section 10), together with its full build record in the ledger and its learnings in GBrain.
 
-### makePDLF — the project that builds PDLF
+### How PDLF is built
 
-PDLF does not yet exist in finished form. It is being built by a development project, **makePDLF** (`C:\dev\dev-makepdlf\makepdlf-project-library`), one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery. The modules have reserved places in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step) and are moved there once, when all steps are complete; makePDLF is then archived. PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
+PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
 
-Two placeholder projects belong to this picture. **mb5pdlf** is the test project on which makePDLF and PDLF will be proven. **mb4ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
+Two placeholder projects belong to this picture. **mb5pdlf** is the test project on which PDLF will be proven. **mb4ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 
 ### Is PDLF only for Anvil.works?
 
@@ -221,7 +220,7 @@ Memory is a family, not a tool: its parts act on each other. The authoritative m
 
 - **project-library-global** (`C:\dev\project-library-global\`) is MyBizz's own definitive library of decisions and standards that apply to every application PDLF builds: global architecture decisions (ADRs), policies, specifications, standards, standard operating procedures, templates, guides, the Anvil documentation compilation (`anvil-docs`), the Cupcake rule sources and the security library. Some sections are still being written.
 - **anvil-agent-references** is Anvil's own published skill set for AI agents: how forms, client modules, server code, data models and the `anvil.yaml` manifest actually work, generated from Anvil's source. It is the platform standard PDLF builds against, and it stops the agent guessing at a framework it was never trained to know in detail. It is a read-only copy of Anvil's repository, at `C:\mybizz\anvil-agent-references\`. Detail: [[[mybizz-config-docs:anvil-agent-references/anvil-agent-references-explainer|the anvil-agent-references explainer]]](C:/mybizz/mybizz-config-docs/anvil-agent-references/anvil-agent-references-explainer.md).
-- **The project libraries** hold each project's own documentation: `makepdlf-project-library` (`C:\dev\dev-makepdlf\makepdlf-project-library\`), `mb-3-cs-project-library` (`C:\dev\dev-mb-3-cs\mb-3-cs-project-library\`), `mb4ecom-project-library` (`C:\dev\dev-mb4ecom\mb4ecom-project-library\`) and `mb5pdlf-project-library` (`C:\dev\dev-mb5pdlf\mb5pdlf-project-library\`), each paired with an Anvil code repository where one exists.
+- **The project libraries** hold each project's own documentation: `mb-3-cs-project-library` (`C:\dev\dev-mb-3-cs\mb-3-cs-project-library\`), `mb4ecom-project-library` (`C:\dev\dev-mb4ecom\mb4ecom-project-library\`) and `mb5pdlf-project-library` (`C:\dev\dev-mb5pdlf\mb5pdlf-project-library\`), each paired with an Anvil code repository where one exists.
 - **The system documentation libraries**: `mybizz-os-docs` (`C:\mybizz\mybizz-os-docs\`: operating procedures and system-wide reference, including this document), `mybizz-config-docs` (`C:\mybizz\mybizz-config-docs\`: one document suite per component), `pdlf` (`C:\pdlf\`: the PDLF library and app factory), `data-mybizz-mgt` (`C:\data-mybizz-mgt\`: management and planning working files) and `dev-root` (`C:\dev\dev-root\`: the hub of the development folder).
 - **The scope list** records which folders are part of the documentation corpus and which are never referenced: [[[mybizz-os-docs:os-reference-docs/mybizz-scope-list|the scope list]]](C:/mybizz/mybizz-os-docs/os-reference-docs/mybizz-scope-list.md).
 
@@ -481,7 +480,6 @@ Every component, once. The family numbers refer to Section 5.
 | PDLF | 3 | WSL and Windows | The build framework | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md) |
 | The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[pdlf:pdlf-library/specifications-local/spec-postgres-ledger]]](C:/pdlf/pdlf-library/specifications-local/spec-postgres-ledger.md) |
 | mb-3-cs (MyBizz CS) | 10 (output, not a component) | Anvil | The MyBizz product, to be built through PDLF | [[[mb-3-cs-project-library:docs-local/positioning-strategy]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/positioning-strategy.md) |
-| makePDLF | 3 (builder, not a component) | Windows (repository) | The project that builds PDLF | [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md) |
 
 ---
 
@@ -509,7 +507,7 @@ Each diagram is one scope for `mb-archify-scope`: one main path, at most twelve 
 |---|---|---|---|---|
 | D1 | The purpose | 1 | developer → Claude → OpenCode → MyBizz-OS → PDLF → client applications | Developer, Claude, OpenCode, memory, enforcement, records, PDLF, Anvil applications |
 | D1A | What makes it distinctive | 1A | baseline → MyBizz-OS additions | Stages with approval, ledger, receipts, compounding memory, governed memory, enforcement, platform knowledge, security review, BFT |
-| D2 | The four layers | 2 | pre-makePDLF → makePDLF → PDLF → shipped estate | The four layers, with makePDLF marked as builder |
+| D2 | The three layers | 2 | supporting systems → PDLF → shipped estate | The three layers |
 | D3 | The PDLF pipeline | 3 | five phases in order, gates between them | Five phases, seven gates, ledger, GBrain, learning junction |
 | D4 | The machine and the bridge | 4 | Windows ↔ bridges ↔ WSL | Repositories, Instance A, Task Scheduler, browser, shared drive, PowerShell bridge, port relay, OpenCode, Cupcake, GBrain, governor, Instance B |
 | D5 | The component families | 5 | OpenCode at the centre, families around it | Harness, memory, enforcement, knowledge, skills, documentation, operations, PDLF |

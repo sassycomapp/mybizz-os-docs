@@ -1,7 +1,7 @@
 ---
 title: "mybizz-scope-list"
 doc-id: "mb-a5a87568"
-updated: "2026-10-07"
+updated: "2026-10-10"
 
 ---
 
@@ -81,5 +81,5 @@ future, is excepted (code is never documentation):
 Notes:
 
 - "C:\dev\dev-mb4ecom\mb4ecom-project-library" and "C:\dev\dev-mb5pdlf\mb5pdlf-project-library" are IN scope. Both are unscoped placeholders today; membership is by content, so they activate when real content lands — no scope change needed.
-- mb-3-cs-project-library, makepdlf-project-library, and all of C:\pdlf other than its
+- mb-3-cs-project-library and all of C:\pdlf other than its
   exceptions above are IN scope despite being in development. Transient state schedules the work; it never removes scope.

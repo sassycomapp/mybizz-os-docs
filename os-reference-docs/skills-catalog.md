@@ -1,6 +1,6 @@
 ---
 title: "skills-catalog"
-updated: "2026-10-07"
+updated: "2026-10-10"
 doc-id: "mb-992aca7a"
 ---
 
@@ -241,7 +241,7 @@ The columns mean the following.
 
 ## memory-governor naming exemption
 
-The `memory-governor` suite folder and system name lack the `mb-` prefix but stay exactly as named. The system is deeply entrenched (MakePDLF among others); renaming effort is not worth the outcome. Do not rename.
+The `memory-governor` suite folder and system name lack the `mb-` prefix but stay exactly as named. The system is deeply entrenched (PDLF among others); renaming effort is not worth the outcome. Do not rename.
 
 ## Skills not used on this system
 

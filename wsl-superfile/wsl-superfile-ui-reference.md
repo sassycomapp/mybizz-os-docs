@@ -2,7 +2,7 @@
 
 title: "wsl-superfile-ui-reference"
 doc-id: "mb-8680c2bd"
-updated: "2026-10-06"
+updated: "2026-10-10"
 
 ---
 
@@ -10,7 +10,7 @@ updated: "2026-10-06"
 
 ![](C:/Users/dev-p/AppData/Roaming/marktext/images/2026-10-04-12-21-57-image.png)
 
-Your screenshot is clear enough to identify the layout. You are viewing the **MakePDLF project library**, and Superfile is divided into a sidebar, a main file browser, a preview area, metadata, processes, and clipboard panels.
+Your screenshot is clear enough to identify the layout. You are viewing the **PDLF folder**, and Superfile is divided into a sidebar, a main file browser, a preview area, metadata, processes, and clipboard panels.
 
 ## Reading your screen
 
@@ -54,10 +54,10 @@ The large central area is your primary file browser.
 At the top, you can see:
 
 ```
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
-That confirms you are in the correct MakePDLF project-library directory.
+That confirms you are in the correct PDLF directory.
 
 The visible folders include items such as:
 
@@ -303,7 +303,7 @@ You can practise without changing anything.
 1. Confirm the top path is:
    
    ```
-   /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+   /mnt/c/pdlf
    ```
 
 2. In the central browser, highlight:
@@ -363,7 +363,7 @@ Use the following process:
 3. Start OpenCode from the project root:
    
    ```
-   cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+   cd /mnt/c/pdlf
    opencode
    ```
 
@@ -381,13 +381,13 @@ Use separate Windows Terminal panes:
 
 ```
 Pane 1:
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
 ```
 Pane 2:
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 opencode
 ```
 
@@ -438,7 +438,7 @@ Superfile is specifically designed to provide a visual terminal file manager wit
 
 Your screenshot shows that Superfile is already working correctly:
 
-- The top path is your intended MakePDLF project library.
+- The top path is your intended PDLF folder.
 - The central list contains your project folders.
 - The right panel displays the selected folder’s contents.
 - The metadata panel identifies the selected folder.

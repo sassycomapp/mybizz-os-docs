@@ -1,7 +1,7 @@
 ---
 title: "wsl-superfile-reference-2"
 doc-id: "mb-773d936b"
-updated: "2026-10-04"
+updated: "2026-10-10"
 ---
 # WSL Superfile Reference
 
@@ -48,18 +48,18 @@ Superfile is not an editor and it is not a Git client. OpenCode is your coding e
 
 ## Project Paths
 
-### MakePDLF project library
+### PDLF folder
 
 Windows Explorer path:
 
 ```text
-C:\dev\dev-makepdlf\makepdlf-project-library
+C:\pdlf
 ```
 
 Equivalent WSL Bash path:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 ### Understand Windows and WSL paths
@@ -70,8 +70,7 @@ In WSL, the Windows `C:` drive is normally available under `/mnt/c`.
 |---|---|
 | `C:\` | `/mnt/c/` |
 | `C:\dev` | `/mnt/c/dev` |
-| `C:\dev\dev-makepdlf` | `/mnt/c/dev/dev-makepdlf` |
-| `C:\dev\dev-makepdlf\makepdlf-project-library` | `/mnt/c/dev/dev-makepdlf/makepdlf-project-library` |
+| `C:\pdlf` | `/mnt/c/pdlf` |
 
 Windows uses backslashes: `\`
 
@@ -86,10 +85,10 @@ pwd
 ls -la
 ```
 
-When you are in the MakePDLF project library, `pwd` should display:
+When you are in the PDLF folder, `pwd` should display:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 To open the exact current WSL folder in Windows Explorer:
@@ -104,19 +103,19 @@ The folder shown by Superfile should match the folder opened by `explorer.exe .`
 
 ## Start Superfile
 
-### Open Superfile in the MakePDLF project library
+### Open Superfile in the PDLF folder
 
 Run these commands in WSL Bash:
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
 You can also start Superfile by providing the folder path directly:
 
 ```bash
-spf /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+spf /mnt/c/pdlf
 ```
 
 ### Quit Superfile
@@ -222,7 +221,7 @@ Press:
 /
 ```
 
-Type part of a name to find it. For example, type `design` to find a file named `makepdlf-design-notes.md`.
+Type part of a name to find it. For example, type `design` to find a file named `pdlf-design-notes.md`.
 
 Press `Esc` to cancel the search.
 
@@ -417,7 +416,7 @@ w
 2. Press `n` to add another panel.
 3. In one panel, navigate to the source folder containing the asset.
 4. Press `Tab` to switch to the other panel.
-5. Navigate to the destination folder in the MakePDLF project library.
+5. Navigate to the destination folder in the PDLF folder.
 6. Press `Tab` to return to the source panel.
 7. Highlight the asset and press `Ctrl + C`.
 8. Press `Tab` to switch to the destination panel.
@@ -480,7 +479,7 @@ P
 Pinned folders appear in Superfile’s sidebar. A useful folder to pin is:
 
 ```text
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 ---
@@ -489,19 +488,19 @@ Pinned folders appear in Superfile’s sidebar. A useful folder to pin is:
 
 OpenCode is your coding environment. Superfile helps you find and browse files; OpenCode helps you understand, plan, and modify the project.
 
-### Start OpenCode in the MakePDLF project library
+### Start OpenCode in the PDLF folder
 
 From Bash:
 
 ```bash
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 opencode
 ```
 
 Or pass the path directly:
 
 ```bash
-opencode /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+opencode /mnt/c/pdlf
 ```
 
 ### Recommended workflow
@@ -509,7 +508,7 @@ opencode /mnt/c/dev/dev-makepdlf/makepdlf-project-library
 1. Use Superfile to browse the project and find the relevant folder or file.
 2. Note the project-relative file path, such as `docs/overview.md`.
 3. Quit Superfile with `q`, or keep it open in a separate Windows Terminal pane.
-4. Start OpenCode from the MakePDLF project root.
+4. Start OpenCode from PDLF root.
 5. Refer to the file in an OpenCode request using `@`.
 6. Ask OpenCode to inspect, explain, plan, review, or change the file.
 7. Use `git status` and `git diff` to inspect resulting changes.
@@ -534,9 +533,9 @@ A simple arrangement in Windows Terminal is:
 
 | Pane | Command | Purpose |
 |---|---|---|
-| Superfile pane | `cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library && spf` | Browse and organise files |
-| OpenCode pane | `cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library && opencode` | AI-assisted project work |
-| Bash/Git pane | `cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library` | Explicit commands and Git checks |
+| Superfile pane | `cd /mnt/c/pdlf && spf` | Browse and organise files |
+| OpenCode pane | `cd /mnt/c/pdlf && opencode` | AI-assisted project work |
+| Bash/Git pane | `cd /mnt/c/pdlf` | Explicit commands and Git checks |
 
 ### Do not use OpenCode as `EDITOR`
 
@@ -600,12 +599,12 @@ Use Superfile freely to browse and handle ordinary assets. For important tracked
 
 ## Optional Shortcuts
 
-### `mpl`: open Superfile in MakePDLF project library
+### `mpl`: open Superfile in PDLF folder
 
 Run once:
 
 ```bash
-echo "alias mpl='cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library && spf'" >> ~/.bashrc
+echo "alias mpl='cd /mnt/c/pdlf && spf'" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -662,10 +661,10 @@ You likely opened the wrong path.
    ```
 
 3. Confirm Explorer shows the folder you expect.
-4. For MakePDLF, start again with:
+4. For PDLF, start again with:
 
    ```bash
-   cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+   cd /mnt/c/pdlf
    spf
    ```
 
@@ -718,8 +717,8 @@ spf --version
 ## Quick Reference
 
 ```text
-Start Superfile in MakePDLF project library:
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+Start Superfile in PDLF folder:
+cd /mnt/c/pdlf
 spf
 
 Move selection:

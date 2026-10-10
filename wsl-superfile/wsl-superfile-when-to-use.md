@@ -1,7 +1,7 @@
 ---
 title: "wsl-superfile-when-to-use"
 doc-id: "mb-8ab80d1e"
-updated: "2026-10-04"
+updated: "2026-10-10"
 ---
 # WSL superfile when to use
 
@@ -11,7 +11,7 @@ Superfile is optional. Its value is narrow: it keeps file navigation and simple 
 
 ## The practical answer
 
-For your MakePDLF workflow, use each tool for what it does best:
+For your PDLF workflow, use each tool for what it does best:
 
 | Task                                                                                   | Best tool                |
 | -------------------------------------------------------------------------------------- | ------------------------ |
@@ -37,7 +37,7 @@ Suppose you are in your project root and OpenCode says:
 Rather than switching to Explorer, locating the same directory manually, and returning to the terminal, you can run:
 
 ```
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 spf
 ```
 
@@ -113,7 +113,7 @@ You should **not** expect Superfile to replace any of these:
 | ----------------------------------------------------------------- | -------------------------------------------- |
 | Familiar file management and visual previews                      | Windows Explorer                             |
 | Coding/editing                                                    | OpenCode plus a proper editor where required |
-| Understanding the MakePDLF project                                | OpenCode                                     |
+| Understanding PDLF                                | OpenCode                                     |
 | Searching text throughout the project                             | `rg` in Bash or OpenCode                     |
 | Git status, diffs, history, commits                               | Git commands and OpenCode                    |
 | File drag/drop, thumbnails, PDFs, Office files, shell integration | Windows Explorer                             |
@@ -133,7 +133,7 @@ That is usually more valuable than browsing the same documents manually in Super
 
 ## My recommendation for you
 
-For the MakePDLF project, I recommend this:
+For PDLF, I recommend this:
 
 ### Default: use Explorer
 
@@ -156,10 +156,10 @@ That is likely the most useful “file manager command” for your actual workfl
 
 ### Development: use OpenCode
 
-Start it at the MakePDLF project root:
+Start it at PDLF root:
 
 ```
-cd /mnt/c/dev/dev-makepdlf/makepdlf-project-library
+cd /mnt/c/pdlf
 opencode
 ```
 
@@ -189,19 +189,19 @@ A reasonable rule for now is:
 
 > **Use Explorer by default. Use Superfile only when you are already in WSL and a terminal-side browse/copy operation is plainly quicker.**
 
-If you never encounter that situation, you can safely stop using Superfile. It is not essential to WSL, OpenCode, Git, or MakePDLF.
+If you never encounter that situation, you can safely stop using Superfile. It is not essential to WSL, OpenCode, Git, or PDLF.
 
 ## One issue with your current layout
 
 Your project lives under the Windows-mounted path:
 
 ```
-/mnt/c/dev/dev-makepdlf/makepdlf-project-library
+/mnt/c/pdlf
 ```
 
 That is perfectly valid, especially if you deliberately want Windows Explorer access. But Microsoft notes that WSL 2’s filesystem performance is best when your project files live on the same filesystem as the tools using them; Linux-side WSL tools are generally faster with projects stored in the Linux filesystem, while cross-filesystem access has more overhead.[[learn.microsoft](https://learn.microsoft.com/en-us/windows/wsl/compare-versions)]
 
-This does **not** mean you should move MakePDLF now. Because you use Windows Explorer heavily, keeping it under `C:\dev\...` is a sensible trade-off. Only reconsider it if you later experience noticeably slow Git operations, dependency installs, builds, or large file-tree searches from WSL.
+This does **not** mean you should move PDLF now. Because you use Windows Explorer heavily, keeping it on `C:` is a sensible trade-off. Only reconsider it if you later experience noticeably slow Git operations, dependency installs, builds, or large file-tree searches from WSL.
 
 ## A simpler working model
 
