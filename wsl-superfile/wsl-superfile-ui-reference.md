@@ -2,7 +2,7 @@
 
 title: "wsl-superfile-ui-reference"
 doc-id: "mb-8680c2bd"
-updated: "2026-10-10"
+updated: "2026-10-11"
 
 ---
 
@@ -69,7 +69,7 @@ obsolete
 output-gstack
 output-opencode
 specifications-local
-stepwise
+app-factory
 templates-local
 workspace
 ```
@@ -89,7 +89,7 @@ Use:
 | Show or hide dotfiles     | `.`          |
 | Search the current folder | `/`          |
 
-The highlighted item is the item currently selected. In your screenshot, `stepwise` appears to be selected.
+The highlighted item is the item currently selected. In your screenshot, `app-factory` appears to be selected.
 
 ### What the `17/25` means
 
@@ -103,24 +103,23 @@ This means the selected item is number 17 out of 25 items in that panel. It is n
 
 ## 3. Right side: preview/browser panel
 
-The right-hand panel is showing the contents of the selected `stepwise` folder.
+The right-hand panel is showing the contents of the selected `app-factory` folder.
 
 It includes files such as:
 
 ```
-INDEX.md
-run-plan.md
-step-01-orchestrator.md
-step-05-undefined.md
-step-11-decision-tree-v2.html
-step-15-plan-eng-review.md
+README.md
+pdlf-build-plan.md
+phase-a-init
+phase-b-discover-and-define
+phase-c-design-and-plan
 ```
 
 This is useful because Superfile can show the contents of a selected folder or preview a selected file without you having to open it fully.
 
 For example:
 
-1. Highlight `stepwise` in the central browser.
+1. Highlight `app-factory` in the central browser.
 2. The right panel displays its contents.
 3. Move the selection to a file such as `INDEX.md`.
 4. Superfile may show a text preview or file details, depending on your current focus and preview settings.
@@ -135,7 +134,7 @@ The panel labelled **Metadata** shows information about the currently selected i
 Your screenshot shows:
 
 ```
-Name       stepwise
+Name       app-factory
 Size       512 B
 Date Modified ...
 Permissions drwxrwxrwx
@@ -160,7 +159,7 @@ The permission value begins with:
 d
 ```
 
-That means `stepwise` is a directory.
+That means `app-factory` is a directory.
 
 For a regular file, the first character would usually be:
 
@@ -309,7 +308,7 @@ You can practise without changing anything.
 2. In the central browser, highlight:
    
    ```
-   stepwise
+   app-factory
    ```
 
 3. Look at the right-hand panel.
@@ -317,12 +316,12 @@ You can practise without changing anything.
 4. Confirm that it contains files such as:
    
    ```
-   INDEX.md
-   run-plan.md
-   step-01-orchestrator.md
+   README.md
+   pdlf-build-plan.md
+   phase-a-init
    ```
 
-5. Press `Enter` to open `stepwise`.
+5. Press `Enter` to open `app-factory`.
 
 6. Press `Backspace` to return to the project-library root.
 
@@ -330,8 +329,8 @@ Nothing is changed by merely browsing.
 
 ### Exercise 2: inspect a Markdown file
 
-1. Open the `stepwise` folder.
-2. Highlight `INDEX.md`.
+1. Open the `app-factory` folder.
+2. Highlight `README.md`.
 3. Look at the metadata and preview areas.
 4. Do not press a copy, move, rename, or delete key.
 5. Press `Backspace` when finished.
@@ -351,7 +350,7 @@ Bash      = verify and run explicit commands
 Suppose you find this file in Superfile:
 
 ```
-stepwise/INDEX.md
+app-factory/README.md
 ```
 
 Use the following process:
@@ -370,7 +369,7 @@ Use the following process:
 4. Ask OpenCode:
    
    ```
-   Review @stepwise/INDEX.md. Explain its purpose and identify any inconsistencies. Do not change the file yet.
+   Review @app-factory/README.md. Explain its purpose and identify any inconsistencies. Do not change the file yet.
    ```
 
 OpenCode can search for the file after you type `@` and begin entering its project-relative path. OpenCode is designed to be started in a project directory and provides a terminal interface for working with that project.[[opencode](https://opencode.ai/docs/cli/)][[opencode](https://opencode.ai/docs/tui/)]

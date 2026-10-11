@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-10"
+updated: "2026-10-11"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -79,7 +79,7 @@ PDLF is a **single, continuous, stage-gated build pipeline** that takes a client
 
 In outline:
 
-- **Forty-six numbered steps** across **five phases** — Discover & Define, Design & Plan, Scaffold & Assemble, Build & Verify, Release. Step 1 is the orchestrator itself; the working pipeline runs from Step 11 to Step 46.
+- **Forty-six numbered steps** across **six phases** — Init, Discover & Define, Design & Plan, Scaffold & Assemble, Build & Verify, Ship & Monitor. Step 1 is the orchestrator itself and Steps 2 to 10 are the entry points (Init); the working pipeline runs from Step 11 to Step 46.
 - **Seven gates**: hard stops that need the developer's explicit approval and cannot be quietly undone.
 - **One execution sequence** that every step follows identically: consult memory, route the step, do the work, verify the result exists, record it, report, stop.
 - **A deviation mechanism**: when a step cannot be done as written, the agent stops and offers exactly three options; it never decides alone.
@@ -117,7 +117,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 ### How PDLF is built
 
-PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`, one module per step). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
+PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
 
 Two placeholder projects belong to this picture. **mb5pdlf** is the test project on which PDLF will be proven. **mb4ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 

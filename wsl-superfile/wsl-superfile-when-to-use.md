@@ -1,7 +1,7 @@
 ---
 title: "wsl-superfile-when-to-use"
 doc-id: "mb-8ab80d1e"
-updated: "2026-10-10"
+updated: "2026-10-11"
 ---
 # WSL superfile when to use
 
@@ -32,7 +32,7 @@ Superfile earns its place only when you are already working in WSL and want to a
 
 Suppose you are in your project root and OpenCode says:
 
-> “The relevant documentation is under `stepwise/` and `specifications-local/`.”
+> “The relevant documentation is under `app-factory/` and `specifications-local/`.”
 
 Rather than switching to Explorer, locating the same directory manually, and returning to the terminal, you can run:
 
@@ -125,7 +125,7 @@ In particular, Superfile does **not** make OpenCode better. It does not automati
 For example, inside OpenCode you can simply write:
 
 ```
-Review @stepwise/INDEX.md and @specifications-local/requirements.md.
+Review @app-factory/README.md and @specifications-local/requirements.md.
 Explain how they relate. Do not modify either file.
 ```
 
@@ -170,7 +170,7 @@ Summarise this project structure. Do not alter files.
 ```
 
 ```
-Review @stepwise/INDEX.md and identify missing or inconsistent documentation.
+Review @app-factory/README.md and identify missing or inconsistent documentation.
 ```
 
 ```
