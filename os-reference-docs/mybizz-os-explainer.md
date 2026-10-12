@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-11"
+updated: "2026-10-12"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -117,7 +117,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 ### How PDLF is built
 
-PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), [[[pdlf:pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer|the orchestrator agent]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/orchestrator-agent-explainer.md), [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
+PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), the orchestrator agent, [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
 
 Two placeholder projects belong to this picture. **mb5pdlf** is the test project on which PDLF will be proven. **mb4ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 
