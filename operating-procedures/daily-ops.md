@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-07"
+updated: "2026-10-14"
 ---
 # Daily Operations — Quick Reference
 
@@ -15,6 +15,10 @@ Your manual, in the order you need it. The reference documents hold the detail.
 
 ```bash
 opencode web --hostname 0.0.0.0
+```
+
+```
+cd /mnt/c/pdlf && opencode
 ```
 
 Open `http://localhost:3000`, choose the project inside OpenCode, and check the model.
