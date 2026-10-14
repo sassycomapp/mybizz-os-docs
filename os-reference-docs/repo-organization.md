@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-10-13"
+updated: "2026-10-14"
 
 ---
 
@@ -27,13 +27,13 @@ folders with local policies run them; all folders always run the global rule set
 | — (code: not in GBrain) | mb-3-cs-app5 (Public) | C:\dev\dev-mb-3-cs\mb-3-cs-app5 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app5 | Ready — fallback (no skeleton) | No |
 | mb-3-cs-project-library (federated)    | mb-3-cs-project-library (Private)                                                               | C:\dev\dev-mb-3-cs\mb-3-cs-project-library   | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library   | Ready — initialized (placeholder)    | Yes                  |
 | mb-archify-scope (federated)           | mb-archify-scope (Private)                                                                      | C:\mybizz\mb-archify-scope                  | /mnt/c/mybizz/mb-archify-scope                   | Ready — fallback (no skeleton)       | No                   |
-| mb-close-out (federated)               | mb-close-out (Private)                                                                          | C:\mybizz\mb-close-out                  | /mnt/c/mybizz/mb-close-out                   | Ready — fallback (no skeleton)       | No                   |
-| mb-compile-rules (federated)           | mb-compile-rules (Private)                                                                      | C:\mybizz\mb-compile-rules                  | /mnt/c/mybizz/mb-compile-rules                   | Ready — fallback (no skeleton)       | No                   |
+| mb-close-out (federated)               | mb-close-out (Public)                                                                          | C:\mybizz\mb-close-out                  | /mnt/c/mybizz/mb-close-out                   | Ready — fallback (no skeleton)       | No                   |
+| mb-compile-rules (federated)           | mb-compile-rules (Public)                                                                      | C:\mybizz\mb-compile-rules                  | /mnt/c/mybizz/mb-compile-rules                   | Ready — fallback (no skeleton)       | No                   |
 | mb-memory-system-diagnostic (federated) | mb-memory-system-diagnostic (Private)                                                          | C:\mybizz\mb-memory-system-diagnostic       | /mnt/c/mybizz/mb-memory-system-diagnostic        | Ready — fallback (no skeleton)       | No                   |
-| mb-project-docs (federated)            | mb-project-docs (Private)                                                                       | C:\mybizz\mb-project-docs                   | /mnt/c/mybizz/mb-project-docs                    | Ready — fallback (no skeleton)       | No                   |
+| mb-project-docs (federated)            | mb-project-docs (Public)                                                                       | C:\mybizz\mb-project-docs                   | /mnt/c/mybizz/mb-project-docs                    | Ready — fallback (no skeleton)       | No                   |
 | mb-sentinel-review (federated)         | mb-sentinel-review (Private)                                                                    | C:\mybizz\mb-sentinel-review                | /mnt/c/mybizz/mb-sentinel-review                 | Ready — fallback (no skeleton)       | No                   |
 | mb-submit-memory (federated)           | mb-submit-memory (Private)                                                                      | C:\mybizz\mb-submit-memory                  | /mnt/c/mybizz/mb-submit-memory                   | Ready — fallback (no skeleton)       | No                   |
-| mb-sysdoc-creator (federated)          | mb-sysdoc-creator (Private)                                                                     | C:\mybizz\mb-sysdoc-creator                 | /mnt/c/mybizz/mb-sysdoc-creator                  | Ready — fallback (no skeleton)       | No                   |
+| mb-sysdoc-creator (federated)          | mb-sysdoc-creator (Public)                                                                     | C:\mybizz\mb-sysdoc-creator                 | /mnt/c/mybizz/mb-sysdoc-creator                  | Ready — fallback (no skeleton)       | No                   |
 | — (code: not in GBrain) | mb-4-ecom-app1 (Public) | C:\dev\dev-mb-4-ecom\mb-4-ecom-app1 | /mnt/c/dev/dev-mb-4-ecom/mb-4-ecom-app1 | Ready — initialized (placeholder) | No |
 | — (code: not in GBrain) | mb-4-ecom-app2 (Public) | C:\dev\dev-mb-4-ecom\mb-4-ecom-app2 | /mnt/c/dev/dev-mb-4-ecom/mb-4-ecom-app2 | Ready — fallback (no skeleton) | No |
 | — (code: not in GBrain) | mb-4-ecom-app3 (Public) | C:\dev\dev-mb-4-ecom\mb-4-ecom-app3 | /mnt/c/dev/dev-mb-4-ecom/mb-4-ecom-app3 | Ready — fallback (no skeleton) | No |
@@ -47,7 +47,7 @@ folders with local policies run them; all folders always run the global rule set
 | memory-governor-code (unset)           | memory-governor (Private)                                                                       | No windows path (Only WSL path by decision)  | /home/dev-p/memory-governor                      | Ready — fallback (no skeleton)       | No                   |
 | mybizz-config-docs (federated)         | mybizz-config-docs (Public)                                                                    | C:\mybizz\mybizz-config-docs                 | /mnt/c/mybizz/mybizz-config-docs                 | Ready — initialized (placeholder)    | yes                  |
 | mybizz-os-docs (federated)             | mybizz-os-docs (Public)                                                                        | C:\mybizz\mybizz-os-docs                     | /mnt/c/mybizz/mybizz-os-docs                     | Ready — fallback (no skeleton)       | Yes                  |
-| mybizz-scripts-code (unset)            | mybizz-scripts (Private)                                                                        | C:\mybizz\scripts                            | /mnt/c/mybizz/scripts                            | Ready — fallback (no skeleton)       | No                   |
+| mybizz-scripts-code (unset)            | mybizz-scripts (Public)                                                                        | C:\mybizz\scripts                            | /mnt/c/mybizz/scripts                            | Ready — fallback (no skeleton)       | No                   |
 | data-mybizz-mgt (federated)            | data-mybizz-mgt (Private)                                                                       | C:\data-mybizz-mgt                           | /mnt/c/data-mybizz-mgt                           | Ready — fallback (no skeleton)       | No                   |
 | pdlf (federated)                       | pdlf (Public)                                                                                  | C:\pdlf                                      | /mnt/c/pdlf                                      | Ready — fallback (no skeleton)       | Yes                  |
 
