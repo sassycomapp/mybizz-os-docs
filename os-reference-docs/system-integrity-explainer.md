@@ -414,7 +414,7 @@ Where Cupcake blocks a check, the check becomes a command the developer runs in 
 
 ### Its documents
 
-[[[mybizz-config-docs:mb-config-manager/config-manager-explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-reference]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-reference.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-config]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-config.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-agent]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-agent.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-register]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-register.md) · [[[mybizz-config-docs:mb-config-manager/config-setup-prompt]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-setup-prompt.md).
+[[[mybizz-config-docs:mb-config-manager/config-manager-explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-reference]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-reference.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-config]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-config.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-agent]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-agent.md) · [[[mybizz-config-docs:mb-config-manager/config-manager-register]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-register.md) · config-setup-prompt.
 
 ---
 
