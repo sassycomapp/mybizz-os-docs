@@ -115,16 +115,9 @@ mb-sysdoc-creator is the skill that researches a skill or system against its iss
 - **`-explainer.md`:** what the system is, what it can do, whether to use it, why it works the way it does, and what has to happen.
 - **`-learnings.md`:** what differs from, or adds to, the standard in the MyBizz setup, and why.
 
-The four documents live in `C:\mybizz\mybizz-config-docs\{system}\` and are found by their endings. What may go into each is fixed by one specification, `doc-suite-specification.md`.
+The four documents live in `C:\mybizz\mybizz-config-docs\{system}\` and are found by their endings. What may go into each is fixed by one specification, `doc-suite-specification.md`, a working file in the skill's own folder.
 
-### Intent
-
-**Remediation**
-- **Version out of date (DRIFT).** The register row and the config's identity rows state source commit `5f48c78`, 2026-10-14. The source is at commit `61ffe23`, 2026-10-15, which adds the restructure rule and the neighbours naming rule. The config's sync row carries the body hash of `5f48c78`. Fix: run `/mb-config-manager mb-sysdoc-creator`, and set the identity rows, the sync row and the register row (Installed version `61ffe23`, Last updated 2026-10-15, Last checked the run date) from the live source.
-- **Naming standard out of date (DRIFT).** The config's four document rows state the standard as "named `{folder}-config.md`" and its three neighbours. The specification names a new document after the documents already in its folder. Fix: correct the four rows in the same run.
-- **Explainer contradicts the source (DRIFT).** The explainer states an existing document is never rewritten whole. The source allows a whole rewrite when the document must be restructured to the specification. Fix: correct the sentence in the same run.
-- **Learning no longer true.** Learning L3 records the `sysdoc-creator-` prefix as an exception to the folder-name convention. Under the specification's naming rule it is the rule. Fix: remove L3 in the same run. Its ID is not reused.
-- **Catalog row out of date.** The skills-catalog row for mb-sysdoc-creator describes a three-document suite. Fix: correct the row to the four-document suite.
+Its issuer is MyBizz. Its source is `C:\mybizz\mb-sysdoc-creator\mb-sysdoc-creator.md`, in its own repository, and its installed version is that repository's latest commit. The installed copy, `~/.config/opencode/skills/mb-sysdoc-creator/SKILL.md`, carries the same body below its own frontmatter.
 
 ### How it works
 
@@ -170,6 +163,7 @@ It keeps no record of its runs. Findings are given in chat.
 - The developer, or mb-config-manager, invokes it with `/mb-sysdoc-creator (system-name)`.
 - `doc-suite-specification.md` stays in place. Without it the skill stops.
 - The developer approves twice in every run, and issues any grant it requests.
+- After any change to the source, the developer copies its body into the installed copy, and the two bodies are checked identical.
 - The developer commits with commit-all.
 
 ### Where it stops
