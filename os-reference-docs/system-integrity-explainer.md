@@ -280,14 +280,12 @@ A grant expires after a fixed time (30 minutes by default) or when its count run
 
 mb-config-manager is an OpenCode agent that keeps every MyBizz skill and system configured to its standard. It examines a system, proposes corrections with their justification, and applies only what the developer approves. It never researches issuers and never writes document suites. It has mb-sysdoc-creator do both.
 
-It is installed as `~/.config/opencode/agents/mb-config-manager.md` (mode: primary), with the command `~/.config/opencode/command/mb-config-manager.md`, which routes to it. Its source is `config-manager-agent.md`, and its one ongoing record is `config-manager-register.md`.
+It is installed as `~/.config/opencode/agents/mb-config-manager.md` (mode: primary), with the command `~/.config/opencode/command/mb-config-manager.md`, which routes to it. Its source is `config-manager-agent.md`, and its one ongoing record is `config-manager-register.md`. Both are working files in its own folder, listed in its config. Its issuer is MyBizz. Its installed version is the latest commit of `config-manager-agent.md`, and the installed agent's body matches that source.
 
 ### Intent
 
 **Remediation**
 - Give commit-all its first examination, filling its register row, once its suite exists.
-- **Version out of date (DRIFT).** The register row and the config's identity rows state `config-manager-agent.md` at commit `12ffc6d`. The agent source is at commit `17e9046`, which adds the rule that documents out of the specification's shape are one DEVIATION. Fix: run `/mb-config-manager mb-config-manager`, and set the identity rows and the register row to `17e9046` from the live source.
-- **Learnings header missing (DEVIATION).** config-manager-learnings lacks the purpose sentence every other learnings file opens with. Fix: add it in the same run.
 
 ### How it works
 
@@ -300,9 +298,9 @@ It is installed as `~/.config/opencode/agents/mb-config-manager.md` (mode: prima
 
 **One run, for one system:**
 
-1. **Locate.** It reads its own learnings, the system's register row and its folder. A system with no documents is sent to mb-sysdoc-creator first. A missing document, or a file the specification does not allow, is a GAP. It reads the learnings in full, then the config, then the reference.
+1. **Locate.** It reads its own learnings, the system's register row and its folder. A system with no register row gets one proposed. A system with no documents is sent to mb-sysdoc-creator first. A missing document, or a file the config does not list as a working file, is a GAP. Documents that are not in the specification's shape are one DEVIATION. Its correction is a full mb-sysdoc-creator Refresh, and every other correction to the documents folds into it. It then reads the learnings in full, then the config, then the reference.
 2. **Issuer.** It reads the installed version. A version different from the config's means the system was changed outside a run: it reports this first and has mb-sysdoc-creator refresh the standard. A newer issuer release is BEHIND.
-3. **Compare.** For every config row it compares the issuer standard, the recorded MyBizz value and the live value, weighs each difference against the learnings, and runs the `Works` check. Documents that are not in the specification's shape are one DEVIATION. Its correction is a full mb-sysdoc-creator Refresh, and every other correction to the documents folds into it.
+3. **Compare.** For every config row it compares the issuer standard, the recorded MyBizz value and the live value, weighs each difference against the learnings, and runs the `Works` check.
 4. **Report.** Findings are given in chat only, numbered, each with its kind, the three values, the proposed correction and its justification.
 5. **Decide.** The developer approves or rejects each finding. A BEHIND finding is a choice: upgrade, with exact steps the developer runs, or stay, with a learnings entry giving the reason.
 6. **Apply.** Approved corrections are applied one at a time, each checked before the next, with the replaced value kept as the way back.
@@ -326,6 +324,7 @@ It is installed as `~/.config/opencode/agents/mb-config-manager.md` (mode: prima
 ### What has to happen
 
 - The developer selects the mb-config-manager agent with `Tab` before running the command, because the command runs in whichever agent is selected.
+- After any change to `config-manager-agent.md`, the installed agent is updated to the same body, and the config and register record the new commit.
 - The developer invokes it and decides every finding.
 - The developer runs every action Cupcake reserves for the terminal, and issues every grant it requests.
 - The developer runs every upgrade.
