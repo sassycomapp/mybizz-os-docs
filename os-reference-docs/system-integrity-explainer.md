@@ -1,7 +1,7 @@
 ---
 title: "system-integrity-explainer"
 doc-id: "mb-91e45ce5"
-updated: "2026-10-15"
+updated: "2026-10-16"
 ---
 # System Integrity — Explainer
 
@@ -189,17 +189,6 @@ It keeps no record of its runs. Findings are given in chat.
 
 The distinction that matters: a rule written in `AGENTS.md` is a request the agent may not follow. A rule enforced by Cupcake is checked every time, whatever the agent believes or has agreed to.
 
-### Intent
-
-**Remediation**
-- **Unverified and out-of-date row (DRIFT).** cupcake-config's "Skeleton initialization" row names the folders `mb-3-cs`, `mb4ecom`, `mb4ecom-project-library`, `mb5pdlf` and `mb5pdlf-project-library`. Those folders no longer exist under those names, and the row marks every folder except `mybizz-config-docs` as carried from record, unverified. Fix: the developer lists the folders that hold a `.cupcake` skeleton in the WSL terminal, and the row is corrected from that output through `/mb-config-manager cupcake`.
-- **Open item points to a missing file.** cupcake-config open item 2 places the exact commands of the skills-dir ancestor check in an exam report under `C:\mybizz\logs\`, which does not exist. Fix: write the two-step check's exact commands into the reference's Checks table, run by the developer, and remove the pointer from the open item.
-- **Learning states an unproven cause.** Learning L4 states as fact the cause that open item 2 records as unverified. Fix: remove L4. It is written again only when the developer's check proves it.
-- **Learning holds an out-of-date condition.** Learning L5 ties its revisit to the move to OpenCode V2. OpenCode runs version 1, because the Cupcake plugin does not run on V2. Fix: remove the V2 clause and keep the decision to stay on 0.3.0.
-- **Grant-decrement anomaly, unproven.** cupcake-config open item 3 records a grant unit consumed without a successful write. The mb-doc-check examination produced a second occurrence on one path. Fix: the developer designs and runs one live test that separates the two recorded hypotheses. The result becomes a config row and, where it differs from the standard, a learning, and the open item closes.
-- **Security library contradicts the setup.** `sec-fail-closed.md` in `project-library-global` records no known exceptions. Cupcake's fail-open setting is one. Fix: add a Known Exceptions entry to `sec-fail-closed.md` naming Cupcake's fail-open setting and pointing to cupcake learning L6.
-- **Heading format (DEVIATION).** The cupcake and mb-compile-rules explainers number their section headings. The specification's titles carry no numbers, and other suites follow them. Fix: remove the numbers in both explainers.
-
 ### How it works
 
 **Every tool call is checked.** Before a tool call runs, the plugin turns it into a structured event and asks the Cupcake checker for a decision. If any rule denies it, the call is blocked with the rule's own message. If nothing denies it, the call proceeds.
@@ -209,7 +198,7 @@ The distinction that matters: a rule written in `AGENTS.md` is a request the age
 - **Builtins** ship with Cupcake: system protection, sensitive-data protection, and protection of the Cupcake binary from agent execution.
 - **Custom rules** are written for this environment, one per concern. They cover test tampering, lockfiles, unverified packages, destructive database operations, history rewriting, autonomous commits, writes outside the current project, secret files, outbound network access, new tools or skills, the agent's own governing files, and Cupcake's own control plane.
 
-**Rules are global.** Every custom rule lives in `~/.config/cupcake/policies/opencode/` and applies to every project. A project may also carry its own `.cupcake` folder with local rules. A folder without one falls back to the global rules only.
+**Rules are global.** Every custom rule lives in `~/.config/cupcake/policies/opencode/` and applies to every project. No project folder carries its own `.cupcake` skeleton, so the checker evaluates every agent action through one place, the fallback home, `~/.config/cupcake/fallback/`. The one skeleton is `~/.cupcake`, the folder holding Cupcake's programs, and it holds the same evaluator files.
 
 **Rules belong to Cupcake.** The plain-language rules in `rules-cupcake-global` and the compiled rule files are Cupcake's own configuration, recorded in Cupcake's config. mb-compile-rules's documents point there and hold no record of the rules.
 
@@ -219,9 +208,9 @@ The distinction that matters: a rule written in `AGENTS.md` is a request the age
 - `net-grant` opens a website for a set number of fetches.
 - `git-grant` allows a set number of commits, pushes or merges in one repository.
 
-A grant expires after a fixed time (30 minutes by default) or when its count runs out. The agent can never issue a grant itself.
+A grant expires after a fixed time (30 minutes by default) or when its count runs out. Each allowed write uses one unit of its own grant only. A blocked write uses none. The agent can never issue a grant itself.
 
-**Failure does not stop work.** If Cupcake itself fails, it is set to "fail open": the call is allowed and the failure is logged, rather than every tool call being blocked.
+**Failure stops the agent.** Cupcake fails closed: if it cannot decide, because it crashed or timed out, the agent's action is blocked. The agent waits, and the developer fixes Cupcake from the terminal, which Cupcake does not govern. The known failure points and their remedies are in Cupcake's reference.
 
 **How a rule is built (mb-compile-rules).**
 
@@ -242,7 +231,8 @@ A grant expires after a fixed time (30 minutes by default) or when its count run
 - **Only real tests count.** Some rules pass offline checks and still fail live. Only the developer's real output decides.
 - **Time is handled outside the rules.** Some Rego functions fail silently inside Cupcake, including time functions. So grant expiry and counting are done by the plugin, and the rules only check whether a grant exists.
 - **One record of the rules.** A second record of the rules in mb-compile-rules's documents would drift from Cupcake's.
-- **Fail open.** A guard that blocks all work when it breaks gets switched off. Failing open keeps it trusted and in place.
+- **Fail closed.** A guard that lets actions through when it breaks gives no protection exactly when something is wrong, and nobody notices. Failing closed makes every fault visible at once.
+- **One home for evaluation.** A project skeleton is a second copy of the evaluator that can break unseen. Every project uses the fallback home instead.
 
 ### What has to happen
 
@@ -251,7 +241,9 @@ A grant expires after a fixed time (30 minutes by default) or when its count run
 - The developer issues every grant, with the count the work needs.
 - The plugin exists at exactly one path. A second copy, even a link to the same file, makes every check run twice.
 - Plugin or global configuration changes take effect only after OpenCode is fully restarted.
-- Every project `.cupcake` folder keeps at least one real rule file, or the engine fails to load.
+- No project folder carries a `.cupcake` skeleton, and `failMode` is `closed` everywhere.
+- After any restart, upgrade or configuration change of OpenCode or Cupcake, a liveness probe proves enforcement: a fetch to a non-allowlisted domain must be denied.
+- OpenCode stays on version 1, because version 2 does not run the Cupcake plugin, and an unloaded plugin enforces nothing.
 - The installed copy of mb-compile-rules stays identical in body to its source after every source change.
 
 ### Where it stops
@@ -344,12 +336,7 @@ mb-doc-check is a small Python program, not an AI. It runs automatically as a Gi
 
 Its issuer is MyBizz. Its standard is `mb-doc-check.py` and `mb-doc-check.sources`, in the `mybizz-scripts` repository at `C:\mybizz\scripts\`. Its link form depends on GBrain's page-name rule and source list, so GBrain is the issuer for those.
 
-### Intent
-
-**Remediation**
-- **Help text contradicts the stored form.** `mb-doc-check.py` lines 6 and 83 show the standard link with a relative path. The stored form uses absolute paths (`@paths = absolute`). This is doc-check-config open item 1. Fix: correct both lines in `mb-doc-check.py` to the absolute-path form, run `run-tests.sh`, and close the open item through `/mb-config-manager mb-doc-check`.
-- **Heading format (DEVIATION).** The explainer's first section is titled "What this actually is" and its headings are numbered. The specification's title is "What it is", without numbers. Fix: correct the headings in the same run.
-- **Open items format (DEVIATION).** The config writes its open items as a table. Other suites write them as a numbered list. Fix: write them as a numbered list in the same run.
+Its installed version is the latest commit of `mb-doc-check.py` in `mybizz-scripts`, with the file's size. Its 150 automated tests run with `run-tests.sh` and end in `OK`.
 
 ### How it works
 
@@ -382,6 +369,7 @@ A settings file, `mb-doc-check.sources`, says which folder is which GBrain sourc
 - Commits are made in WSL, with commit-all, never with `--no-verify` and never from a Windows program.
 - After any change to GBrain's sources, `sources-check` is run.
 - After any GBrain upgrade, `slug-selftest` is run.
+- After any change to `mb-doc-check.py`, the tests are run and must pass before the change is committed.
 - When a commit is stopped, the named line is fixed and the commit is run again.
 - A new documentation repository is brought under the hook before it is used.
 
@@ -600,5 +588,5 @@ With `--status` it only shows what would be committed and changes nothing.
 - **Credentials are named, never shown.** A credential appears only as its variable name.
 - **One fact, one home.** Every fact lives in one document. A fact written twice drifts.
 - **Present is not working.** A system is trusted only when it is shown to work, not when its files exist.
-- **Fail open where failure would stop work.** Cupcake and mb-doc-check both let work continue when they themselves break, and say so.
+- **Failure is visible.** Cupcake fails closed, because it is the security boundary: a broken guard blocks the agent. mb-doc-check fails open, because a commit is not a security boundary: a broken checker lets the commit through and says so.
 - **Plain records, current state.** Documents state what is true now and why. They do not keep history for its own sake; Git keeps history.

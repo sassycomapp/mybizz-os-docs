@@ -25,6 +25,8 @@ cd /mnt/c/pdlf && opencode
 cd /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library && opencode web --hostname 0.0.0.0
 ```
 
+pkill -f opencode; sleep 3; opencode web --hostname 0.0.0.0
+
 Open `http://localhost:3000`, choose the project inside OpenCode, and check the model.
 
 ### STOP / RESTART OPENCODE
