@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-14"
+updated: "2026-10-16"
 ---
 # Daily Operations — Quick Reference
 
@@ -19,6 +19,10 @@ opencode web --hostname 0.0.0.0
 
 ```
 cd /mnt/c/pdlf && opencode
+```
+
+```bash
+cd /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library && opencode web --hostname 0.0.0.0
 ```
 
 Open `http://localhost:3000`, choose the project inside OpenCode, and check the model.
