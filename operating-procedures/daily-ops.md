@@ -25,7 +25,9 @@ cd /mnt/c/pdlf && opencode
 cd /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library && opencode web --hostname 0.0.0.0
 ```
 
+```
 pkill -f opencode; sleep 3; opencode web --hostname 0.0.0.0
+```
 
 Open `http://localhost:3000`, choose the project inside OpenCode, and check the model.
 
@@ -371,6 +373,7 @@ Use when OpenCode behaves strangely or a provider package is broken. It clears c
 ```bash
 pkill -f "opencode web"
 rm -rf -- "$(opencode debug paths cache)" "$(opencode debug paths state)" "$(opencode debug paths tmp)" && echo "OpenCode cache, state, and temporary files cleared."
+
 ```
 
 Then start OpenCode again (section 1). Full options: `opencode-reset-management.md`.
