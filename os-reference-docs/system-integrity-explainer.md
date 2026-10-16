@@ -189,13 +189,6 @@ It keeps no record of its runs. Findings are given in chat.
 
 The distinction that matters: a rule written in `AGENTS.md` is a request the agent may not follow. A rule enforced by Cupcake is checked every time, whatever the agent believes or has agreed to.
 
-### Intent
-
-**Remediation**
-- **Skills-folder check from the home folder.** Cupcake decides what is inside a project from the folder a session starts in. A session started in `/home/dev-p` sits above the skills folder, so a write into the skills folder may be treated as in-project. Fix: run the reference's "Skills-dir ancestor case" check from an OpenCode session in `/home/dev-p`; a write without a grant must be blocked.
-- **Protected files block approved edits too.** The rules protecting `AGENTS.md`, `CLAUDE.md`, `opencode.json` and `package.json` block an agent's edit even when the developer approves it in the same turn. Fix: the developer decides whether this stays, and the decision is recorded in Cupcake's learnings.
-- **Issuer documentation not fully read.** Cupcake's standard was taken from the README, licence and releases page of version 0.3.0. The deeper documentation in its `docs/` folder was not read. Fix: read it in the next `/mb-config-manager cupcake` run.
-
 ### How it works
 
 **Every tool call is checked.** Before a tool call runs, the plugin turns it into a structured event and asks the Cupcake checker for a decision. If any rule denies it, the call is blocked with the rule's own message. If nothing denies it, the call proceeds.
