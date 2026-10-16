@@ -21,7 +21,7 @@ Section 1 says what System Integrity is. Section 2 says why it exists. Section 3
 - **Where it stops** (what it does not do, and which system does that instead)
 - **Its documents**
 
-Section 11 states the rules and intents that every one of these systems shares, and the remediations that apply to all of them and to this document.
+Section 11 states the rules and intents that every one of these systems shares.
 
 Each section describes the system as it is built and runs. Where something must still change, the system's Intent lists it as a Remediation. A remediation is removed when it is done. A system with nothing open has no Intent part.
 
@@ -189,6 +189,13 @@ It keeps no record of its runs. Findings are given in chat.
 
 The distinction that matters: a rule written in `AGENTS.md` is a request the agent may not follow. A rule enforced by Cupcake is checked every time, whatever the agent believes or has agreed to.
 
+### Intent
+
+**Remediation**
+- **Skills-folder check from the home folder.** Cupcake decides what is inside a project from the folder a session starts in. A session started in `/home/dev-p` sits above the skills folder, so a write into the skills folder may be treated as in-project. Fix: run the reference's "Skills-dir ancestor case" check from an OpenCode session in `/home/dev-p`; a write without a grant must be blocked.
+- **Protected files block approved edits too.** The rules protecting `AGENTS.md`, `CLAUDE.md`, `opencode.json` and `package.json` block an agent's edit even when the developer approves it in the same turn. Fix: the developer decides whether this stays, and the decision is recorded in Cupcake's learnings.
+- **Issuer documentation not fully read.** Cupcake's standard was taken from the README, licence and releases page of version 0.3.0. The deeper documentation in its `docs/` folder was not read. Fix: read it in the next `/mb-config-manager cupcake` run.
+
 ### How it works
 
 **Every tool call is checked.** Before a tool call runs, the plugin turns it into a structured event and asks the Cupcake checker for a decision. If any rule denies it, the call is blocked with the rule's own message. If nothing denies it, the call proceeds.
@@ -267,11 +274,6 @@ A grant expires after a fixed time (30 minutes by default) or when its count run
 mb-config-manager is an OpenCode agent that keeps every MyBizz skill and system configured to its standard. It examines a system, proposes corrections with their justification, and applies only what the developer approves. It never researches issuers and never writes document suites. It has mb-sysdoc-creator do both.
 
 It is installed as `~/.config/opencode/agents/mb-config-manager.md` (mode: primary), with the command `~/.config/opencode/command/mb-config-manager.md`, which routes to it. Its source is `config-manager-agent.md`, and its one ongoing record is `config-manager-register.md`. Both are working files in its own folder, listed in its config. Its issuer is MyBizz. Its installed version is the latest commit of `config-manager-agent.md`, and the installed agent's body matches that source.
-
-### Intent
-
-**Remediation**
-- Give commit-all its first examination, filling its register row, once its suite exists.
 
 ### How it works
 
@@ -451,15 +453,6 @@ For each project it writes into the project library. When the session is in one 
 
 The two stay separate. mb-close-out ends a section of work. commit-all commits, syncs and pushes, alone or as close-out's last step.
 
-### Intent
-
-**Remediation**
-- Create the commit-all folder and its four documents through mb-sysdoc-creator's Create.
-- Point the commit-all operating procedure, and mb-close-out's reference, to the commit-all suite once it exists, and close mb-close-out's config open item.
-- Make commit-all keep the last run's log only, overwriting it on each run. `commit-all.sh` line 41 writes a new dated log file to `~/backups/` on every run.
-- **Procedure lists the wrong repositories.** `commit-all-repositories.md` lists `mb4ecom-project-library` and `mb5pdlf-project-library` and omits `scripts`. `commit-all.sh` commits `mb-4-ecom-project-library`, `mb-5-pdlf-project-library` and `scripts`, eighteen repositories in all. Fix: make the procedure point to the list in `repo-organization.md` and `commit-all.sh` instead of copying it.
-- **Learnings header missing (DEVIATION).** mb-close-out-learnings lacks the purpose sentence every other learnings file opens with. Fix: add it through `/mb-config-manager mb-close-out`.
-
 ### How it works
 
 **mb-close-out, step by step:**
@@ -512,7 +505,7 @@ With `--status` it only shows what would be committed and changes nothing.
 
 ### Its documents
 
-[[[mybizz-config-docs:mb-close-out/mb-close-out-explainer]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-explainer.md) · [[[mybizz-config-docs:mb-close-out/mb-close-out-reference]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-reference.md) · [[[mybizz-config-docs:mb-close-out/mb-close-out-config]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-config.md) · [[[mybizz-config-docs:mb-close-out/mb-close-out-learnings]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-learnings.md) · [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md). The skill's source is in its own repository, `C:\mybizz\mb-close-out\`.
+[[[mybizz-config-docs:mb-close-out/mb-close-out-explainer]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-explainer.md) · [[[mybizz-config-docs:mb-close-out/mb-close-out-reference]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-reference.md) · [[[mybizz-config-docs:mb-close-out/mb-close-out-config]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-config.md) · [[[mybizz-config-docs:mb-close-out/mb-close-out-learnings]]](C:/mybizz/mybizz-config-docs/mb-close-out/mb-close-out-learnings.md) · [[[mybizz-config-docs:commit-all/commit-all-explainer]]](C:/mybizz/mybizz-config-docs/commit-all/commit-all-explainer.md) · [[[mybizz-config-docs:commit-all/commit-all-reference]]](C:/mybizz/mybizz-config-docs/commit-all/commit-all-reference.md) · [[[mybizz-config-docs:commit-all/commit-all-config]]](C:/mybizz/mybizz-config-docs/commit-all/commit-all-config.md) · [[[mybizz-config-docs:commit-all/commit-all-learnings]]](C:/mybizz/mybizz-config-docs/commit-all/commit-all-learnings.md) · [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md). The skill's source is in its own repository, `C:\mybizz\mb-close-out\`.
 
 ---
 
@@ -568,12 +561,6 @@ With `--status` it only shows what would be committed and changes nothing.
   - Findings are given in chat.
   - Git keeps history.
 
-### Shared remediation
-
-- **This document has a duplicate.** `os-reference-docs\system-integrity-explainer-v5.md` holds an earlier text of this document under a second doc-id. Fix: delete it with `git rm`.
-- **Working reports.** The six config-management reports in `os-reference-docs\reports\` record work this document now holds. Fix: move them to `mybizz-os-docs\obsolete\`.
-- **One format in every suite.** Explainer headings carry the specification's titles, without numbers. Open items are a numbered list, or the word "None". Every learnings file opens with the same purpose sentence. Each suite's remediation above applies this rule to its own documents.
-
 ### Shared rules
 
 - **The developer decides.** No system applies a change to a working system, a governing file or a record without the developer's approval.
@@ -584,4 +571,5 @@ With `--status` it only shows what would be committed and changes nothing.
 - **One fact, one home.** Every fact lives in one document. A fact written twice drifts.
 - **Present is not working.** A system is trusted only when it is shown to work, not when its files exist.
 - **Failure is visible.** Cupcake fails closed, because it is the security boundary: a broken guard blocks the agent. mb-doc-check fails open, because a commit is not a security boundary: a broken checker lets the commit through and says so.
+- **One format in every suite.** Explainer headings carry the specification's titles, without numbers. Open items are a numbered list, or the word "None". Every learnings file opens with the same purpose sentence.
 - **Plain records, current state.** Documents state what is true now and why. They do not keep history for its own sake; Git keeps history.
