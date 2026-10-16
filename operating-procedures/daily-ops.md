@@ -373,7 +373,7 @@ Use when OpenCode behaves strangely or a provider package is broken. It clears c
 ```bash
 pkill -f "opencode web"
 rm -rf -- "$(opencode debug paths cache)" "$(opencode debug paths state)" "$(opencode debug paths tmp)" && echo "OpenCode cache, state, and temporary files cleared."
-
+opencode web --hostname 0.0.0.0
 ```
 
 Then start OpenCode again (section 1). Full options: `opencode-reset-management.md`.
