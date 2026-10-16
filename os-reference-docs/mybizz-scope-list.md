@@ -1,7 +1,7 @@
 ---
 title: "mybizz-scope-list"
 doc-id: "mb-a5a87568"
-updated: "2026-10-10"
+updated: "2026-10-16"
 
 ---
 
@@ -75,11 +75,21 @@ Disposable and template projects:
 Anvil code repositories — class rule: any folder containing an anvil.yaml, current or
 future, is excepted (code is never documentation):
 
-"C:\dev\dev-mb-3-cs\mb-3-cs"
-"C:\dev\dev-mb4ecom\mb4ecom"
+"C:\dev\dev-mb-3-cs\mb-3-cs-app1"
+"C:\dev\dev-mb-3-cs\mb-3-cs-app2"
+"C:\dev\dev-mb-3-cs\mb-3-cs-app3"
+"C:\dev\dev-mb-3-cs\mb-3-cs-app5"
+"C:\dev\dev-mb-4-ecom\mb-4-ecom-app1"
+"C:\dev\dev-mb-4-ecom\mb-4-ecom-app2"
+"C:\dev\dev-mb-4-ecom\mb-4-ecom-app3"
+"C:\dev\dev-mb-4-ecom\mb-4-ecom-app5"
+"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app1"
+"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app2"
+"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app3"
+"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app5"
 
 Notes:
 
-- "C:\dev\dev-mb4ecom\mb4ecom-project-library" and "C:\dev\dev-mb5pdlf\mb5pdlf-project-library" are IN scope. Both are unscoped placeholders today; membership is by content, so they activate when real content lands — no scope change needed.
+- "C:\dev\dev-mb-4-ecom\mb-4-ecom-project-library" and "C:\dev\dev-mb-5-pdlf\mb-5-pdlf-project-library" are IN scope. Both are unscoped placeholders today; membership is by content, so they activate when real content lands — no scope change needed.
 - mb-3-cs-project-library and all of C:\pdlf other than its
   exceptions above are IN scope despite being in development. Transient state schedules the work; it never removes scope.
