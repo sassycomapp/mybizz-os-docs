@@ -1,13 +1,13 @@
 ---
 title: "commit-all-repositories"
 doc-id: "mb-313772ce"
-updated: "2026-10-10"
+updated: "2026-10-16"
 ---
 # Commit, update GBrain and push all repositories
 
 The one procedure to follow every time you finish work on any documentation repository on the commit-all list. It keeps every repository committed, GBrain current and GitHub up to date at the same time. It is the "after doing work" step of [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md).
 
-The repositories on the commit-all list: `mybizz-os-docs`, `mybizz-config-docs`, `data-mybizz-mgt`, `pdlf`, `dev-root`, `mb-3-cs-project-library`, `mb4ecom-project-library`, `mb5pdlf-project-library`, `project-library-global`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`. The full list with paths and GBrain sources is in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).
+The repositories on the commit-all list are the documentation repositories and the scripts repository named in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md), section "Commit hook and `commit-all.sh`". `commit-all.sh` holds the same list.
 
 ## Every time
 
@@ -27,7 +27,7 @@ bash /mnt/c/mybizz/scripts/commit-all.sh "what you did"
 4. Wait. It can take several minutes, because GBrain re-reads the changed documents. Do not press Ctrl+C.
 5. Read the summary at the end. Every repository should say `committed` or `nothing to commit`, and `pushed` or `already up to date`. The last line says `All done.`
 
-The command does three things in this order: it commits every repository that has changes, with your message; it updates GBrain with `sync-gbrain.sh`; it pushes every repository to GitHub. The full output is saved to a log file in `~/backups/`.
+The command does three things in this order: it commits every repository that has changes, with your message; it updates GBrain with `sync-gbrain.sh`; it pushes every repository to GitHub. The full output is saved to `~/backups/commit-all-last.txt`, which each run replaces.
 
 ## If a repository says BLOCKED
 

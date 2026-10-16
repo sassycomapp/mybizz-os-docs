@@ -401,13 +401,6 @@ It works on one project at a time, the one the session is in. It documents proje
 
 Its issuer is MyBizz. Its standard is its source, `C:\mybizz\mb-project-docs\mb-project-docs.md`.
 
-### Intent
-
-**Remediation**
-- **Unverified setting.** project-docs-config open item 1: whether Anvil keeps the `theme\docs` folder through its cloud round-trip. The folder exists locally in `mb-3-cs-app1`. Fix: the developer pushes `mb-3-cs-app1` to Anvil, pulls it back, and confirms `theme\docs` and its files survive. The result becomes a config row and the open item closes through `/mb-config-manager mb-project-docs`.
-- **Open items format (DEVIATION).** The config writes its open items as a table. Other suites write them as a numbered list. Fix: write them as a numbered list in the same run.
-- **Project paths out of date elsewhere.** `mybizz-scope-list.md` lines 78 to 83 name `dev-mb4ecom`, `mb4ecom`, `mb5pdlf` and `dev-mb-3-cs\mb-3-cs`. The projects are `mb-3-cs`, `mb-4-ecom` and `mb-5-pdlf`, with their libraries and `{slug}-app1` repositories. Fix: correct those lines to the paths in `repo-organization.md`.
-
 ### How it works
 
 1. It reads the project's real state and what the session changed.
@@ -416,7 +409,7 @@ Its issuer is MyBizz. Its standard is its source, `C:\mybizz\mb-project-docs\mb-
 4. It proposes small edits: corrections, plus what the session added, each to the file that owns it.
 5. It prepares the `AGENTS.md` change as a draft. The developer applies it with one terminal line.
 
-For each project it writes into the project library. Where the project has a code repository, that is App 1, `{slug}-app1`, the development workspace, and it writes there into `theme\docs`, but only if the Anvil app already exists. Otherwise it stops and asks the developer to create the app.
+For each project it writes into the project library. When the session is in one of the project's code repositories, App 1 (the development workspace), App 3 or App 5, it writes into that app's docs folder, `theme\assets\docs\app1`, `app3` or `app5`. Anvil carries a folder under `theme\assets` only when it was first uploaded through Anvil, so the developer creates each app's docs folder once, through Anvil's Add asset > Upload folder, with `pilot-doc.txt` in it for good. If the folder is missing, the skill stops and gives the developer those steps. It never creates the folder itself and never removes `pilot-doc.txt`.
 
 ### Why it works this way
 
@@ -425,6 +418,7 @@ For each project it writes into the project library. Where the project has a cod
 - **The agent does not write `AGENTS.md`.** The file governs the agent. The developer applies its changes.
 - **Small edits, never regeneration.** State can be found again. Reasons and decisions cannot, and a rewrite would lose them.
 - **It runs at close-out.** That is when the session's changes are known and the developer is already approving.
+- **Docs folders are made in Anvil, not on disk.** Anvil ignores a folder that was not first uploaded through Anvil, and drops a folder that becomes empty. The pilot file keeps every docs folder alive.
 - **Its project table follows `repo-organization.md`.** A table that names a folder that no longer exists makes the skill stop in that project.
 
 ### What has to happen
@@ -433,6 +427,7 @@ For each project it writes into the project library. Where the project has a cod
 - The developer approves its changes at close-out's single approval step.
 - The developer applies the `AGENTS.md` change with the terminal line it provides.
 - When a project folder or repository is renamed, the skill's project table is updated in its source and the skill reinstalled.
+- Every app that agents work in has its docs folder in Anvil, holding `pilot-doc.txt`.
 
 ### Where it stops
 
