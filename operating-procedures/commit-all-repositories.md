@@ -80,7 +80,7 @@ The list holds every documentation repository. Three kinds of repository stay of
 
 ## After a GBrain upgrade
 
-Follow [[mybizz-config-docs:gbrain/gbrain-upgrade-checklist]]. Never run `gbrain upgrade` or `gbrain self-upgrade` on this installation.
+Follow gbrain-upgrade-checklist. Never run `gbrain upgrade` or `gbrain self-upgrade` on this installation.
 
 ## Where the tools are
 

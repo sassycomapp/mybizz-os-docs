@@ -290,7 +290,7 @@ re-run any time; it does not touch project files.
 installed folder is prefixed (`gstack-qa/`), but the actual slash
 command is the **bare name** from that skill's own frontmatter —
 `/qa`, not `/gstack-qa`. Confirmed directly: the prefixed form returns
-nothing. See [[[mybizz-config-docs:gstack/gstack-skills-reference|GStack Skills Reference]]](C:/mybizz/mybizz-config-docs/gstack/gstack-skills-reference.md) for the full catalog using
+nothing. See GStack Skills Reference for the full catalog using
 correct names.
 
 ### FIX: GSTACK BROWSER SKILLS WON'T LAUNCH
