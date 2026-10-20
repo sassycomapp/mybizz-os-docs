@@ -36,7 +36,7 @@ Installed skills are in WSL. `SKILL.md` files never get a `doc-id`, and the hook
 
 c) Documents are stored with LF line endings.
 
-d) `obsolete` folders are never touched by the hook.
+d) A retired document is deleted; Git history keeps it.
 
 The GBrain side of these rules is in [[[mybizz-config-docs:mb-sysdoc-creator/doc-suite-specification]]](C:/mybizz/mybizz-config-docs/mb-sysdoc-creator/doc-suite-specification.md).
 

@@ -1,7 +1,7 @@
 ---
 title: "commit-all-repositories"
 doc-id: "mb-313772ce"
-updated: "2026-10-16"
+updated: "2026-10-20"
 ---
 # Commit, update GBrain and push all repositories
 
@@ -52,7 +52,7 @@ GitHub has commits that your computer does not. Do not force the push. Ask Claud
 - **Paths.** A document path pasted into running text becomes a link. A path written in `backticks` stays plain text. Put a path in backticks when it only states where something is.
 - **Frontmatter.** Every document has `title`, `doc-id` and `updated`. The hook adds what is missing. `doc-id` never changes. `updated` changes only when the document really changed.
 - **Line endings.** Documents are stored with LF. MarkText is set to LF.
-- **Never touched.** `SKILL.md` files and `obsolete` folders.
+- **Never touched.** `SKILL.md` files.
 
 ## Checks you can run
 
@@ -80,7 +80,7 @@ The list holds every documentation repository. Three kinds of repository stay of
 
 ## After a GBrain upgrade
 
-Follow [[[mybizz-config-docs:gbrain/gbrain-upgrade-checklist]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-upgrade-checklist.md). Never run `gbrain upgrade` or `gbrain self-upgrade` on this installation.
+Follow [[mybizz-config-docs:gbrain/gbrain-upgrade-checklist]]. Never run `gbrain upgrade` or `gbrain self-upgrade` on this installation.
 
 ## Where the tools are
 

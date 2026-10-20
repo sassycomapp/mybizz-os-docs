@@ -35,7 +35,7 @@ This document states what the system is and why. It does not repeat the detail h
 
 ## 1A. What makes MyBizz-OS distinctive
 
-Several frameworks now exist to keep AI coding agents disciplined; the most widely used ones organise work into stages with a human approval between planning and building. MyBizz-OS shares that idea and goes further in specific, checkable ways. The full assessment, including the comparison with named frameworks, is [[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]].
+Several frameworks now exist to keep AI coding agents disciplined; the most widely used ones organise work into stages with a human approval between planning and building. MyBizz-OS shares that idea and goes further in specific, checkable ways.
 
 - **A real database ledger, not files.** Most comparable tools keep their working state in text files. PDLF records every step, gate and decision in a database whose structure enforces its own consistency.
 - **A record that cannot differ from what happened.** The report the developer reads after each step is generated from the database row the step wrote, not composed afterwards by the agent.
@@ -89,7 +89,7 @@ In outline:
 
 ### Why it exists
 
-PDLF exists so that a non-technical developer can direct an AI agent to build software for paying clients and be justified in trusting the result. It provides continuity (nothing is lost between sessions), enforcement (no step runs before its dependencies), traceability (every step leaves a record), disciplined use of skills (a skill is used only where it genuinely does better than the agent alone), and compounding knowledge (each project starts from everything earlier projects learned). An independent assessment is in [[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]].
+PDLF exists so that a non-technical developer can direct an AI agent to build software for paying clients and be justified in trusting the result. It provides continuity (nothing is lost between sessions), enforcement (no step runs before its dependencies), traceability (every step leaves a record), disciplined use of skills (a skill is used only where it genuinely does better than the agent alone), and compounding knowledge (each project starts from everything earlier projects learned).
 
 ### The ledger — memory that cannot silently lie
 
@@ -117,7 +117,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 ### How PDLF is built
 
-PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), the orchestrator agent, [[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]].
+PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), the orchestrator agent.
 
 Two placeholder projects belong to this picture. **mb-5-pdlf** is the test project on which PDLF will be proven. **mb-4-ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 

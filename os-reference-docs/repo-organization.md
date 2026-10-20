@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-10-16"
+updated: "2026-10-20"
 
 ---
 
@@ -42,7 +42,7 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 | memory-governor | — (WSL only) | /home/dev-p/memory-governor | memory-governor-code (unset) | Yes | Fallback home | No |
 | mybizz-config-docs | C:\mybizz\mybizz-config-docs | /mnt/c/mybizz/mybizz-config-docs | mybizz-config-docs (federated) | Yes | Fallback home | Yes |
 | mybizz-os-docs | C:\mybizz\mybizz-os-docs | /mnt/c/mybizz/mybizz-os-docs | mybizz-os-docs (federated) | Yes | Fallback home | Yes |
-| mybizz-scripts | C:\mybizz\scripts | /mnt/c/mybizz/scripts | mybizz-scripts-code (unset) | Yes | Fallback home | No |
+| mybizz-scripts | C:\mybizz\scripts | /mnt/c/mybizz/scripts | — | Yes | Fallback home | No |
 | pdlf | C:\pdlf | /mnt/c/pdlf | pdlf (federated) | Yes | Fallback home | Yes |
 | project-library-global | C:\dev\project-library-global | /mnt/c/dev/project-library-global | default (federated) | Yes | Fallback home | Yes |
 | project-template | C:\dev\project-template | /mnt/c/dev/project-template | — | No | — | No |
@@ -63,7 +63,7 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 
 **Verified against the machine:** `git remote` of every repository, `gbrain sources list`, the OpenCode project list, the `.cupcake` folders and a Cupcake evaluation from every OpenCode project folder.
 
-**GBrain source:** the source id and its federation state. `federated`: appears in every other source's default search and may write links into other sources. `unset`: never set; the source stays out of other sources' searches, but a session working inside it can still read the federated sources. `isolated`: set explicitly with `gbrain sources unfederate`; cut off in both directions. Every documentation source is federated. The two system code sources, `memory-governor-code` and `mybizz-scripts-code`, are `unset`. `— (code)` marks an application code repository, which is not a GBrain source.
+**GBrain source:** the source id and its federation state. `federated`: appears in every other source's default search and may write links into other sources. `unset`: never set; the source stays out of other sources' searches, but a session working inside it can still read the federated sources. `isolated`: set explicitly with `gbrain sources unfederate`; cut off in both directions. Every documentation source is federated. The system code source `memory-governor-code` is `unset`. `— (code)` marks an application code repository, which is not a GBrain source.
 
 **Application code is not in GBrain.** Agents read application code directly from the app folder, which is always current; an index of it would go stale between syncs.
 
@@ -78,3 +78,5 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 **Note on `anvil-agent-references-code`:** this source is a read-only clone of Anvil's own public repository, `github.com/anvil-works/anvil-agent-references`, at `C:\mybizz\anvil-agent-references`. Anvil publishes it. It is not one of the developer's repositories, and it has no GitHub repository of the developer's own. It is separate from `anvil-docs` in the source `default` (`project-library-global`), which is the developer's own compilation of Anvil documentation. The `-code` in its source id distinguishes it from the developer's own documentation folder `anvil-agent-references/` in `mybizz-config-docs`. The source is isolated, so it is searched only when named explicitly. It is updated by hand (`git -C /mnt/c/mybizz/anvil-agent-references pull`); the standing sync script does not pull.
 
 **Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `dev-root-hub`, `mb-3-cs-project-library`, `mb-4-ecom-project-library`, `mb-5-pdlf-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They also cover the scripts repository, `mybizz-scripts`. They do not cover the app code repositories, the Anvil clone, `project-template`, `gbrain-repo` or the memory governor's folder.
+
+**Branch:** every repository works on `main`, except the Anvil app code repositories, which work on `master` because Anvil syncs that branch.

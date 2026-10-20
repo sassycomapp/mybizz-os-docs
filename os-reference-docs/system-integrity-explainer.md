@@ -1,7 +1,7 @@
 ---
 title: "system-integrity-explainer"
 doc-id: "mb-91e45ce5"
-updated: "2026-10-16"
+updated: "2026-10-20"
 ---
 # System Integrity — Explainer
 
@@ -373,7 +373,7 @@ A settings file, `mb-doc-check.sources`, says which folder is which GBrain sourc
 - It checks form and links, never meaning. It cannot tell whether a document is true.
 - It never checks configuration. mb-config-manager does that.
 - It does not cover code repositories, the Anvil clone or the memory governor's folder.
-- It never edits an installed `SKILL.md` or anything in an `obsolete` folder.
+- It never edits an installed `SKILL.md`.
 
 ### Its documents
 

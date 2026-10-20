@@ -66,8 +66,7 @@ At every commit, for every document in that commit:
    its name or its content, so a document that was renamed and completely rewritten is still found.
    Links to it are corrected in every repository, not only the one being committed.
 4. **Turns links to a deleted document into plain words.** The sentence stays; the dead link goes.
-5. **Follows a document into `obsolete`.** When you retire a document by moving it into an
-   `obsolete` folder, links to it follow it there.
+5. **Turns a link to a deleted document into plain words.** The text stays readable when its target is gone.
 6. **Stops the commit** when a link you just typed points to nothing, or to a name several
    documents share, or when the frontmatter is damaged. The message names the line and, for a
    shared name, the exact links you can write instead.
@@ -77,7 +76,7 @@ At every commit, for every document in that commit:
    date line, or its line endings, keeps its old date.
 
 What it never does: move, rename or delete a file; touch `SKILL.md` files (installed skills) or
-anything inside an `obsolete` folder; or commit for you.
+or commit for you.
 
 ## 4. Why it works the way it does
 
@@ -164,7 +163,7 @@ Windows program bypass it.
 - **Best for:** documentation written mostly by AI agents across several repositories, where the
   documents must refer to one another, be searchable as one body of knowledge, and be reorganised
   without breaking.
-- **Good for:** renaming and moving documents freely; retiring documents into `obsolete`; reading
+- **Good for:** renaming and moving documents freely; deleting documents; reading
   and following links in MarkText; letting GBrain answer questions that cross repository
   boundaries.
 - **Not good for:** reading the documents on GitHub, where the local paths do not open; moving a
