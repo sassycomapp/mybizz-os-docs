@@ -1,7 +1,7 @@
 ---
 title: "frontmatter conventions"
 doc-id: "mb-f484bbdf"
-updated: "2026-10-07"
+updated: "2026-10-20"
 ---
 frontmatter conventions:
 
@@ -38,5 +38,5 @@ c) Documents are stored with LF line endings.
 
 d) `obsolete` folders are never touched by the hook.
 
-The GBrain side of these rules is in [[[mybizz-config-docs:gbrain/gbrain-doc-contract]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-doc-contract.md).
+The GBrain side of these rules is in [[mybizz-config-docs:gbrain/gbrain-doc-contract]].
 

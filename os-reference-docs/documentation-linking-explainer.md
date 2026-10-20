@@ -1,11 +1,11 @@
 ---
 title: "documentation-linking-explainer"
 doc-id: "mb-15cd9959"
-updated: "2026-10-07"
+updated: "2026-10-20"
 ---
 # Documentation linking — Explainer
 
-*Companion note: the rules a document must meet are in [[[mybizz-config-docs:gbrain/gbrain-doc-contract]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-doc-contract.md) and
+*Companion note: the rules a document must meet are in [[mybizz-config-docs:gbrain/gbrain-doc-contract]] and
 [[[mybizz-os-docs:os-reference-docs/frontmatter-conventions]]](C:/mybizz/mybizz-os-docs/os-reference-docs/frontmatter%20conventions.md); the procedure to follow every time you finish work is
 [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md); GBrain's side of the story is in [[[mybizz-config-docs:gbrain/gbrain-explainer]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-explainer.md); the
 repositories and their GBrain sources are listed in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).*

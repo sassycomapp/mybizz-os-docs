@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-16"
+updated: "2026-10-20"
 ---
 # Daily Operations — Quick Reference
 
@@ -14,24 +14,43 @@ Your manual, in the order you need it. The reference documents hold the detail.
 ### Start OpenCode
 
 ```bash
-opencode web --hostname 0.0.0.0
-```
-
-```
-cd /mnt/c/pdlf && opencode
+cd ~ && opencode web --hostname 0.0.0.0
 ```
 
 ```bash
-cd /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library && opencode web --hostname 0.0.0.0
+pkill -f opencode; sleep 3; cd ~ && opencode web --hostname 0.0.0.0
 ```
 
-```
-pkill -f opencode; sleep 3; opencode web --hostname 0.0.0.0
-```
+### Open any project inside opencode webUI with
 
-Open `http://localhost:3000`, choose the project inside OpenCode, and check the model.
+projects/data-mybizz-mgt
+projects/mb-3-cs-app1
+projects/mb-3-cs-app3
+projects/mb-3-cs-app5
+projects/mb-3-cs-project-library
+projects/mb-4-ecom-app1
+projects/mb-4-ecom-app3
+projects/mb-4-ecom-app5
+projects/mb-4-ecom-project-library
+projects/mb-5-pdlf-app1
+projects/mb-5-pdlf-app3
+projects/mb-5-pdlf-app5
+projects/mb-5-pdlf-project-library
+projects/mb-archify-scope
+projects/mb-close-out
+projects/mb-compile-rules
+projects/mb-memory-system-diagnostic
+projects/mb-project-docs
+projects/mb-sentinel-review
+projects/mb-submit-memory
+projects/mb-sysdoc-creator
+projects/mybizz-config-docs
+projects/mybizz-os-docs
+projects/pdlf
+projects/project-library-global
+projects/scripts
 
-### STOP / RESTART OPENCODE
+### STOP OPENCODE
 
 ```bash
 pkill -f "opencode web"
@@ -381,7 +400,7 @@ Then start OpenCode again (section 1). Full options: `opencode-reset-management.
 ### Tool details
 
 - Cupcake on and off: [[[mybizz-config-docs:cupcake/cupcake-reference]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-reference.md), "Disabling Cupcake".
-- i-have-adhd switches, update, verification and uninstall: [[[mybizz-config-docs:i-have-adhd/i-have-adhd-reference]]](C:/mybizz/mybizz-config-docs/i-have-adhd/i-have-adhd-reference.md).
+- i-have-adhd switches, update, verification and uninstall: [[mybizz-config-docs:i-have-adhd/i-have-adhd-reference]].
 - GBrain's AI providers: [[[mybizz-config-docs:gbrain/gbrain-config]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-config.md), Models.
 
 ---
