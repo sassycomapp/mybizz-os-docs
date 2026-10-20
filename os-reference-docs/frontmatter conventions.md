@@ -38,5 +38,5 @@ c) Documents are stored with LF line endings.
 
 d) `obsolete` folders are never touched by the hook.
 
-The GBrain side of these rules is in [[mybizz-config-docs:gbrain/gbrain-doc-contract]].
+The GBrain side of these rules is in [[[mybizz-config-docs:mb-sysdoc-creator/doc-suite-specification]]](C:/mybizz/mybizz-config-docs/mb-sysdoc-creator/doc-suite-specification.md).
 

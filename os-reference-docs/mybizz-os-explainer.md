@@ -35,7 +35,7 @@ This document states what the system is and why. It does not repeat the detail h
 
 ## 1A. What makes MyBizz-OS distinctive
 
-Several frameworks now exist to keep AI coding agents disciplined; the most widely used ones organise work into stages with a human approval between planning and building. MyBizz-OS shares that idea and goes further in specific, checkable ways. The full assessment, including the comparison with named frameworks, is [[[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]]](C:/pdlf/obsolete/pdlf-objective-review.md).
+Several frameworks now exist to keep AI coding agents disciplined; the most widely used ones organise work into stages with a human approval between planning and building. MyBizz-OS shares that idea and goes further in specific, checkable ways. The full assessment, including the comparison with named frameworks, is [[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]].
 
 - **A real database ledger, not files.** Most comparable tools keep their working state in text files. PDLF records every step, gate and decision in a database whose structure enforces its own consistency.
 - **A record that cannot differ from what happened.** The report the developer reads after each step is generated from the database row the step wrote, not composed afterwards by the agent.
@@ -89,7 +89,7 @@ In outline:
 
 ### Why it exists
 
-PDLF exists so that a non-technical developer can direct an AI agent to build software for paying clients and be justified in trusting the result. It provides continuity (nothing is lost between sessions), enforcement (no step runs before its dependencies), traceability (every step leaves a record), disciplined use of skills (a skill is used only where it genuinely does better than the agent alone), and compounding knowledge (each project starts from everything earlier projects learned). An independent assessment is in [[[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]]](C:/pdlf/obsolete/pdlf-objective-review.md).
+PDLF exists so that a non-technical developer can direct an AI agent to build software for paying clients and be justified in trusting the result. It provides continuity (nothing is lost between sessions), enforcement (no step runs before its dependencies), traceability (every step leaves a record), disciplined use of skills (a skill is used only where it genuinely does better than the agent alone), and compounding knowledge (each project starts from everything earlier projects learned). An independent assessment is in [[pdlf:obsolete/pdlf-objective-review|the PDLF objective review]].
 
 ### The ledger — memory that cannot silently lie
 
@@ -117,7 +117,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 ### How PDLF is built
 
-PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), the orchestrator agent, [[[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]]](C:/pdlf/obsolete/artifact-lifecycle-explainer.md).
+PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), the orchestrator agent, [[pdlf:obsolete/artifact-lifecycle-explainer|the life of an artifact]].
 
 Two placeholder projects belong to this picture. **mb-5-pdlf** is the test project on which PDLF will be proven. **mb-4-ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
 
@@ -221,7 +221,7 @@ Memory is a family, not a tool: its parts act on each other. The authoritative m
 ### 5.4 Knowledge and standards — the system knows the rules of the business
 
 - **project-library-global** (`C:\dev\project-library-global\`) is MyBizz's own definitive library of decisions and standards that apply to every application PDLF builds: global architecture decisions (ADRs), policies, specifications, standards, standard operating procedures, templates, guides, the Anvil documentation compilation (`anvil-docs`), the Cupcake rule sources and the security library. Some sections are still being written.
-- **anvil-agent-references** is Anvil's own published skill set for AI agents: how forms, client modules, server code, data models and the `anvil.yaml` manifest actually work, generated from Anvil's source. It is the platform standard PDLF builds against, and it stops the agent guessing at a framework it was never trained to know in detail. It is a read-only copy of Anvil's repository, at `C:\mybizz\anvil-agent-references\`. Detail: [[mybizz-config-docs:anvil-agent-references/anvil-agent-references-explainer|the anvil-agent-references explainer]].
+- **anvil-agent-references** is Anvil's own published skill set for AI agents: how forms, client modules, server code, data models and the `anvil.yaml` manifest actually work, generated from Anvil's source. It is the platform standard PDLF builds against, and it stops the agent guessing at a framework it was never trained to know in detail. It is a read-only copy of Anvil's repository, at `C:\mybizz\anvil-agent-references\`. Detail: the anvil-agent-references explainer.
 - **The project libraries** hold each project's own documentation: `mb-3-cs-project-library` (`C:\dev\dev-mb-3-cs\mb-3-cs-project-library\`), `mb-4-ecom-project-library` (`C:\dev\dev-mb-4-ecom\mb-4-ecom-project-library\`) and `mb-5-pdlf-project-library` (`C:\dev\dev-mb-5-pdlf\mb-5-pdlf-project-library\`). Each sits beside its project's four Anvil code repositories, `-app1`, `-app2`, `-app3` and `-app5`, one per application of the five-application structure that lives on this computer (Section 10).
 - **The system documentation libraries**: `mybizz-os-docs` (`C:\mybizz\mybizz-os-docs\`: operating procedures and system-wide reference, including this document), `mybizz-config-docs` (`C:\mybizz\mybizz-config-docs\`: one document suite per component), `pdlf` (`C:\pdlf\`: the PDLF library and app factory), `data-mybizz-mgt` (`C:\data-mybizz-mgt\`: management and planning working files) and `dev-root` (`C:\dev\dev-root\`: the hub of the development folder).
 - **The scope list** records which folders are part of the documentation corpus and which are never referenced: [[[mybizz-os-docs:os-reference-docs/mybizz-scope-list|the scope list]]](C:/mybizz/mybizz-os-docs/os-reference-docs/mybizz-scope-list.md).
@@ -233,10 +233,10 @@ Every repository, its GitHub home and its GBrain source are listed in one place:
 Skills are packaged instructions an agent loads to do one kind of work well. Every installed skill is listed in [[[mybizz-os-docs:os-reference-docs/skills-catalog|the skills catalogue]]](C:/mybizz/mybizz-os-docs/os-reference-docs/skills-catalog.md).
 
 - **GStack** is a virtual engineering team as skills: product interrogation, plan reviews from several professional angles, code review, real-browser QA, security audits, shipping and canary monitoring. GBrain is memory; GStack is workflow. Detail: [[[mybizz-config-docs:gstack/gstack-explainer|the GStack explainer]]](C:/mybizz/mybizz-config-docs/gstack/gstack-explainer.md).
-- **Matt Pocock skills** are small, composable engineering disciplines: aligning on intent before building, domain modelling, test-driven slices, ticketing, triage, architecture surveys. Together with `secure-software-engineering`, they are the engineering pool PDLF draws on. Detail: [[mybizz-config-docs:matt-pocock-skills/matt-pocock-skills-explainer|the Matt Pocock skills explainer]].
-- **Magdoub wireframe** turns a one-line feature description into five alternative interactive wireframes, so a screen's structure is settled before any interface is built. PDLF uses it twice: rough structure first, refinement once the structure is approved. Detail: [[mybizz-config-docs:magdoub-wireframe/magdoub-wireframe-explainer|the Magdoub wireframe explainer]].
+- **Matt Pocock skills** are small, composable engineering disciplines: aligning on intent before building, domain modelling, test-driven slices, ticketing, triage, architecture surveys. Together with `secure-software-engineering`, they are the engineering pool PDLF draws on. Detail: the Matt Pocock skills explainer.
+- **Magdoub wireframe** turns a one-line feature description into five alternative interactive wireframes, so a screen's structure is settled before any interface is built. PDLF uses it twice: rough structure first, refinement once the structure is approved. Detail: the Magdoub wireframe explainer.
 - **Archify** turns a typed description of a system into a validated, interactive diagram, every element traceable to its source. **`mb-archify-scope`** comes first: it agrees the diagram's scope — one main path, at most twelve nodes — before any drawing starts. Detail: [[[mybizz-config-docs:archify/archify-explainer|the Archify explainer]]](C:/mybizz/mybizz-config-docs/archify/archify-explainer.md), [[[mb-archify-scope:mb-archify-scope|the scoping skill]]](C:/mybizz/mb-archify-scope/mb-archify-scope.md).
-- **i-have-adhd** reshapes the agents' response style for a reader with ADHD: action first, numbered steps, no tangents. Detail: [[mybizz-config-docs:i-have-adhd/i-have-adhd-explainer|the i-have-adhd explainer]].
+- **i-have-adhd** reshapes the agents' response style for a reader with ADHD: action first, numbered steps, no tangents. Detail: the i-have-adhd explainer.
 - **MiniMax document skills** (`minimax-docx`, `minimax-xlsx`) let agents produce Word and Excel files.
 - **Graphify's operational skill** is how agents query the code graphs (5.2).
 
@@ -454,16 +454,16 @@ Every component, once. The family numbers refer to Section 5.
 | Sentinel | 5.3 | WSL, inside PDLF | Security review of what PDLF builds | [[[mybizz-config-docs:mb-sentinel-review/sentinel-explainer]]](C:/mybizz/mybizz-config-docs/mb-sentinel-review/sentinel-explainer.md) |
 | `secure-software-engineering` | 5.3 | WSL | Prevention-first security method | [[[mybizz-os-docs:os-reference-docs/skills-catalog]]](C:/mybizz/mybizz-os-docs/os-reference-docs/skills-catalog.md) |
 | project-library-global | 5.4 | Windows (repository) | MyBizz's global decisions and standards | `C:\dev\project-library-global\` |
-| anvil-agent-references | 5.4 | Windows clone, WSL skills | Anvil's own platform knowledge | [[mybizz-config-docs:anvil-agent-references/anvil-agent-references-explainer]] |
+| anvil-agent-references | 5.4 | Windows clone, WSL skills | Anvil's own platform knowledge | anvil-agent-references-explainer |
 | Project libraries | 5.4 | Windows (repositories) | Each project's documentation | [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md) |
 | System documentation libraries | 5.4 | Windows (repositories) | Operating, component and PDLF documentation | [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md) |
 | Scope list | 5.4 | Windows (repository) | What the corpus includes and excludes | [[[mybizz-os-docs:os-reference-docs/mybizz-scope-list]]](C:/mybizz/mybizz-os-docs/os-reference-docs/mybizz-scope-list.md) |
 | GStack | 5.5 | WSL | Workflow skills: plan, review, QA, ship | [[[mybizz-config-docs:gstack/gstack-explainer]]](C:/mybizz/mybizz-config-docs/gstack/gstack-explainer.md) |
-| Matt Pocock skills | 5.5 | WSL | Engineering disciplines | [[mybizz-config-docs:matt-pocock-skills/matt-pocock-skills-explainer]] |
-| Magdoub wireframe | 5.5 | WSL | Alternative wireframes before building | [[mybizz-config-docs:magdoub-wireframe/magdoub-wireframe-explainer]] |
+| Matt Pocock skills | 5.5 | WSL | Engineering disciplines | matt-pocock-skills-explainer |
+| Magdoub wireframe | 5.5 | WSL | Alternative wireframes before building | magdoub-wireframe-explainer |
 | Archify | 5.5 | WSL | Validated interactive diagrams | [[[mybizz-config-docs:archify/archify-explainer]]](C:/mybizz/mybizz-config-docs/archify/archify-explainer.md) |
 | `mb-archify-scope` | 5.5 | WSL | Scopes a diagram before drawing | [[[mb-archify-scope:mb-archify-scope]]](C:/mybizz/mb-archify-scope/mb-archify-scope.md) |
-| i-have-adhd | 5.5 | WSL | Response style for an ADHD reader | [[mybizz-config-docs:i-have-adhd/i-have-adhd-explainer]] |
+| i-have-adhd | 5.5 | WSL | Response style for an ADHD reader | i-have-adhd-explainer |
 | MiniMax document skills | 5.5 | WSL | Word and Excel output | [[[mybizz-os-docs:os-reference-docs/skills-catalog]]](C:/mybizz/mybizz-os-docs/os-reference-docs/skills-catalog.md) |
 | `mb-doc-check` | 5.6 | WSL (commit hook) | Keeps documents and links correct | [[[mybizz-config-docs:mb-doc-check/doc-check-explainer]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-explainer.md) |
 | MarkText | 5.6 | Windows | The document editor | [[[mybizz-os-docs:os-reference-docs/documentation-linking-explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/documentation-linking-explainer.md) |

@@ -400,7 +400,7 @@ Then start OpenCode again (section 1). Full options: `opencode-reset-management.
 ### Tool details
 
 - Cupcake on and off: [[[mybizz-config-docs:cupcake/cupcake-reference]]](C:/mybizz/mybizz-config-docs/cupcake/cupcake-reference.md), "Disabling Cupcake".
-- i-have-adhd switches, update, verification and uninstall: [[mybizz-config-docs:i-have-adhd/i-have-adhd-reference]].
+- i-have-adhd switches, update, verification and uninstall: i-have-adhd-reference.
 - GBrain's AI providers: [[[mybizz-config-docs:gbrain/gbrain-config]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-config.md), Models.
 
 ---
