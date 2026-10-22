@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-20"
+updated: "2026-10-22"
 ---
 # Daily Operations — Quick Reference
 
@@ -99,6 +99,32 @@ It commits every repository on the commit-all list, updates GBrain and pushes. T
 New projects start from `C:\dev\project-template`, copied by hand when required.
 
 ---
+
+## Gbrain
+
+### Gbrain sync issues (Tail current run)
+
+```bash
+tail -30 "$(ls -t /mnt/c/mybizz/logs/gbrain-logs/sync-*.log | head -1)"
+```
+
+### Gbrain sync issues (Tail the actual error)
+
+```bash
+grep -iE "error|fail|429|400|413|token|rate" "$(ls -t /mnt/c/mybizz/logs/gbrain-logs/sync-*.log | head -1)" | tail -15
+```
+
+### Run gbrain-sync.sh
+
+```bash
+dev-p@dev-p:~$ bash /mnt/c/mybizz/scripts/sync-gbrain.sh
+```
+
+### gbrain. Inspect why items were not synced
+
+```bash
+grep -h "Skipped .* candidate" $(ls -t /mnt/c/mybizz/logs/gbrain-logs/sync-*.log | head -8); git -C /mnt/c/mybizz/mybizz-os-docs status -s
+```
 
 ## 3. Sunday maintenance
 
