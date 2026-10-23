@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-20"
+updated: "2026-10-23"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -119,7 +119,7 @@ A finished, tested, security-reviewed Anvil application, in the five-application
 
 PDLF does not yet exist in finished form. It is built in `C:\pdlf`, one step at a time and never in bulk. Each completed step produces one module of PDLF's machinery, in its own place in PDLF's **app factory** (`C:\pdlf\app-factory\`: one folder per phase, holding each step's files and its module file). PDLF's own documentation lives in the PDLF library (`C:\pdlf\pdlf-library\`). Detail: [[[pdlf:pdlf-library/pdlf-explainer-docs/app-factory-explainer|the app factory]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/app-factory-explainer.md), the orchestrator agent.
 
-Two placeholder projects belong to this picture. **mb-5-pdlf** is the test project on which PDLF will be proven. **mb-4-ecom** is a future client-style project, to be modelled largely on mb-3-cs. Both are live, registered and in scope, though not yet scoped.
+**mb-3-cs** is the first application pulled through PDLF, to prove it. **mb-4-ecom** follows.
 
 ### Is PDLF only for Anvil.works?
 
@@ -222,7 +222,7 @@ Memory is a family, not a tool: its parts act on each other. The authoritative m
 
 - **project-library-global** (`C:\dev\project-library-global\`) is MyBizz's own definitive library of decisions and standards that apply to every application PDLF builds: global architecture decisions (ADRs), policies, specifications, standards, standard operating procedures, templates, guides, the Anvil documentation compilation (`anvil-docs`), the Cupcake rule sources and the security library. Some sections are still being written.
 - **anvil-agent-references** is Anvil's own published skill set for AI agents: how forms, client modules, server code, data models and the `anvil.yaml` manifest actually work, generated from Anvil's source. It is the platform standard PDLF builds against, and it stops the agent guessing at a framework it was never trained to know in detail. It is a read-only copy of Anvil's repository, at `C:\mybizz\anvil-agent-references\`. Detail: the anvil-agent-references explainer.
-- **The project libraries** hold each project's own documentation: `mb-3-cs-project-library` (`C:\dev\dev-mb-3-cs\mb-3-cs-project-library\`), `mb-4-ecom-project-library` (`C:\dev\dev-mb-4-ecom\mb-4-ecom-project-library\`) and `mb-5-pdlf-project-library` (`C:\dev\dev-mb-5-pdlf\mb-5-pdlf-project-library\`). Each sits beside its project's four Anvil code repositories, `-app1`, `-app2`, `-app3` and `-app5`, one per application of the five-application structure that lives on this computer (Section 10).
+- **The project libraries** hold each project's own documentation: `mb-3-cs-project-library` (`C:\dev\dev-mb-3-cs\mb-3-cs-project-library\`), and `mb-4-ecom-project-library` (`C:\dev\dev-mb-4-ecom\mb-4-ecom-project-library\`). Each sits beside its project's four Anvil code repositories, `-app1`, `-app2`, `-app3` and `-app5`, one per application of the five-application structure that lives on this computer (Section 10).
 - **The system documentation libraries**: `mybizz-os-docs` (`C:\mybizz\mybizz-os-docs\`: operating procedures and system-wide reference, including this document), `mybizz-config-docs` (`C:\mybizz\mybizz-config-docs\`: one document suite per component), `pdlf` (`C:\pdlf\`: the PDLF library and app factory), `data-mybizz-mgt` (`C:\data-mybizz-mgt\`: management and planning working files) and `dev-root` (`C:\dev\dev-root\`: the hub of the development folder).
 - **The scope list** records which folders are part of the documentation corpus and which are never referenced: [[[mybizz-os-docs:os-reference-docs/mybizz-scope-list|the scope list]]](C:/mybizz/mybizz-os-docs/os-reference-docs/mybizz-scope-list.md).
 
@@ -244,9 +244,9 @@ Skills are packaged instructions an agent loads to do one kind of work well. Eve
 
 The documents are written by AI agents, so their consistency cannot depend on anyone remembering a rule.
 
-- **`mb-doc-check`** (`C:\mybizz\scripts\mb-doc-check.py`, with its source list `mb-doc-check.sources` beside it) runs inside every commit. It gives every document its identity (a permanent `doc-id`), its title and its date of last real change; writes every link in one standard form that both GBrain and the editor can follow; repairs links when documents move or are renamed; turns links to deleted documents into plain words; and stops a commit that introduces a link pointing to nothing. It is a program, not an AI: the same input always gives the same result. Detail: [[[mybizz-config-docs:mb-doc-check/doc-check-explainer|the mb-doc-check explainer]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-explainer.md), [[[mybizz-os-docs:os-reference-docs/documentation-linking-explainer|the documentation linking explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/documentation-linking-explainer.md), [[[mybizz-os-docs:os-reference-docs/frontmatter-conventions|the frontmatter conventions]]](C:/mybizz/mybizz-os-docs/os-reference-docs/frontmatter%20conventions.md).
+- **`mb-doc-check`** (`C:\mybizz\scripts\mb-doc-check.py`, with its source list `mb-doc-check.sources` beside it) runs inside every commit. It gives every document its identity (a permanent `doc-id`), its title and its date of last real change; writes every link in one standard form that both GBrain and the editor can follow; repairs links when documents move or are renamed; turns links to deleted documents into plain words; and stops a commit that introduces a link pointing to nothing. It is a program, not an AI: the same input always gives the same result. Detail: [[[mybizz-config-docs:mb-doc-check/doc-check-explainer|the mb-doc-check explainer]]](C:/mybizz/mybizz-config-docs/mb-doc-check/doc-check-explainer.md), [[[mybizz-os-docs:os-reference-docs/documentation-linking-explainer|the documentation linking explainer]]](C:/mybizz/mybizz-os-docs/os-reference-docs/documentation-linking-explainer.md), [[[mybizz-os-docs:os-reference-docs/frontmatter-conventions|the frontmatter conventions]]](C:/mybizz/mybizz-os-docs/os-reference-docs/frontmatter-conventions.md).
 - **MarkText** is the editor the documents are read in; the stored link form includes a full path so a link opens with a click.
-- **GitHub** holds the off-machine copy of every repository, private by default. A commit pushed is a commit that survives the loss of this computer.
+- **GitHub** holds the off-machine copy of every repository. Every repository is public, so that Claude can read it ([[[mybizz-os-docs:os-decisions/adr-dev-tooling-source-repos-must-be-github-backed|Every MyBizz Repository Is GitHub-Backed]]](C:/mybizz/mybizz-os-docs/os-decisions/adr-dev-tooling-source-repos-must-be-github-backed.md)). A commit pushed is a commit that survives the loss of this computer.
 - **`mb-sysdoc-creator`** writes a component's four-document suite — configuration (what is set), reference (how to act), explainer (what it is and why) and learnings (what differs in the MyBizz setup, and why) — after researching the live system, never by transcribing supplied material. Detail: [[[mybizz-config-docs:mb-sysdoc-creator/sysdoc-creator-explainer|the mb-sysdoc-creator explainer]]](C:/mybizz/mybizz-config-docs/mb-sysdoc-creator/sysdoc-creator-explainer.md).
 - **`mb-project-docs`** keeps each project's own three files and README current, at close-out. It works in each project library and in Applications 1, 3 and 5 of each project, where it writes into the documents folder Anvil carries with the application. Detail: [[[mybizz-config-docs:mb-project-docs/project-docs-explainer|the mb-project-docs explainer]]](C:/mybizz/mybizz-config-docs/mb-project-docs/project-docs-explainer.md).
 
@@ -409,11 +409,9 @@ The system's main enemy is not failure but **silent** failure: something stops w
 
 ### The product
 
-**MyBizz is a complete online business platform for consulting and services businesses, sold as a subscription.** It replaces the separate tools such a business otherwise pays for and connects by hand — website builder, booking system, payment processing, customer database, email marketing, invoicing, blog and analytics — with one platform, one setup and one price. It serves any business that sells time or deliverables, from health practitioners and salons to consultants, trades and tutors, starting with solo practitioners and small practices. It handles payments internationally and in Africa, and multiple currencies.
+**MyBizz builds online business platforms, each its own Mybizz business, sold as a subscription.** Each replaces the separate tools a small business otherwise pays for and connects by hand with one platform, one setup and one price. **mb-3-cs** (MyBizz Consulting & Services) serves businesses that sell time or deliverables: website, booking, payments, customer database, email marketing, invoicing, blog and analytics. **mb-4-ecom** serves e-commerce businesses. Each application's own strategy and feature description live in its project library.
 
 Every subscriber receives their own application, with their own database. MyBizz is not a marketplace: it takes no commission, lists no competitors beside the subscriber, and every client record belongs to the subscribing business alone.
-
-The project that builds it is **mb-3-cs** (MyBizz Consulting & Services). Its development began before PDLF existed and is on hold; it will be built through PDLF, as PDLF's first real product. Its strategy, positioning and full feature description were written before PDLF and describe the product, not the build method: [[[mb-3-cs-project-library:docs-local/positioning-strategy|positioning strategy]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/positioning-strategy.md), [[[mb-3-cs-project-library:docs-local/platform-architecture-narrative|platform architecture narrative]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/platform-architecture-narrative.md), [[[mb-3-cs-project-library:docs-local/founder-strategic-review|founder strategic review]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/founder-strategic-review.md). **mb-4-ecom** is a future product, to be modelled largely on mb-3-cs.
 
 ### The five-application structure
 
@@ -484,7 +482,7 @@ Every component, once. The family numbers refer to Section 5.
 | Google Calendar | 5.7 | External | Maintenance reminders | This document |
 | PDLF | 3 | WSL and Windows | The build framework | [[[pdlf:pdlf-library/pdlf-explainer-docs/pdlf-explainer]]](C:/pdlf/pdlf-library/pdlf-explainer-docs/pdlf-explainer.md) |
 | The PDLF ledger | 3 | Windows (Instance A) | PDLF's single source of truth | [[[pdlf:pdlf-library/specifications-local/spec-postgres-ledger]]](C:/pdlf/pdlf-library/specifications-local/spec-postgres-ledger.md) |
-| mb-3-cs (MyBizz CS) | 10 (output, not a component) | Anvil | The MyBizz product, to be built through PDLF | [[[mb-3-cs-project-library:docs-local/positioning-strategy]]](C:/dev/dev-mb-3-cs/mb-3-cs-project-library/docs-local/positioning-strategy.md) |
+| mb-3-cs and mb-4-ecom | 10 (outputs, not components) | Anvil | The MyBizz applications PDLF builds | Their own project libraries |
 
 ---
 

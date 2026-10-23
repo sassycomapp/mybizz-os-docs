@@ -1,7 +1,7 @@
 ---
-title: "frontmatter conventions"
+title: "frontmatter-conventions"
 doc-id: "mb-f484bbdf"
-updated: "2026-10-20"
+updated: "2026-10-23"
 ---
 frontmatter conventions:
 

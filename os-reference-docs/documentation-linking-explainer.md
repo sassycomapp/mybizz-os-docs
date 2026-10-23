@@ -1,12 +1,12 @@
 ---
 title: "documentation-linking-explainer"
 doc-id: "mb-15cd9959"
-updated: "2026-10-20"
+updated: "2026-10-23"
 ---
 # Documentation linking — Explainer
 
 *Companion note: the rules a document must meet are in [[[mybizz-config-docs:mb-sysdoc-creator/doc-suite-specification]]](C:/mybizz/mybizz-config-docs/mb-sysdoc-creator/doc-suite-specification.md) and
-[[[mybizz-os-docs:os-reference-docs/frontmatter-conventions]]](C:/mybizz/mybizz-os-docs/os-reference-docs/frontmatter%20conventions.md); the procedure to follow every time you finish work is
+[[[mybizz-os-docs:os-reference-docs/frontmatter-conventions]]](C:/mybizz/mybizz-os-docs/os-reference-docs/frontmatter-conventions.md); the procedure to follow every time you finish work is
 [[[mybizz-os-docs:operating-procedures/commit-all-repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md); GBrain's side of the story is in [[[mybizz-config-docs:gbrain/gbrain-explainer]]](C:/mybizz/mybizz-config-docs/gbrain/gbrain-explainer.md); the
 repositories and their GBrain sources are listed in [[[mybizz-os-docs:os-reference-docs/repo-organization]]](C:/mybizz/mybizz-os-docs/os-reference-docs/repo-organization.md).*
 
@@ -66,17 +66,15 @@ At every commit, for every document in that commit:
    its name or its content, so a document that was renamed and completely rewritten is still found.
    Links to it are corrected in every repository, not only the one being committed.
 4. **Turns links to a deleted document into plain words.** The sentence stays; the dead link goes.
-5. **Turns a link to a deleted document into plain words.** The text stays readable when its target is gone.
-6. **Stops the commit** when a link you just typed points to nothing, or to a name several
+5. **Stops the commit** when a link you just typed points to nothing, or to a name several
    documents share, or when the frontmatter is damaged. The message names the line and, for a
    shared name, the exact links you can write instead.
-7. **Stores every document with LF line endings.**
-8. **Moves the `updated` date only for a real change.** A document that is new, moved, or changed
+6. **Stores every document with LF line endings.**
+7. **Moves the `updated` date only for a real change.** A document that is new, moved, or changed
    in anything other than its date line gets today's date. A document whose only difference is the
    date line, or its line endings, keeps its old date.
 
-What it never does: move, rename or delete a file; touch `SKILL.md` files (installed skills) or
-or commit for you.
+What it never does: move, rename or delete a file; touch `SKILL.md` files (installed skills); or commit for you.
 
 ## 4. Why it works the way it does
 

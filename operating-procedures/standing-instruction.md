@@ -1,7 +1,7 @@
 ---
 title: "standing-instruction"
 doc-id: "mb-d76a56ba"
-updated: "2026-10-01"
+updated: "2026-10-23"
 ---
 ## Engineering Instructions
 
@@ -31,6 +31,10 @@ If you identify a discrepancy, inconsistency, or potential problem:
 4. Provide your recommended solution and explain why you recommend it.
 5. If there are multiple valid options, list them and clearly identify the best option with justification.
 6. Proceed only after the required decision has been confirmed.
+
+### Blocks
+
+When Cupcake blocks an action, stop. Never route around the block by any other path, such as a wrapper script or an indirect command, for any reason. Ask for the permission the action needs (see [[[mybizz-os-docs:operating-procedures/grant-paths|Grant Paths]]](C:/mybizz/mybizz-os-docs/operating-procedures/grant-paths.md)), or hand the developer the exact commands to run.
 
 When asking a question, always include your best recommendation.
 

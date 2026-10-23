@@ -1,6 +1,6 @@
 ---
 title: "skills-catalog"
-updated: "2026-10-22"
+updated: "2026-10-23"
 doc-id: "mb-992aca7a"
 ---
 
@@ -166,7 +166,7 @@ Every system on this PC has a row. A system is a program, script, database or pr
 | mybizz        | commit-all         | Script                    | Commits, syncs GBrain and pushes every documentation repository.                                 |
 | mybizz        | mb-doc-check       | Program (commit hook)     | Makes every committed document and link correct, on every commit made in WSL.                    |
 | mybizz        | memory-governor    | Program                   | Governs every submission into GBrain memory.                                                     |
-| mybizz        | pdlf               | System                    | The process that builds every Anvil app of the mb-3-cs, mb-4-ecom and mb-5-pdlf projects.        |
+| mybizz        | pdlf               | System                    | The process that builds every Anvil app of the mb-3-cs and mb-4-ecom projects.                   |
 | postgres      | postgresql         | Database server           | The PostgreSQL database servers the memory system runs on.                                       |
 | zaproxy       | owasp-zap          | Program                   | OWASP ZAP. Runs the test suite's passive scan of the running app, once per release. |
 

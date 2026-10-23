@@ -1,7 +1,7 @@
 ---
 title: "mybizz-scope-list"
 doc-id: "mb-a5a87568"
-updated: "2026-10-16"
+updated: "2026-10-23"
 
 ---
 
@@ -40,6 +40,7 @@ Backups, archives, and retired material (snapshots, never live knowledge):
 "C:\backup-daily"
 "C:\backup-dream-cycle"
 "C:\backup-gbrain"
+"C:\backup-pre-pdlf-sanity-sweep"
 "C:\mybizz\archive"
 "C:\data-mybizz-mgt\archive"
 "C:\dev\obsolete"
@@ -83,13 +84,9 @@ future, is excepted (code is never documentation):
 "C:\dev\dev-mb-4-ecom\mb-4-ecom-app2"
 "C:\dev\dev-mb-4-ecom\mb-4-ecom-app3"
 "C:\dev\dev-mb-4-ecom\mb-4-ecom-app5"
-"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app1"
-"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app2"
-"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app3"
-"C:\dev\dev-mb-5-pdlf\mb-5-pdlf-app5"
 
 Notes:
 
-- "C:\dev\dev-mb-4-ecom\mb-4-ecom-project-library" and "C:\dev\dev-mb-5-pdlf\mb-5-pdlf-project-library" are IN scope. Both are unscoped placeholders today; membership is by content, so they activate when real content lands — no scope change needed.
+- "C:\dev\dev-mb-4-ecom\mb-4-ecom-project-library" is IN scope; membership is by content.
 - mb-3-cs-project-library and all of C:\pdlf other than its
   exceptions above are IN scope despite being in development. Transient state schedules the work; it never removes scope.

@@ -1,7 +1,7 @@
 ---
 title: "system-integrity-explainer"
 doc-id: "mb-91e45ce5"
-updated: "2026-10-20"
+updated: "2026-10-23"
 ---
 # System Integrity — Explainer
 
@@ -385,7 +385,7 @@ A settings file, `mb-doc-check.sources`, says which folder is which GBrain sourc
 
 ### What it is
 
-mb-project-docs is a skill that keeps each project's own documents current. A project is one of `mb-3-cs`, `mb-4-ecom`, `mb-5-pdlf` and `pdlf`, as named in `repo-organization.md`. In each, it maintains:
+mb-project-docs is a skill that keeps each project's own documents current. A project is one of `mb-3-cs`, `mb-4-ecom` and `pdlf`, as named in `repo-organization.md`. In each, it maintains:
 
 - a **config** file: the project's state;
 - an **explainer**: what the project is and why it is built the way it is;
