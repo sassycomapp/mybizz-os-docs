@@ -1,7 +1,7 @@
 ---
 title: "wsl-path-references"
 doc-id: "mb-8904e69d"
-updated: "2026-10-20"
+updated: "2026-10-23"
 
 ---
 
@@ -48,7 +48,7 @@ The procedure is in [[[mybizz-config-docs:cupcake/cupcake-reference|Cupcake refe
 
 ## Scripts and logs (on C:\)
 
-`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `commit-all.sh`, `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.sources`, `rollout-repo.sh`, `rollout-all.sh`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
+`C:\mybizz\scripts\` (WSL: `/mnt/c/mybizz/scripts/`): `commit-all.sh`, `sync-gbrain.sh`, `mb-doc-check.py`, `mb-doc-check.sources`, `rollout-repo.sh`, `cutover-block2.sh`, `cutover-block3.sh`, `cutover-rollback.sh`  
 `C:\mybizz\logs\gbrain-logs\` — sync logs  
 `C:\mybizz\logs\mb-submit-memory\` — submission logs
 
