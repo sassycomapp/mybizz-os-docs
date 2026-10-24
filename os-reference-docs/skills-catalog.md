@@ -1,6 +1,6 @@
 ---
 title: "skills-catalog"
-updated: "2026-10-23"
+updated: "2026-10-24"
 doc-id: "mb-992aca7a"
 ---
 
@@ -19,6 +19,7 @@ The columns mean the following.
 - **Invocation** is `User` when only the user can start the skill, `Agent` when only an agent can, and `Both` when either can. In OpenCode every installed skill is `Both`, because OpenCode does not act on the frontmatter settings that restrict this.
 - **Source path** is the file the skill is maintained from. When no separate source exists, it is the installed file itself.
 - **Installed path** is where OpenCode loads the skill from, with several paths separated by semicolons, or `not installed`.
+- **PDLF Steps** is every app-factory step that uses the skill, by the step's code (for example `b15`), including each step the skill's own pipeline runs through. It is updated in the same batch as the step that adds or removes the skill.
 - **Status** is `OK`, or one or more of the following separated by semicolons: `Not installed` (OpenCode does not load it), `Installed more than once` (OpenCode reaches it through more than one path), `Installed copy missing` (an installed path has no file), `No source copy` (no separate source exists) and `Copies differ` (an installed copy's content differs from the source). `OK` means installed once with content identical to its source. Content is compared below the frontmatter, because source documents carry documentation frontmatter (`title`, `doc-id`, `updated`) and installed skills carry skill frontmatter (`name`, `description`) by design.
 - **Skill Description** is the `description` field of the installed copy, or of the source when the skill is not installed.
 
