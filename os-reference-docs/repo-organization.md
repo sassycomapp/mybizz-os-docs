@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-10-23"
+updated: "2026-10-29"
 
 ---
 
@@ -20,7 +20,7 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 | mb-3-cs-app2 | C:\dev\dev-mb-3-cs\mb-3-cs-app2 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app2 | — (code) | No | — | No |
 | mb-3-cs-app3 | C:\dev\dev-mb-3-cs\mb-3-cs-app3 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app3 | — (code) | Yes | Fallback home | No |
 | mb-3-cs-app5 | C:\dev\dev-mb-3-cs\mb-3-cs-app5 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app5 | — (code) | Yes | Fallback home | No |
-| mb-3-cs-project-library | C:\dev\dev-mb-3-cs\mb-3-cs-project-library | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-library | mb-3-cs-project-library (federated) | Yes | Fallback home | Yes |
+| mb-3-cs-project-context | C:\dev\dev-mb-3-cs\mb-3-cs-project-context | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-project-context | mb-3-cs-project-context (federated) | No | — | No |
 | mb-4-ecom-app1 | C:\dev\dev-mb-4-ecom\mb-4-ecom-app1 | /mnt/c/dev/dev-mb-4-ecom/mb-4-ecom-app1 | — (code) | Yes | Fallback home | No |
 | mb-4-ecom-app2 | C:\dev\dev-mb-4-ecom\mb-4-ecom-app2 | /mnt/c/dev/dev-mb-4-ecom/mb-4-ecom-app2 | — (code) | No | — | No |
 | mb-4-ecom-app3 | C:\dev\dev-mb-4-ecom\mb-4-ecom-app3 | /mnt/c/dev/dev-mb-4-ecom/mb-4-ecom-app3 | — (code) | Yes | Fallback home | No |
@@ -75,6 +75,6 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 
 **Note on `anvil-agent-references-code`:** this source is a read-only clone of Anvil's own public repository, `github.com/anvil-works/anvil-agent-references`, at `C:\mybizz\anvil-agent-references`. Anvil publishes it. It is not one of the developer's repositories, and it has no GitHub repository of the developer's own. It is separate from `anvil-docs` in the source `default` (`project-library-global`), which is the developer's own compilation of Anvil documentation. The `-code` in its source id distinguishes it from the developer's own documentation folder `anvil-agent-references/` in `mybizz-config-docs`. The source is isolated, so it is searched only when named explicitly. It is updated by hand (`git -C /mnt/c/mybizz/anvil-agent-references pull`); the standing sync script does not pull.
 
-**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `dev-root-hub`, `mb-3-cs-project-library`, `mb-4-ecom-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They also cover the scripts repository, `mybizz-scripts`. They do not cover `mb-gbrain-searches`, whose own script commits and pushes it so that the hook never rewrites the recorded GBrain output. They do not cover the app code repositories, the Anvil clone, `project-template`, `gbrain-repo` or the memory governor's folder.
+**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `dev-root-hub`, `mb-3-cs-project-context`, `mb-4-ecom-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They also cover the scripts repository, `mybizz-scripts`. They do not cover `mb-gbrain-searches`, whose own script commits and pushes it so that the hook never rewrites the recorded GBrain output. They do not cover the app code repositories, the Anvil clone, `project-template`, `gbrain-repo` or the memory governor's folder.
 
 **Branch:** every repository works on `main`, except the Anvil app code repositories, which work on `master` because Anvil syncs that branch.
