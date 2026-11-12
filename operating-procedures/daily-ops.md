@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-10-23"
+updated: "2026-11-12"
 ---
 # Daily Operations — Quick Reference
 
@@ -35,6 +35,7 @@ projects/mb-4-ecom-project-library
 projects/mb-archify-scope
 projects/mb-close-out
 projects/mb-compile-rules
+projects/mb-form-builder
 projects/mb-memory-system-diagnostic
 projects/mb-project-docs
 projects/mb-sentinel-review
