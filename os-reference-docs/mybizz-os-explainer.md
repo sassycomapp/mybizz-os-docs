@@ -1,7 +1,7 @@
 ---
 title: "mybizz-os-explainer"
 doc-id: "mb-ddaef42c"
-updated: "2026-10-23"
+updated: "2026-11-14"
 ---
 # MyBizz-OS — The Comprehensive Explainer
 
@@ -255,16 +255,13 @@ The documents are written by AI agents, so their consistency cannot depend on an
 - **Commit all** (`C:\mybizz\scripts\commit-all.sh`) commits every documentation repository (the hook runs inside each commit), updates GBrain from every source (`C:\mybizz\scripts\sync-gbrain.sh`), and pushes everything to GitHub, then prints one summary and keeps the full log of the last run. Procedure: [[[mybizz-os-docs:operating-procedures/commit-all-repositories|commit all repositories]]](C:/mybizz/mybizz-os-docs/operating-procedures/commit-all-repositories.md); detail: [[[mybizz-config-docs:commit-all/commit-all-explainer|the commit-all explainer]]](C:/mybizz/mybizz-config-docs/commit-all/commit-all-explainer.md).
 - **Close out** (`/mb-close-out`) ends a session and its task in one run: the session page in GBrain, the facts worth keeping, the project documents, one approval, then one terminal block ending in commit all, and an empty review queue. Procedure: [[[mybizz-os-docs:operating-procedures/opening-and-closing|opening and closing]]](C:/mybizz/mybizz-os-docs/operating-procedures/opening-and-closing.md); skill: [[[mb-close-out:mb-close-out|mb-close-out]]](C:/mybizz/mb-close-out/mb-close-out.md).
 - **Scheduled tasks** (Windows Task Scheduler):
-  - **SundayBackup** — every Sunday: backs up both PostgreSQL instances to two locations (`C:\backup-gbrain\` and `/home/dev-p/backup-gbrain/`), checks every copy, keeps two cycles, exports GBrain to `C:\backup-dream-cycle\`, and reports the result in a pop-up. Script: `C:\mybizz\scripts\sunday-backup.sh`; pop-up: `C:\mybizz\scripts\show-sunday-result.ps1`; log: `C:\mybizz\logs\sunday-backup\`.
-  - **DailyDevBackup** — every day: copies the development folders into `C:\backup-daily\`. Script: `C:\mybizz\scripts\daily-backup.ps1`.
-  - **OpenCodeSessionPrune** — every day: removes OpenCode session history older than sixty days, after backing it up to `C:\backup-wsl\opencode-session-prune\`. Script: `C:\mybizz\scripts\opencode-session-prune.sh`.
-  - **MissedRunCheck** — at every logon: reports any scheduled task that was missed or did not finish. Script: `C:\mybizz\scripts\missed-run-check.ps1`.
+  - **MorningTasks** — at every logon, after one minute: runs whatever is due and shows a pop-up only when a task failed or the dream cycle is due. Daily: the copy of the development folders into `C:\backup-daily\` (three most recent copies kept; `C:\mybizz\scripts\daily-backup.ps1`) and the OpenCode history clean-up (sessions older than sixty days, backed up first to `C:\backup-wsl\opencode-session-prune\`; `C:\mybizz\scripts\opencode-session-prune.sh`). Weekly, 7 days after the last success: both PostgreSQL instances backed up to `C:\backup-gbrain\` and `/home/dev-p/backup-gbrain/`, every copy checked, two cycles kept, GBrain exported to `C:\backup-dream-cycle\`, and the newest database backups copied to `G:\My Drive\mybizz-backups\database\` (`C:\mybizz\scripts\weekly-backup.sh`). Monthly, 30 days after the last success and never on the weekly backup's morning: Ubuntu exported to `G:\My Drive\mybizz-backups\ubuntu-backup.tar`. Script: `C:\mybizz\scripts\morning-tasks.ps1`; how it works: `C:\data-mybizz-mgt\desktop\morning-tasks-explainer.md`.
 - **The memory system diagnostic** (`/mb-memory-system-diagnostic`) walks the whole memory family in one pass, with real checks, and repairs what it finds with the developer's approval. Its final section runs the dream cycle when the developer agrees. Detail: [[[mybizz-config-docs:mb-memory-system-diagnostic/mb-memory-system-diagnostic-explainer|the diagnostic explainer]]](C:/mybizz/mybizz-config-docs/mb-memory-system-diagnostic/mb-memory-system-diagnostic-explainer.md).
 - **Configuration management** (`mb-config-manager`, an OpenCode agent) examines one system at a time: it compares the issuer's standard, the recorded MyBizz value and the live system, and catches the gap between "present" and "working". It keeps one register of every system, with its version and the date it was last checked. It has mb-sysdoc-creator research and write the documents; it never does so itself. Findings are given in chat, and every correction waits for the developer. Detail: [[[mybizz-config-docs:mb-config-manager/config-manager-explainer|the configuration management explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md).
 - **Supporting tools**: `C:\mybizz\scripts\opencode-db-cleanup.sh` (removes stale project records from OpenCode after a folder is renamed), the OpenCode cache reset ([[[mybizz-os-docs:operating-procedures/daily-ops|daily operations]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md), [[[mybizz-os-docs:os-reference-docs/opencode-reset-management|OpenCode reset management]]](C:/mybizz/mybizz-os-docs/os-reference-docs/opencode-reset-management.md)), and the clean WSL shutdown procedure ([[[mybizz-config-docs:postgresql/postgresql-reference|the PostgreSQL reference]]](C:/mybizz/mybizz-config-docs/postgresql/postgresql-reference.md), "Clean shutdown").
 - **Search tools**: Everything (`es.exe`) for instant file search on Windows, and mgrep for searching file contents by meaning.
 - **n8n**, a workflow-automation tool, is installed and available for linking processes, but deliberately unused, to keep the system lean.
-- **Google Calendar** holds the reminders: the Sunday maintenance reminder and the task list for configuration exams.
+- **Google Calendar** holds the reminders: the task list for configuration exams.
 
 **In one picture (component map):** OpenCode at the centre; memory family, enforcement family, knowledge library, skills, documentation integrity and operations around it; PDLF drawing on all of them.
 
@@ -356,10 +353,8 @@ Some behaviours belong to no single component; they appear only when components 
 |---|---|---|
 | Every session | Start OpenCode; work; `/mb-close-out` (ending in commit all) | Developer, with the agent |
 | After other work | Commit all | Developer |
-| Every day | DailyDevBackup, OpenCodeSessionPrune | By itself |
-| Every logon | MissedRunCheck | By itself |
-| Every Sunday, 10:00 | SundayBackup | By itself, with a pop-up |
-| Every Sunday, after the backup | `/mb-memory-system-diagnostic`, then the dream cycle at its end | Developer, in OpenCode |
+| Every logon | MorningTasks: daily copy and OpenCode clean-up; weekly backup after 7 days; Ubuntu export after 30 days | By itself, with a pop-up only on a failure or when the dream cycle is due |
+| When the MorningTasks pop-up says so | `/mb-memory-system-diagnostic`, then the dream cycle at its end | Developer, in OpenCode |
 | On drift or after a significant change | Configuration exams through `mb-config-manager` | Developer (calendar task) |
 | After any OpenCode or Cupcake restart, upgrade or setting change | The Cupcake liveness probe | Developer, in OpenCode |
 | After a GBrain upgrade | The upgrade checklist, `slug-selftest`, `sources-check` | Developer |
@@ -368,7 +363,7 @@ Some behaviours belong to no single component; they appear only when components 
 
 The day-to-day manual is [[[mybizz-os-docs:operating-procedures/daily-ops|daily operations]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md).
 
-**In one picture (maintenance cycle):** session → close-out → commit all; daily backups and prune; logon check; Sunday backup → diagnostic → dream cycle; exams on drift.
+**In one picture (maintenance cycle):** session → close-out → commit all; morning tasks at logon (daily copy and clean-up, weekly backup → diagnostic → dream cycle, monthly Ubuntu export); exams on drift.
 
 ---
 
@@ -378,8 +373,7 @@ The system's main enemy is not failure but **silent** failure: something stops w
 
 | Silent failure | What catches it | Where you see it |
 |---|---|---|
-| A scheduled job did not run, or stopped part-way | MissedRunCheck | Message at logon |
-| The weekly backup failed | SundayBackup's own check | Pop-up, with what to do |
+| A morning task failed | MorningTasks | Pop-up at logon, with what to do; the task is tried again at the next logon |
 | A backup exists but is damaged | Hash checks in the backup and in the diagnostic | Pop-up; diagnostic report |
 | A document has a broken link or missing identity | `mb-doc-check` | The commit stops and names the line |
 | A repository lost its commit hook | Commit all's hook check | Warning in the commit-all output |
@@ -470,10 +464,7 @@ Every component, once. The family numbers refer to Section 5.
 | `mb-project-docs` | 5.6 | WSL | Keeps project documents current | [[[mybizz-config-docs:mb-project-docs/project-docs-explainer]]](C:/mybizz/mybizz-config-docs/mb-project-docs/project-docs-explainer.md) |
 | Commit all (`commit-all.sh`, `sync-gbrain.sh`) | 5.7 | WSL | Commit, refresh GBrain, push | [[[mybizz-config-docs:commit-all/commit-all-explainer]]](C:/mybizz/mybizz-config-docs/commit-all/commit-all-explainer.md) |
 | `/mb-close-out` | 5.7 | WSL | Ends a session and its task | [[[mb-close-out:mb-close-out]]](C:/mybizz/mb-close-out/mb-close-out.md) |
-| SundayBackup | 5.7 | Windows → WSL | Weekly database backup and GBrain export | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
-| DailyDevBackup | 5.7 | Windows | Daily copy of development folders | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
-| OpenCodeSessionPrune | 5.7 | Windows → WSL | Keeps OpenCode's history bounded | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
-| MissedRunCheck | 5.7 | Windows | Reports missed or unfinished jobs | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
+| MorningTasks | 5.7 | Windows → WSL | Daily copy and clean-up, weekly database backup and GBrain export, monthly Ubuntu export | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
 | `mb-memory-system-diagnostic` | 5.7 | WSL | Weekly whole-memory health check | [[[mybizz-config-docs:mb-memory-system-diagnostic/mb-memory-system-diagnostic-explainer]]](C:/mybizz/mybizz-config-docs/mb-memory-system-diagnostic/mb-memory-system-diagnostic-explainer.md) |
 | `mb-config-manager` | 5.7 | WSL | Specification-against-reality exams | [[[mybizz-config-docs:mb-config-manager/config-manager-explainer]]](C:/mybizz/mybizz-config-docs/mb-config-manager/config-manager-explainer.md) |
 | `opencode-db-cleanup.sh`, cache reset, clean shutdown | 5.7 | WSL | Maintenance procedures | [[[mybizz-os-docs:operating-procedures/daily-ops]]](C:/mybizz/mybizz-os-docs/operating-procedures/daily-ops.md) |
@@ -518,7 +509,7 @@ Each diagram is one scope for `mb-archify-scope`: one main path, at most twelve 
 | D5 | The component families | 5 | OpenCode at the centre, families around it | Harness, memory, enforcement, knowledge, skills, documentation, operations, PDLF |
 | D6 | A working session | 6 | start → rules → memory → work → close-out → commit all | Developer, OpenCode, AGENTS.md, GBrain, Cupcake, close-out, commit hook, GitHub |
 | D7 | How knowledge moves | 6 | file → `mb-submit-memory` → governor → durable facts | Repositories, sync, mirror, fact file, `mb-submit-memory`, governor, review queue, durable facts, dream cycle |
-| D8 | The maintenance cycle | 8 | session → daily → weekly → on demand | Close-out, commit all, daily jobs, logon check, Sunday backup, diagnostic, dream cycle, exams |
+| D8 | The maintenance cycle | 8 | session → morning tasks → on demand | Close-out, commit all, morning tasks (daily, weekly, monthly), diagnostic, dream cycle, exams |
 | D9 | Silent-failure detection | 9 | failure → detector → where it shows | Failure classes, detectors, the developer's view |
 | D9A | System-level nuances | 7A | coupling → how it is handled | Two servers, name, startup, default source, facts per source, quick path, dream cycle, MCP load, Cupcake tests, local-only configuration |
 | D10 | The shipped estate | 10 | workspace → master → blank template → client applications | The five applications, isolated client databases |

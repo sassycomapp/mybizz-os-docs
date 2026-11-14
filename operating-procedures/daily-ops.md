@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-11-12"
+updated: "2026-11-14"
 ---
 # Daily Operations — Quick Reference
 
@@ -123,12 +123,12 @@ dev-p@dev-p:~$ bash /mnt/c/mybizz/scripts/sync-gbrain.sh
 grep -h "Skipped .* candidate" $(ls -t /mnt/c/mybizz/logs/gbrain-logs/sync-*.log | head -8); git -C /mnt/c/mybizz/mybizz-os-docs status -s
 ```
 
-## 3. Sunday maintenance
+## 3. Morning tasks
 
-1. **10:00 — runs by itself.** The task `SundayBackup` backs up both PostgreSQL instances and exports GBrain. A pop-up reports the result. If it failed, the pop-up says what to do.
-2. **After it finishes — in OpenCode.** Run `/mb-memory-system-diagnostic`. At its end it asks whether to run the dream cycle: answer yes. If the backup failed, answer no until it has succeeded.
+1. **At logon — runs by itself.** The task `MorningTasks` runs whatever is due: the daily copy and the OpenCode clean-up every day, the weekly backup after 7 days, and the Ubuntu export to Google Drive after 30 days. Wait until its window closes before opening WSL. How it works: [[[data-mybizz-mgt:desktop/morning-tasks-explainer]]](C:/data-mybizz-mgt/desktop/morning-tasks-explainer.md).
+2. **When its pop-up says the dream cycle is due — in OpenCode.** Run `/mb-memory-system-diagnostic`. At its end it asks whether to run the dream cycle: answer yes. If the pop-up reports that the backup failed, answer no until it has succeeded.
 
-Missed or unfinished scheduled runs are reported in a message at logon (`MissedRunCheck`). Configuration exams are not on Sunday; they are in your Google Calendar task list, for when something drifts or changes.
+Configuration exams are in your Google Calendar task list, for when something drifts or changes.
 
 ---
 
