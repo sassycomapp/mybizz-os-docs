@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-11-14"
+updated: "2026-11-15"
 
 ---
 
@@ -15,6 +15,8 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 |---|---|---|---|---|---|---|
 | data-mybizz-mgt | C:\data-mybizz-mgt | /mnt/c/data-mybizz-mgt | data-mybizz-mgt (federated) | Yes | Fallback home | No |
 | gbrain-repo | — (WSL only) | /home/dev-p/.gstack and /home/dev-p/.gstack-brain-worktree | — | No | — | No |
+| mb-1-fda-app1 | C:\dev\dev-mb-1-fda\mb-1-fda-app1 | /mnt/c/dev/dev-mb-1-fda/mb-1-fda-app1 | — (code) | Yes | Fallback home | No |
+| mb-1-fda-project-library | C:\dev\dev-mb-1-fda\mb-1-fda-project-library | /mnt/c/dev/dev-mb-1-fda/mb-1-fda-project-library | mb-1-fda-project-library (federated) | Yes | Fallback home | No |
 | mb-3-cs-app1 | C:\dev\dev-mb-3-cs\mb-3-cs-app1 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app1 | — (code) | Yes | Fallback home | No |
 | mb-3-cs-app2 | C:\dev\dev-mb-3-cs\mb-3-cs-app2 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app2 | — (code) | No | — | No |
 | mb-3-cs-app3 | C:\dev\dev-mb-3-cs\mb-3-cs-app3 | /mnt/c/dev/dev-mb-3-cs/mb-3-cs-app3 | — (code) | Yes | Fallback home | No |
@@ -67,7 +69,7 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 
 **Cupcake:** `Fallback home` means the folder has no `.cupcake` skeleton, so Cupcake evaluates every agent action there through `~/.config/cupcake/fallback`, and every global rule applies. No project folder carries a skeleton. The one skeleton is `~/.cupcake`, the folder holding Cupcake's programs, which serves sessions started in `/home/dev-p`. `—` means no agent works there.
 
-**Names:** every business has one project folder, `C:\dev\dev-{slug}\`, holding five code repositories and one project library: `{slug}-app1`, `{slug}-app2`, `{slug}-app3`, `{slug}-app4`, `{slug}-app5` and `{slug}-project-library`. A business that enters PDLF with existing material brings it as its project context, `{slug}-project-context`; Step 11 moves the project context into the project library and then retires the project context. The slugs are `mb-3-cs` and `mb-4-ecom`, all lowercase. `{slug}-app4` holds the release image definition and is a GitHub repository only, created in the business's App 3 run; it gets its row in this table once it exists. A client instance runs on DigitalOcean and has no folder here. Each other code repository is an Anvil app of the same name. `-code` appears only in some GBrain source ids. `pdlf-library` is a folder inside the `pdlf` repository, not a repository of its own.
+**Names:** every business has one project folder, `C:\dev\dev-{slug}\`, holding five code repositories and one project library: `{slug}-app1`, `{slug}-app2`, `{slug}-app3`, `{slug}-app4`, `{slug}-app5` and `{slug}-project-library`. A business that enters PDLF with existing material brings it as its project context, `{slug}-project-context`; Step 11 moves the project context into the project library and then retires the project context. The slugs are `mb-1-fda`, `mb-3-cs` and `mb-4-ecom`, all lowercase. `{slug}-app4` holds the release image definition and is a GitHub repository only, created in the business's App 3 run; it gets its row in this table once it exists. A client instance runs on DigitalOcean and has no folder here. Each other code repository is an Anvil app of the same name. `-code` appears only in some GBrain source ids. `pdlf-library` is a folder inside the `pdlf` repository, not a repository of its own.
 
 **`mb-gbrain-searches`:** the record of every GBrain search Claude asks for and its results. It is not a GBrain source, because its results are copies of GBrain content. OpenCode agents only read it.
 
@@ -75,6 +77,6 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 
 **Note on `anvil-agent-references-code`:** this source is a read-only clone of Anvil's own public repository, `github.com/anvil-works/anvil-agent-references`, at `C:\mybizz\anvil-agent-references`. Anvil publishes it. It is not one of the developer's repositories, and it has no GitHub repository of the developer's own. It is separate from `anvil-docs` in the source `default` (`project-library-global`), which is the developer's own compilation of Anvil documentation. The `-code` in its source id distinguishes it from the developer's own documentation folder `anvil-agent-references/` in `mybizz-config-docs`. The source is isolated, so it is searched only when named explicitly. It is updated by hand (`git -C /mnt/c/mybizz/anvil-agent-references pull`); the standing sync script does not pull.
 
-**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `mb-3-cs-project-library`, `mb-4-ecom-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-form-builder`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They also cover the scripts repository, `mybizz-scripts`. They do not cover `mb-gbrain-searches`, whose own script commits and pushes it so that the hook never rewrites the recorded GBrain output. They do not cover the app code repositories, the Anvil clone, `project-template`, `gbrain-repo` or the memory governor's folder.
+**Commit hook and `commit-all.sh`:** they apply to every documentation repository: `default`, `mb-1-fda-project-library`, `mb-3-cs-project-library`, `mb-4-ecom-project-library`, `mb-archify-scope`, `mb-close-out`, `mb-compile-rules`, `mb-form-builder`, `mb-memory-system-diagnostic`, `mb-project-docs`, `mb-sentinel-review`, `mb-submit-memory`, `mb-sysdoc-creator`, `mybizz-config-docs`, `mybizz-os-docs`, `data-mybizz-mgt` and `pdlf`. They also cover the scripts repository, `mybizz-scripts`. They do not cover `mb-gbrain-searches`, whose own script commits and pushes it so that the hook never rewrites the recorded GBrain output. They do not cover the app code repositories, the Anvil clone, `project-template`, `gbrain-repo` or the memory governor's folder.
 
 **Branch:** every repository works on `main`, except the Anvil app code repositories, which work on `master` because Anvil syncs that branch.
