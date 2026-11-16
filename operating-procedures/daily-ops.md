@@ -1,7 +1,7 @@
 ---
 title: "daily-ops"
 doc-id: "mb-2d7af6f7"
-updated: "2026-11-14"
+updated: "2026-11-16"
 ---
 # Daily Operations — Quick Reference
 
@@ -24,6 +24,12 @@ pkill -f opencode; sleep 3; cd ~ && opencode web --hostname 0.0.0.0
 ### Open any project inside opencode webUI with
 
 projects/data-mybizz-mgt
+
+
+projects/mb-1-fda-app1
+
+projects/mb-1-fda-project-library
+
 projects/mb-3-cs-app1
 projects/mb-3-cs-app3
 projects/mb-3-cs-app5
