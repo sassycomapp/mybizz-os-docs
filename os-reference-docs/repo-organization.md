@@ -1,7 +1,7 @@
 ---
 title: "repo-organization"
 doc-id: "mb-f38fd0aa"
-updated: "2026-11-15"
+updated: "2026-11-17"
 
 ---
 
@@ -69,7 +69,7 @@ Correlation table of every Git repository on the machine: its GitHub repository,
 
 **Cupcake:** `Fallback home` means the folder has no `.cupcake` skeleton, so Cupcake evaluates every agent action there through `~/.config/cupcake/fallback`, and every global rule applies. No project folder carries a skeleton. The one skeleton is `~/.cupcake`, the folder holding Cupcake's programs, which serves sessions started in `/home/dev-p`. `—` means no agent works there.
 
-**Names:** every business has one project folder, `C:\dev\dev-{slug}\`, holding five code repositories and one project library: `{slug}-app1`, `{slug}-app2`, `{slug}-app3`, `{slug}-app4`, `{slug}-app5` and `{slug}-project-library`. A business that enters PDLF with existing material brings it as its project context, `{slug}-project-context`; Step 11 moves the project context into the project library and then retires the project context. The slugs are `mb-1-fda`, `mb-3-cs` and `mb-4-ecom`, all lowercase. `{slug}-app4` holds the release image definition and is a GitHub repository only, created in the business's App 3 run; it gets its row in this table once it exists. A client instance runs on DigitalOcean and has no folder here. Each other code repository is an Anvil app of the same name. `-code` appears only in some GBrain source ids. `pdlf-library` is a folder inside the `pdlf` repository, not a repository of its own.
+**Names:** every business has one project folder, `C:\dev\dev-{slug}\`, holding five code repositories and one project library: `{slug}-app1`, `{slug}-app2`, `{slug}-app3`, `{slug}-app4`, `{slug}-app5` and `{slug}-project-library`. A business that enters PDLF with existing material brings it as its project context, `{slug}-project-context`; Step 11 moves the project context into the project library and then retires the project context. The slugs are `mb-1-fda`, `mb-3-cs` and `mb-4-ecom`, all lowercase. `{slug}-app4` holds the release image definition and is a GitHub repository only, created in the business's App 3 run; it gets its row in this table once it exists. A client instance runs on a Mybizz Hetzner application server, with its database in Mybizz's Ubicloud service, and has no folder here. Each other code repository is an Anvil app of the same name. `-code` appears only in some GBrain source ids. `pdlf-library` is a folder inside the `pdlf` repository, not a repository of its own.
 
 **`mb-gbrain-searches`:** the record of every GBrain search Claude asks for and its results. It is not a GBrain source, because its results are copies of GBrain content. OpenCode agents only read it.
 
